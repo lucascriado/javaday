@@ -288,6 +288,12 @@
         inset: 0;
         pointer-events: none;
         background:
+          linear-gradient(
+            180deg,
+            transparent 0 70%,
+            rgb(var(--surface) / 0.45) 88%,
+            rgb(var(--surface)) 100%
+          ),
           linear-gradient(90deg, rgb(10 10 9 / 0.72) 0 44%, transparent 70%),
           radial-gradient(
             ellipse at center top,
@@ -297,6 +303,185 @@
           );
         mix-blend-mode: normal;
         opacity: 0.55;
+      }
+      .intro-blend {
+        position: relative;
+        overflow: hidden;
+        background:
+          radial-gradient(
+            ellipse at 52% -18%,
+            rgb(255 126 24 / 0.13),
+            transparent 42%
+          ),
+          linear-gradient(
+            180deg,
+            rgb(var(--background)) 0%,
+            rgb(var(--surface)) 28%,
+            rgb(var(--surface)) 100%
+          );
+      }
+      .intro-blend::before,
+      .intro-blend::after {
+        content: "";
+        position: absolute;
+        pointer-events: none;
+        z-index: 0;
+      }
+      .intro-blend::before {
+        inset: 0;
+        background:
+          linear-gradient(180deg, rgb(var(--background) / 0.82), transparent 30%),
+          radial-gradient(
+            ellipse at 50% 0%,
+            rgb(255 126 24 / 0.1),
+            transparent 46%
+          );
+      }
+      .intro-blend::after {
+        inset: auto -10% -34% -10%;
+        height: 340px;
+        background: radial-gradient(
+          ellipse at center,
+          rgb(255 126 24 / 0.09),
+          transparent 62%
+        );
+      }
+      .intro-marquee {
+        position: relative;
+        z-index: 1;
+        margin-inline: -24px;
+        overflow: hidden;
+        mask-image: linear-gradient(
+          90deg,
+          transparent,
+          black 9%,
+          black 91%,
+          transparent
+        );
+      }
+      .intro-track {
+        display: flex;
+        width: max-content;
+        gap: 24px;
+        animation: intro-scroll 28s linear infinite;
+        will-change: transform;
+      }
+      .intro-card {
+        width: min(78vw, 360px);
+        min-height: 160px;
+        flex: 0 0 auto;
+      }
+      .intro-icon {
+        font-size: 36px;
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 500,
+          "GRAD" 0,
+          "opsz" 32;
+      }
+      .moments-gallery {
+        display: grid;
+        position: relative;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 32px;
+        align-items: center;
+        isolation: isolate;
+      }
+      .moments-gallery::before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        inset: 10% 6% -8%;
+        background:
+          radial-gradient(
+            ellipse at center,
+            rgb(248 120 24 / 0.28),
+            rgb(248 120 24 / 0.1) 34%,
+            transparent 68%
+          );
+        filter: blur(34px);
+      }
+      .moment-tile {
+        position: relative;
+        overflow: hidden;
+        aspect-ratio: 4 / 5;
+        min-height: 340px;
+        border: 1px solid rgb(var(--outline-variant) / 0.34);
+        border-radius: 18px;
+        background: rgb(var(--surface-container-low) / 0.72);
+        box-shadow: 0 24px 70px -38px rgb(0 0 0 / 0.9);
+      }
+      .moment-tile:nth-child(1) {
+        grid-column: 3;
+        grid-row: 1;
+      }
+      .moment-tile:nth-child(2) {
+        grid-column: 1;
+        grid-row: 1;
+        transform: translateY(28px);
+      }
+      .moment-tile:nth-child(3) {
+        grid-column: 2;
+        grid-row: 1;
+        transform: translateY(-28px);
+      }
+      .moment-tile:nth-child(4) {
+        grid-column: 4;
+        grid-row: 1;
+        transform: translateY(-28px);
+      }
+      .moment-tile:nth-child(5) {
+        grid-column: 5;
+        grid-row: 1;
+        transform: translateY(28px);
+      }
+      .moment-tile img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        filter: saturate(0.92) contrast(1.04);
+        transition:
+          transform 500ms ease,
+          filter 500ms ease;
+      }
+      .moment-tile:hover img {
+        transform: scale(1.035);
+        filter: saturate(1.06) contrast(1.06);
+      }
+      @media (max-width: 900px) {
+        .moments-gallery {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .moment-tile,
+        .moment-tile:nth-child(n) {
+          grid-column: auto;
+          grid-row: auto;
+          min-height: 240px;
+          transform: none;
+        }
+      }
+      @media (max-width: 560px) {
+        .moments-gallery {
+          grid-template-columns: 1fr;
+        }
+      }
+      @keyframes intro-scroll {
+        from {
+          transform: translate3d(0, 0, 0);
+        }
+        to {
+          transform: translate3d(calc(-50% - 12px), 0, 0);
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .intro-track {
+          animation: none;
+        }
+        .intro-marquee {
+          overflow-x: auto;
+          mask-image: none;
+        }
       }
       .hero-visual {
         position: relative;
@@ -494,105 +679,200 @@
           </div>
         </div>
       </section>
-      <section class="py-xl bg-surface">
-        <div class="max-w-container-max mx-auto px-gutter">
-          <div class="grid grid-cols-1 lg:grid-cols-12 gap-lg items-center">
-            <div class="lg:col-span-5 space-y-md">
-              <h2 class="font-headline-md text-headline-md text-on-background">
-                Transformando o Ecossistema
-                <span class="text-primary">Tech Local</span>
-              </h2>
-              <div class="h-1 w-24 bg-primary-container rounded-full"></div>
-              <p class="font-body-lg text-body-lg text-on-surface-variant">
-                O Java Day é um evento anual focado em disseminar conhecimento
-                técnico de alto nível, promover o networking e fortalecer a
+      <section class="pt-[88px] pb-[152px] intro-blend">
+        <div class="relative z-10 max-w-container-max mx-auto px-gutter">
+          <div class="mx-auto max-w-4xl text-center">
+            <h2
+              class="font-label-code text-[30px] lg:text-[36px] xl:text-[40px] leading-tight font-semibold text-on-background lg:whitespace-nowrap"
+            >
+              Transformando o Ecossistema
+              <span class="text-primary">Tech Local</span>
+            </h2>
+            <div
+              class="mt-lg mx-auto max-w-[760px] space-y-sm font-body-md text-[17px] leading-8 text-on-surface/90"
+            >
+              <p>
+                O Java Day &eacute; um evento anual focado em disseminar conhecimento
+                t&eacute;cnico de alto n&iacute;vel, promover o networking e fortalecer a
                 comunidade de desenvolvedores do Noroeste Paulista.
               </p>
-              <p class="font-body-md text-body-md text-on-surface-variant">
+              <p>
                 Organizado pela comunidade
                 <span class="text-primary">Java Noroeste</span> e o
                 <span class="text-primary">IFSP</span>, unimos academia e
-                indústria para discutir as tendências de Java, Cloud Native,
-                Microserviços e Engenharia de Software.
+                ind&uacute;stria para discutir as tend&ecirc;ncias de Java, Cloud Native,
+                Microservi&ccedil;os e Engenharia de Software.
               </p>
             </div>
-            <div class="lg:col-span-7 grid grid-cols-2 gap-md">
-              <div class="space-y-md mt-lg">
-                <div
-                  class="glass-card p-md rounded-xl space-y-xs hover:border-primary-container/40 transition-colors"
+          </div>
+          <div class="intro-marquee mt-[152px]">
+            <div class="intro-track">
+              <div
+                class="intro-card glass-card p-md rounded-xl space-y-sm hover:border-primary-container/40 transition-colors"
+              >
+                <span
+                  class="material-symbols-outlined intro-icon text-primary-container"
+                  >co_present</span
                 >
-                  <span
-                    class="material-symbols-outlined text-primary-container text-4xl"
-                    >code</span
-                  >
-                  <h3 class="font-headline-sm text-headline-sm">Palestras</h3>
-                  <p
-                    class="font-label-md text-label-md text-on-surface-variant"
-                  >
-                    Conteúdo técnico denso e atualizado.
-                  </p>
-                </div>
-                <div
-                  class="glass-card p-md rounded-xl space-y-xs hover:border-primary-container/40 transition-colors"
-                >
-                  <span
-                    class="material-symbols-outlined text-primary-container text-4xl"
-                    >groups</span
-                  >
-                  <h3 class="font-headline-sm text-headline-sm">Networking</h3>
-                  <p
-                    class="font-label-md text-label-md text-on-surface-variant"
-                  >
-                    Conexão direta com líderes da indústria.
-                  </p>
-                </div>
+                <h3 class="font-headline-sm text-[25px] leading-8 font-semibold text-on-surface">
+                  Palestras
+                </h3>
+                <p class="font-body-md text-[16px] leading-6 text-on-surface/75">
+                  Conte&uacute;do t&eacute;cnico denso e atualizado.
+                </p>
               </div>
-              <div class="space-y-md">
-                <div
-                  class="glass-card p-md rounded-xl space-y-xs hover:border-primary-container/40 transition-colors"
+              <div
+                class="intro-card glass-card p-md rounded-xl space-y-sm hover:border-primary-container/40 transition-colors"
+              >
+                <span
+                  class="material-symbols-outlined intro-icon text-primary-container"
+                  >handyman</span
                 >
-                  <span
-                    class="material-symbols-outlined text-primary-container text-4xl"
-                    >school</span
-                  >
-                  <h3 class="font-headline-sm text-headline-sm">Workshops</h3>
-                  <p
-                    class="font-label-md text-label-md text-on-surface-variant"
-                  >
-                    Prática mão na massa com especialistas.
-                  </p>
-                </div>
-                <div
-                  class="glass-card p-md rounded-xl space-y-xs hover:border-primary-container/40 transition-colors"
+                <h3 class="font-headline-sm text-[25px] leading-8 font-semibold text-on-surface">
+                  Workshops
+                </h3>
+                <p class="font-body-md text-[16px] leading-6 text-on-surface/75">
+                  Pr&aacute;tica m&atilde;o na massa com especialistas.
+                </p>
+              </div>
+              <div
+                class="intro-card glass-card p-md rounded-xl space-y-sm hover:border-primary-container/40 transition-colors"
+              >
+                <span
+                  class="material-symbols-outlined intro-icon text-primary-container"
+                  >diversity_3</span
                 >
-                  <span
-                    class="material-symbols-outlined text-primary-container text-4xl"
-                    >workspace_premium</span
-                  >
-                  <h3 class="font-headline-sm text-headline-sm">Certificado</h3>
-                  <p
-                    class="font-label-md text-label-md text-on-surface-variant"
-                  >
-                    Reconhecimento oficial de participação.
-                  </p>
-                </div>
+                <h3 class="font-headline-sm text-[25px] leading-8 font-semibold text-on-surface">
+                  Networking
+                </h3>
+                <p class="font-body-md text-[16px] leading-6 text-on-surface/75">
+                  Conex&atilde;o direta com l&iacute;deres da ind&uacute;stria.
+                </p>
+              </div>
+              <div
+                class="intro-card glass-card p-md rounded-xl space-y-sm hover:border-primary-container/40 transition-colors"
+              >
+                <span
+                  class="material-symbols-outlined intro-icon text-primary-container"
+                  >verified</span
+                >
+                <h3 class="font-headline-sm text-[25px] leading-8 font-semibold text-on-surface">
+                  Certificado
+                </h3>
+                <p class="font-body-md text-[16px] leading-6 text-on-surface/75">
+                  Reconhecimento oficial de participa&ccedil;&atilde;o.
+                </p>
+              </div>
+              <div
+                class="intro-card glass-card p-md rounded-xl space-y-sm hover:border-primary-container/40 transition-colors"
+                aria-hidden="true"
+              >
+                <span
+                  class="material-symbols-outlined intro-icon text-primary-container"
+                  >co_present</span
+                >
+                <h3 class="font-headline-sm text-[25px] leading-8 font-semibold text-on-surface">
+                  Palestras
+                </h3>
+                <p class="font-body-md text-[16px] leading-6 text-on-surface/75">
+                  Conte&uacute;do t&eacute;cnico denso e atualizado.
+                </p>
+              </div>
+              <div
+                class="intro-card glass-card p-md rounded-xl space-y-sm hover:border-primary-container/40 transition-colors"
+                aria-hidden="true"
+              >
+                <span
+                  class="material-symbols-outlined intro-icon text-primary-container"
+                  >handyman</span
+                >
+                <h3 class="font-headline-sm text-[25px] leading-8 font-semibold text-on-surface">
+                  Workshops
+                </h3>
+                <p class="font-body-md text-[16px] leading-6 text-on-surface/75">
+                  Pr&aacute;tica m&atilde;o na massa com especialistas.
+                </p>
+              </div>
+              <div
+                class="intro-card glass-card p-md rounded-xl space-y-sm hover:border-primary-container/40 transition-colors"
+                aria-hidden="true"
+              >
+                <span
+                  class="material-symbols-outlined intro-icon text-primary-container"
+                  >diversity_3</span
+                >
+                <h3 class="font-headline-sm text-[25px] leading-8 font-semibold text-on-surface">
+                  Networking
+                </h3>
+                <p class="font-body-md text-[16px] leading-6 text-on-surface/75">
+                  Conex&atilde;o direta com l&iacute;deres da ind&uacute;stria.
+                </p>
+              </div>
+              <div
+                class="intro-card glass-card p-md rounded-xl space-y-sm hover:border-primary-container/40 transition-colors"
+                aria-hidden="true"
+              >
+                <span
+                  class="material-symbols-outlined intro-icon text-primary-container"
+                  >verified</span
+                >
+                <h3 class="font-headline-sm text-[25px] leading-8 font-semibold text-on-surface">
+                  Certificado
+                </h3>
+                <p class="font-body-md text-[16px] leading-6 text-on-surface/75">
+                  Reconhecimento oficial de participa&ccedil;&atilde;o.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
-      <section class="py-xl bg-surface-container-lowest">
+      <section class="pt-[120px] pb-[160px] bg-surface-container-lowest">
         <div class="max-w-container-max mx-auto px-gutter">
           <div class="text-center mb-lg space-y-xs">
-            <h2 class="font-headline-md text-headline-md">
+            <h2 class="font-label-code text-[30px] lg:text-[40px] leading-tight font-semibold">
               Momentos <span class="text-primary">#JavaDay</span>
             </h2>
             <p class="font-body-md text-body-md text-on-surface-variant">
               Uma história construída por desenvolvedores apaixonados.
             </p>
           </div>
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-md">
-            <div class="space-y-md"></div>
+          <div class="moments-gallery">
+            <figure class="moment-tile">
+              <img
+                src="assets/moments/palestra-15.jpg"
+                alt="Palestrante no palco durante o Java Day Rio Preto"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="moment-tile">
+              <img
+                src="assets/moments/palestra-01.jpg"
+                alt="Plateia acompanhando palestra no Java Day Rio Preto"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="moment-tile">
+              <img
+                src="assets/moments/palestra-02.jpg"
+                alt="Palestrante falando para a plateia do Java Day"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="moment-tile">
+              <img
+                src="assets/moments/palestra-09.jpg"
+                alt="Palestra com público reunido no Java Day Rio Preto"
+                loading="lazy"
+              />
+            </figure>
+            <figure class="moment-tile">
+              <img
+                src="assets/moments/palestra-14.jpg"
+                alt="Participantes do Java Day em frente ao palco"
+                loading="lazy"
+              />
+            </figure>
           </div>
         </div>
       </section>
