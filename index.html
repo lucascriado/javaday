@@ -1,490 +1,1122 @@
-<!DOCTYPE html><html class="dark" lang="pt-BR" style=""><head>
-<meta charset="utf-8">
-<meta content="width=device-width, initial-scale=1.0" name="viewport">
-<title>Java Day Rio Preto 2026 - 8ª Edição</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
-<script id="tailwind-config">
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Java Day Noroeste</title>
+    <link href="assets/favicon.ico" rel="icon" sizes="any" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fustat:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <script id="tailwind-config">
       tailwind.config = {
-        darkMode: "class",
         theme: {
           extend: {
-            "colors": {
-                    "on-tertiary": "#690003",
-                    "on-primary-container": "#633800",
-                    "on-tertiary-fixed-variant": "#930007",
-                    "on-primary-fixed": "#2c1600",
-                    "secondary-container": "#2e4963",
-                    "on-tertiary-fixed": "#410001",
-                    "on-secondary-fixed": "#001d33",
-                    "surface-dim": "#121414",
-                    "surface-container": "#1e2020",
-                    "on-primary": "#4a2800",
-                    "on-secondary": "#16324b",
-                    "error": "#ffb4ab",
-                    "on-background": "#e2e2e2",
-                    "inverse-on-surface": "#2f3131",
-                    "surface": "#121414",
-                    "tertiary-fixed-dim": "#ffb4aa",
-                    "on-tertiary-container": "#8a0006",
-                    "outline": "#a28d7b",
-                    "primary": "#ffbd7b",
-                    "outline-variant": "#544435",
-                    "tertiary": "#ffb8af",
-                    "on-surface": "#e2e2e2",
-                    "surface-container-lowest": "#0c0f0f",
-                    "primary-container": "#f89820",
-                    "on-surface-variant": "#dac2ae",
-                    "primary-fixed": "#ffdcbe",
-                    "surface-tint": "#ffb870",
-                    "surface-variant": "#333535",
-                    "surface-container-low": "#1a1c1c",
-                    "secondary-fixed-dim": "#aec9e8",
-                    "tertiary-fixed": "#ffdad5",
-                    "secondary": "#aec9e8",
-                    "inverse-surface": "#e2e2e2",
-                    "on-error-container": "#ffdad6",
-                    "secondary-fixed": "#cfe5ff",
-                    "on-primary-fixed-variant": "#693c00",
-                    "primary-fixed-dim": "#ffb870",
-                    "surface-bright": "#37393a",
-                    "on-error": "#690005",
-                    "surface-container-highest": "#333535",
-                    "surface-container-high": "#282a2b",
-                    "on-secondary-fixed-variant": "#2e4963",
-                    "background": "#121414",
-                    "on-secondary-container": "#9db8d6",
-                    "tertiary-container": "#ff8f81",
-                    "error-container": "#93000a",
-                    "inverse-primary": "#8b5000"
+            colors: {
+              "on-tertiary": "rgb(var(--on-tertiary) / <alpha-value>)",
+              "on-primary-container":
+                "rgb(var(--on-primary-container) / <alpha-value>)",
+              "on-tertiary-fixed-variant":
+                "rgb(var(--on-tertiary-fixed-variant) / <alpha-value>)",
+              "on-primary-fixed":
+                "rgb(var(--on-primary-fixed) / <alpha-value>)",
+              "secondary-container":
+                "rgb(var(--secondary-container) / <alpha-value>)",
+              "on-tertiary-fixed":
+                "rgb(var(--on-tertiary-fixed) / <alpha-value>)",
+              "on-secondary-fixed":
+                "rgb(var(--on-secondary-fixed) / <alpha-value>)",
+              "surface-dim": "rgb(var(--surface-dim) / <alpha-value>)",
+              "surface-container":
+                "rgb(var(--surface-container) / <alpha-value>)",
+              "on-primary": "rgb(var(--on-primary) / <alpha-value>)",
+              "on-secondary": "rgb(var(--on-secondary) / <alpha-value>)",
+              error: "rgb(var(--error) / <alpha-value>)",
+              "on-background": "rgb(var(--on-background) / <alpha-value>)",
+              "inverse-on-surface":
+                "rgb(var(--inverse-on-surface) / <alpha-value>)",
+              surface: "rgb(var(--surface) / <alpha-value>)",
+              "tertiary-fixed-dim":
+                "rgb(var(--tertiary-fixed-dim) / <alpha-value>)",
+              "on-tertiary-container":
+                "rgb(var(--on-tertiary-container) / <alpha-value>)",
+              outline: "rgb(var(--outline) / <alpha-value>)",
+              primary: "rgb(var(--primary) / <alpha-value>)",
+              "outline-variant": "rgb(var(--outline-variant) / <alpha-value>)",
+              tertiary: "rgb(var(--tertiary) / <alpha-value>)",
+              "on-surface": "rgb(var(--on-surface) / <alpha-value>)",
+              "surface-container-lowest":
+                "rgb(var(--surface-container-lowest) / <alpha-value>)",
+              "primary-container":
+                "rgb(var(--primary-container) / <alpha-value>)",
+              "on-surface-variant":
+                "rgb(var(--on-surface-variant) / <alpha-value>)",
+              "primary-fixed": "rgb(var(--primary-fixed) / <alpha-value>)",
+              "surface-tint": "rgb(var(--surface-tint) / <alpha-value>)",
+              "surface-variant": "rgb(var(--surface-variant) / <alpha-value>)",
+              "surface-container-low":
+                "rgb(var(--surface-container-low) / <alpha-value>)",
+              "secondary-fixed-dim":
+                "rgb(var(--secondary-fixed-dim) / <alpha-value>)",
+              "tertiary-fixed": "rgb(var(--tertiary-fixed) / <alpha-value>)",
+              secondary: "rgb(var(--secondary) / <alpha-value>)",
+              "inverse-surface": "rgb(var(--inverse-surface) / <alpha-value>)",
+              "on-error-container":
+                "rgb(var(--on-error-container) / <alpha-value>)",
+              "secondary-fixed": "rgb(var(--secondary-fixed) / <alpha-value>)",
+              "on-primary-fixed-variant":
+                "rgb(var(--on-primary-fixed-variant) / <alpha-value>)",
+              "primary-fixed-dim":
+                "rgb(var(--primary-fixed-dim) / <alpha-value>)",
+              "surface-bright": "rgb(var(--surface-bright) / <alpha-value>)",
+              "on-error": "rgb(var(--on-error) / <alpha-value>)",
+              "surface-container-highest":
+                "rgb(var(--surface-container-highest) / <alpha-value>)",
+              "surface-container-high":
+                "rgb(var(--surface-container-high) / <alpha-value>)",
+              "on-secondary-fixed-variant":
+                "rgb(var(--on-secondary-fixed-variant) / <alpha-value>)",
+              background: "rgb(var(--background) / <alpha-value>)",
+              "on-secondary-container":
+                "rgb(var(--on-secondary-container) / <alpha-value>)",
+              "tertiary-container":
+                "rgb(var(--tertiary-container) / <alpha-value>)",
+              "error-container": "rgb(var(--error-container) / <alpha-value>)",
+              "inverse-primary": "rgb(var(--inverse-primary) / <alpha-value>)",
             },
-            "borderRadius": {
-                    "DEFAULT": "0.125rem",
-                    "lg": "0.25rem",
-                    "xl": "0.5rem",
-                    "full": "0.75rem"
+            borderRadius: {
+              DEFAULT: "0.125rem",
+              lg: "0.25rem",
+              xl: "0.5rem",
+              full: "0.75rem",
             },
-            "spacing": {
-                    "section-padding": "80px",
-                    "container-max-width": "1200px",
-                    "base": "8px",
-                    "gutter": "24px",
-                    "margin-mobile": "16px",
-                    "xl": "80px",
-                    "container-max": "1280px",
-                    "lg": "48px",
-                    "md": "24px",
-                    "sm": "12px",
-                    "xs": "4px"
+            spacing: {
+              "section-padding": "80px",
+              "container-max-width": "1200px",
+              base: "8px",
+              gutter: "24px",
+              "margin-mobile": "16px",
+              xl: "80px",
+              "container-max": "1280px",
+              lg: "48px",
+              md: "24px",
+              sm: "12px",
+              xs: "4px",
             },
-            "fontFamily": {
-                    "label-code": ["JetBrains Mono"],
-                    "headline-md": ["Hanken Grotesk"],
-                    "body-lg": ["Hanken Grotesk"],
-                    "headline-lg": ["Hanken Grotesk"],
-                    "headline-lg-mobile": ["Hanken Grotesk"],
-                    "headline-xl": ["Hanken Grotesk"],
-                    "body-md": ["Hanken Grotesk"],
-                    "headline-sm": ["Hanken Grotesk"],
-                    "display-lg": ["Hanken Grotesk"],
-                    "display-lg-mobile": ["Hanken Grotesk"]
+            fontFamily: {
+              "label-code": ["JetBrains Mono"],
+              "headline-md": ["Fustat"],
+              "body-lg": ["Fustat"],
+              "headline-lg": ["Fustat"],
+              "headline-lg-mobile": ["Fustat"],
+              "headline-xl": ["Fustat"],
+              "body-md": ["Fustat"],
+              "headline-sm": ["Fustat"],
+              "display-lg": ["Fustat"],
+              "display-lg-mobile": ["Fustat"],
             },
-            "fontSize": {
-                    "label-code": ["14px", {"lineHeight": "1.4", "letterSpacing": "0.05em", "fontWeight": "500"}],
-                    "headline-md": ["32px", {"lineHeight": "1.3", "fontWeight": "600"}],
-                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "headline-lg": ["48px", {"lineHeight": "1.2", "fontWeight": "700"}],
-                    "headline-lg-mobile": ["36px", {"lineHeight": "1.2", "fontWeight": "700"}],
-                    "headline-xl": ["64px", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "800"}],
-                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
-                    "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
-                    "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
-                    "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}]
-            }
-          }
+            fontSize: {
+              "label-code": [
+                "14px",
+                {
+                  lineHeight: "1.4",
+                  letterSpacing: "0.05em",
+                  fontWeight: "500",
+                },
+              ],
+              "headline-md": ["32px", { lineHeight: "1.3", fontWeight: "600" }],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "headline-lg": ["48px", { lineHeight: "1.2", fontWeight: "700" }],
+              "headline-lg-mobile": [
+                "36px",
+                { lineHeight: "1.2", fontWeight: "700" },
+              ],
+              "headline-xl": [
+                "68px",
+                {
+                  lineHeight: "1.05",
+                  letterSpacing: "0",
+                  fontWeight: "800",
+                },
+              ],
+              "body-md": ["16px", { lineHeight: "1.6", fontWeight: "400" }],
+              "headline-sm": [
+                "24px",
+                { lineHeight: "32px", fontWeight: "600" },
+              ],
+              "display-lg": [
+                "68px",
+                {
+                  lineHeight: "1.05",
+                  letterSpacing: "0",
+                  fontWeight: "700",
+                },
+              ],
+              "display-lg-mobile": [
+                "36px",
+                {
+                  lineHeight: "44px",
+                  letterSpacing: "0",
+                  fontWeight: "700",
+                },
+              ],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :root {
+        color-scheme: dark;
+        --background: 10 10 9;
+        --on-background: 248 239 229;
+        --surface: 14 14 13;
+        --surface-dim: 10 10 9;
+        --surface-bright: 47 43 38;
+        --surface-container-lowest: 5 5 4;
+        --surface-container-low: 20 19 17;
+        --surface-container: 27 25 23;
+        --surface-container-high: 35 32 29;
+        --surface-container-highest: 44 40 36;
+        --surface-variant: 72 58 47;
+        --on-surface: 248 239 229;
+        --on-surface-variant: 224 200 181;
+        --outline: 169 141 119;
+        --outline-variant: 84 67 53;
+        --primary: 255 183 122;
+        --primary-container: 248 120 24;
+        --on-primary: 73 33 0;
+        --on-primary-container: 43 18 0;
+        --primary-fixed: 255 219 194;
+        --primary-fixed-dim: 255 183 122;
+        --on-primary-fixed: 47 22 0;
+        --on-primary-fixed-variant: 111 47 0;
+        --secondary: 236 190 154;
+        --secondary-container: 86 62 45;
+        --on-secondary: 67 43 29;
+        --on-secondary-container: 255 219 194;
+        --secondary-fixed: 255 219 194;
+        --secondary-fixed-dim: 232 190 160;
+        --on-secondary-fixed: 44 29 19;
+        --on-secondary-fixed-variant: 98 73 55;
+        --tertiary: 242 191 76;
+        --tertiary-container: 94 65 0;
+        --on-tertiary: 67 45 0;
+        --on-tertiary-container: 255 224 153;
+        --tertiary-fixed: 255 224 153;
+        --tertiary-fixed-dim: 242 191 76;
+        --on-tertiary-fixed: 41 28 0;
+        --on-tertiary-fixed-variant: 94 65 0;
+        --error: 255 180 171;
+        --error-container: 147 0 10;
+        --on-error: 105 0 5;
+        --on-error-container: 255 218 214;
+        --inverse-surface: 248 239 229;
+        --inverse-on-surface: 54 47 41;
+        --inverse-primary: 139 61 0;
+        --surface-tint: 255 183 122;
+      }
+
+      .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+      }
+      .glass-card {
+        background: rgb(var(--surface-container) / 0.72);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgb(var(--outline-variant) / 0.35);
+        box-shadow: 0 10px 40px -10px rgb(0 0 0 / 0.35);
+      }
+      .text-gradient {
+        background: linear-gradient(
+          135deg,
+          rgb(var(--primary)) 0%,
+          rgb(var(--primary-container)) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .hero-pattern {
+        background-color: rgb(var(--background));
+        background-image:
+          radial-gradient(
+            circle at 54% -12%,
+            rgb(255 126 24 / 0.34) 0,
+            rgb(255 126 24 / 0.11) 27%,
+            transparent 53%
+          ),
+          radial-gradient(
+            ellipse at 56% 0%,
+            transparent 0 31%,
+            rgb(255 177 96 / 0.38) 32%,
+            rgb(255 128 32 / 0.14) 35%,
+            transparent 41%
+          ),
+          radial-gradient(
+            ellipse at 82% 42%,
+            rgb(255 115 20 / 0.09),
+            transparent 36%
+          ),
+          linear-gradient(180deg, rgb(5 5 4 / 0.18) 0 34%, rgb(10 10 9) 68%);
+      }
+      .hero-pattern::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background-image:
+          linear-gradient(90deg, rgb(255 149 64 / 0.14) 1px, transparent 1px),
+          radial-gradient(rgb(255 210 165 / 0.12) 1px, transparent 1px);
+        background-size:
+          5px 100%,
+          58px 58px;
+        mask-image: linear-gradient(to bottom, black, transparent 92%);
+        opacity: 0.34;
+      }
+      .hero-pattern::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background:
+          linear-gradient(90deg, rgb(10 10 9 / 0.72) 0 44%, transparent 70%),
+          radial-gradient(
+            ellipse at center top,
+            transparent 0 34%,
+            rgb(255 126 24 / 0.22) 35%,
+            transparent 36% 100%
+          );
+        mix-blend-mode: normal;
+        opacity: 0.55;
+      }
+      .hero-visual {
+        position: relative;
+        isolation: isolate;
+      }
+      .hero-visual::before {
+        content: "";
+        position: absolute;
+        inset: 12% -10% 2% 8%;
+        z-index: -1;
+        background: radial-gradient(
+          circle,
+          rgb(255 122 24 / 0.28),
+          transparent 62%
+        );
+        filter: blur(18px);
+      }
+      .hero-visual img {
+        filter: drop-shadow(0 38px 80px rgb(0 0 0 / 0.72));
+      }
+      .hero-float {
+        animation: duke-float 7s ease-in-out infinite;
+        transform-origin: 52% 48%;
+        will-change: transform;
+      }
+      @keyframes duke-float {
+        0%,
+        100% {
+          transform: translate3d(0, 0, 0) rotate(-2deg);
+        }
+        50% {
+          transform: translate3d(0, -10px, 0) rotate(-1deg);
         }
       }
-    </script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      @media (prefers-reduced-motion: reduce) {
+        .hero-float {
+          animation: none;
         }
-        .glass-card {
-            background: rgba(30, 32, 32, 0.6);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(162, 141, 123, 0.2);
-            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
-        }
-        .text-gradient {
-            background: linear-gradient(135deg, #ffbd7b 0%, #f89820 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .hero-pattern {
-            background-color: #121414;
-            background-image: radial-gradient(#333535 1px, transparent 1px);
-            background-size: 32px 32px;
-        }
-        html {
-            scroll-behavior: smooth;
-        }
+      }
+      .hero-title {
+        font-family: Fustat, sans-serif;
+        letter-spacing: 0.018em;
+        text-transform: uppercase;
+      }
+      .hero-title-line {
+        display: block;
+        line-height: 0.82;
+        white-space: nowrap;
+      }
+      .hero-cta {
+        position: relative;
+        overflow: hidden;
+        font-weight: 700;
+        transform: translateY(0);
+      }
+      .hero-cta::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          120deg,
+          transparent,
+          rgb(255 255 255 / 0.22),
+          transparent
+        );
+        transform: translateX(-120%);
+        transition: transform 0.65s ease;
+      }
+      .hero-cta:hover {
+        transform: translateY(-2px);
+      }
+      .hero-cta:hover::before {
+        transform: translateX(120%);
+      }
+      .nav-scrolled {
+        background-color: rgb(var(--surface) / 0.95);
+      }
+      html {
+        scroll-behavior: smooth;
+      }
     </style>
-</head>
-<body class="bg-background text-on-background font-body-md">
-<nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm">
-<div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
-<div class="font-headline-sm text-headline-sm font-bold text-primary">
-            Java Day 8ª Edição
+  </head>
+  <body class="bg-background text-on-background font-body-md">
+    <nav
+      class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm"
+    >
+      <div
+        class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto"
+      >
+        <div
+          class="font-label-code text-[18px] font-semibold uppercase tracking-[0.08em] text-primary-fixed-dim"
+        >
+          Java Day <span data-counter data-end="8">8</span>ª Edição
         </div>
-<div class="hidden md:flex items-center space-x-lg">
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#speakers">Palestrantes</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#agenda">Agenda</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#pricing">Preços</a>
-<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors duration-200" href="#partners">Parceiros</a>
-</div>
-<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-xl font-label-md hover:opacity-90 transition-all active:scale-95">
-           Garanta seu ingresso
-        </button>
-</div>
-</nav>
-<main class="pt-20">
-<section class="relative min-h-[870px] flex items-center overflow-hidden hero-pattern">
-<div class="relative z-10 max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-2 gap-lg items-center">
-<div class="space-y-md">
-<div class="inline-flex items-center gap-xs px-sm py-xs bg-primary-fixed text-on-primary-fixed rounded-full">
-<span class="material-symbols-outlined text-[18px]">calendar_today</span>
-<span class="font-label-sm text-sm font-semibold">8ª Edição • São José do Rio Preto</span>
-</div>
-<h1 class="font-display-lg text-display-lg md:text-display-lg leading-tight tracking-tighter">
-<span class="text-on-background">Explore o Futuro com o</span><br>
-<span class="text-primary-container font-black">Java Day 2026</span>
-</h1>
-<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
-                    A conferência técnica definitiva para desenvolvedores <span class="text-primary">Java</span>, arquitetos de software e entusiastas do ecossistema <span class="text-primary">JVM</span> no Noroeste Paulista.
-                </p>
-<div class="flex flex-wrap gap-md pt-base">
-<button class="bg-primary-container text-on-primary-container px-lg py-4 rounded-xl font-headline-sm hover:shadow-lg transition-all flex items-center gap-sm">
-                        Garantir meu Ingresso
-                        <span class="material-symbols-outlined">arrow_forward</span>
-</button>
-<button class="bg-surface-container-high text-on-surface px-lg py-4 rounded-xl font-headline-sm hover:bg-surface-container-highest transition-all">
-                        Ver Agenda
-                    </button>
-</div>
-</div>
-<div class="hidden lg:block relative">
-<div class="glass-card p-base rounded-xl overflow-hidden rotate-2 shadow-2xl">
-<img class="w-full  object-cover rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBalscVEk_teBjhpr17B3M2Ip8vOJrK17jO7AFPRZsIHuCmFf1NmRPmzNlyaoHfNtXqsx2Y-w-iSBOYFUikY0yAnxoO56Yf-cxCbYi6rBgXTyYy4eaXS3sGze3JTe8bz1LZ6PBypyLEHAc40uerllSxI65F4uytUfu1X7a0lFHWp7iAMyVuHNZPaXlWhjugezQjIisluUdAHXu6-TZtlD02zuQfKbAKCf5FbBl8EFZSIEzOfcNnpP5bgHUJu55z97OqVMhGtJ5ihRQkut4" style="transform: scale(1.15); transform-origin: center center;">
-</div>
-<div class="absolute -bottom-base -left-base glass-card p-md rounded-xl shadow-xl -rotate-3 border-primary/20">
-<p class="text-primary-container font-bold font-headline-sm">200+ Devs</p>
-<p class="text-on-surface-variant font-label-md">Edição Anterior</p>
-</div>
-</div>
-</div>
-</section>
-<section class="py-xl bg-surface">
-<div class="max-w-container-max mx-auto px-gutter">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-lg items-center">
-<div class="lg:col-span-5 space-y-md">
-<h2 class="font-headline-md text-headline-md text-on-background">Transformando o Ecossistema <span class="text-primary">Tech Local</span></h2>
-<div class="h-1 w-24 bg-primary-container rounded-full"></div>
-<p class="font-body-lg text-body-lg text-on-surface-variant">
-                        O Java Day é um evento anual focado em disseminar conhecimento técnico de alto nível, promover o networking e fortalecer a comunidade de desenvolvedores do Noroeste Paulista. 
-                    </p>
-<p class="font-body-md text-body-md text-on-surface-variant">
-                        Organizado pela comunidade <span class="text-primary">Java Noroeste</span> e o <span class="text-primary">IFSP</span>, unimos academia e indústria para discutir as tendências de Java, Cloud Native, Microserviços e Engenharia de Software.
-                    </p>
-</div>
-<div class="lg:col-span-7 grid grid-cols-2 gap-md">
-<div class="space-y-md mt-lg">
-<div class="glass-card p-md rounded-xl space-y-xs hover:border-primary-container/40 transition-colors">
-<span class="material-symbols-outlined text-primary-container text-4xl">code</span>
-<h3 class="font-headline-sm text-headline-sm">Palestras</h3>
-<p class="font-label-md text-label-md text-on-surface-variant">Conteúdo técnico denso e atualizado.</p>
-</div>
-<div class="glass-card p-md rounded-xl space-y-xs hover:border-primary-container/40 transition-colors">
-<span class="material-symbols-outlined text-primary-container text-4xl">groups</span>
-<h3 class="font-headline-sm text-headline-sm">Networking</h3>
-<p class="font-label-md text-label-md text-on-surface-variant">Conexão direta com líderes da indústria.</p>
-</div>
-</div>
-<div class="space-y-md">
-<div class="glass-card p-md rounded-xl space-y-xs hover:border-primary-container/40 transition-colors">
-<span class="material-symbols-outlined text-primary-container text-4xl">school</span>
-<h3 class="font-headline-sm text-headline-sm">Workshops</h3>
-<p class="font-label-md text-label-md text-on-surface-variant">Prática mão na massa com especialistas.</p>
-</div>
-<div class="glass-card p-md rounded-xl space-y-xs hover:border-primary-container/40 transition-colors">
-<span class="material-symbols-outlined text-primary-container text-4xl">workspace_premium</span>
-<h3 class="font-headline-sm text-headline-sm">Certificado</h3>
-<p class="font-label-md text-label-md text-on-surface-variant">Reconhecimento oficial de participação.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="py-xl bg-surface-container-lowest">
-<div class="max-w-container-max mx-auto px-gutter">
-<div class="text-center mb-lg space-y-xs">
-<h2 class="font-headline-md text-headline-md">Momentos <span class="text-primary">#JavaDay</span></h2>
-<p class="font-body-md text-body-md text-on-surface-variant">Uma história construída por desenvolvedores apaixonados.</p>
-</div>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-md">
-<div class="space-y-md">
-
-</div>
-</div>
-</section>
-<section class="py-xl bg-surface" id="speakers">
-<div class="max-w-container-max mx-auto px-gutter">
-<div class="flex flex-col md:flex-row justify-between items-end mb-lg gap-md">
-<div>
-<h2 class="font-headline-md text-headline-md">Palestrantes <span class="text-primary">Confirmados</span></h2>
-<p class="font-body-md text-body-md text-on-surface-variant">Conheça os especialistas que estarão conosco nesta edição.</p>
-</div>
-
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-lg">
-<div class="group relative">
-<div class="aspect-[4/5] rounded-2xl overflow-hidden bg-surface-container-high mb-sm relative flex items-center justify-center text-on-surface-variant/40">
-<span class="material-symbols-outlined text-[96px] select-none">account_circle</span>
-<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-md">
-<div class="flex gap-sm text-white">
-<span class="material-symbols-outlined cursor-pointer hover:text-primary-container">link</span>
-<span class="material-symbols-outlined cursor-pointer hover:text-primary-container">person</span>
-</div>
-</div>
-</div>
-<h4 class="font-headline-sm text-headline-sm">Em Breve</h4>
-<p class="font-label-md text-label-md text-on-surface-variant">Palestrante a ser anunciado</p>
-</div>
-<div class="group relative">
-<div class="aspect-[4/5] rounded-2xl overflow-hidden bg-surface-container-high mb-sm relative flex items-center justify-center text-on-surface-variant/40">
-<span class="material-symbols-outlined text-[96px] select-none">account_circle</span>
-<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-md">
-<div class="flex gap-sm text-white">
-<span class="material-symbols-outlined cursor-pointer hover:text-primary-container">link</span>
-</div>
-</div>
-</div>
-<h4 class="font-headline-sm text-headline-sm">A Definir</h4>
-<p class="font-label-md text-label-md text-on-surface-variant">Palestrante a ser anunciado</p>
-</div>
-<div class="group relative">
-<div class="aspect-[4/5] rounded-2xl overflow-hidden bg-surface-container-high mb-sm relative flex items-center justify-center text-on-surface-variant/40">
-<span class="material-symbols-outlined text-[96px] select-none">account_circle</span>
-<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-md">
-<div class="flex gap-sm text-white">
-<span class="material-symbols-outlined cursor-pointer hover:text-primary-container">link</span>
-</div>
-</div>
-</div>
-<h4 class="font-headline-sm text-headline-sm">A Definir</h4>
-<p class="font-label-md text-label-md text-on-surface-variant">Palestrante a ser anunciado</p>
-</div>
-<div class="group relative">
-<div class="aspect-[4/5] rounded-2xl overflow-hidden bg-surface-container-high mb-sm relative flex items-center justify-center text-on-surface-variant/40">
-<span class="material-symbols-outlined text-[96px] select-none">account_circle</span>
-<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-md">
-<div class="flex gap-sm text-white">
-<span class="material-symbols-outlined cursor-pointer hover:text-primary-container">link</span>
-</div>
-</div>
-</div>
-<h4 class="font-headline-sm text-headline-sm">Em Breve</h4>
-<p class="font-label-md text-label-md text-on-surface-variant">Palestrante a ser anunciado</p>
-</div>
-</div>
-</div>
-</section>
-<section class="py-xl bg-surface-container-low" id="partners">
-<div class="max-w-container-max mx-auto px-gutter">
-<div class="text-center mb-lg">
-<h2 class="font-headline-md text-headline-md">Patrocínio e <span class="text-primary">Apoio</span></h2>
-<p class="font-body-md text-body-md text-on-surface-variant">Empresas que acreditam e investem na comunidade Java.</p>
-</div>
-<div class="space-y-lg">
-<div class="flex flex-wrap justify-center items-center gap-lg grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
-<div class="h-16 flex items-center justify-center p-md bg-white/5 rounded-xl">
-<img class="h-full object-contain brightness-0 invert" data-alt="Oracle Academy logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV-2im1L0cd3YILiejPUK84NnRLk92U-BpkaX4F0Vd2ngTXfN0dv1c7y-lE3-lWPaTl2be2dqUIt7UhHMFWxu3LW32O7mJyX1AIHBznqA_bf8t-hMJRiPGWR_92jLmkcsQ45woJpIu-mG_OxdiJ4H6ldqOcTUKaAi3NfVX2TOH_uJ3IC__NKxnpRjDn1KBIhNzAsdtaUT-cAE0eoi5RUBHLebJWDjPBOG8Nbh9dVHfdUWsq7FRTjE5ICpo8zls5vO6mgsyrdvoCD96">
-</div>
-<div class="h-16 flex items-center justify-center p-md bg-white/5 rounded-xl">
-<img class="h-full object-contain brightness-0 invert" data-alt="GitHub logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzs_gepNwWQYnj32VN4leLZORvYAmld6VT4gcpWqbYvpx4t2GSelFRK3g_2F4ThfbI6npZ4VY7lPV-pM47GUduf8BZJ-2sVKK1ffdWIVmuctJFqlfLv08c-qNwNooVjgikrctXvhZsWb8ep8HAgKvJWFWzYBDI-4axVmwvC3EyuWCSRgldUzDSNz0ce6Mzv1T0y-5gCaSzRDS5q60i6Il36TsjZ2v0Otx2uJ8RDxXyk6M6Rrehxy70i7x4o-ypG4PPMWMzCKW7YSgn">
-</div>
-<div class="h-16 flex items-center justify-center p-md bg-white/5 rounded-xl">
-<img class="h-full object-contain brightness-0 invert" data-alt="IFSP logo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEIaXNnvanjVbGAYMVhqGYnKNj-DShZe2UaMjFLH_6aMtfoUELqx4nJs4MAQig7Lqb2YoeFvAj7veCCLOx7ZAp7myEa8z6Xrc_wv0c1lFbp23jPIe16c_aOtL8MkfD0145deiWxIsfiEU6MWqNdTkD_GZD5UO-0IWyWU1wR85vbvavMN_VU73TLdodn-yeIi3cRWk2qm72uyP77cmNgGPUu5LqGpBWYPtzObPCdQRz3waWH0DNSO3y4sq8cnh3Uhk3dijZIjKRTtTq">
-</div>
-</div>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-md items-center justify-center max-w-4xl mx-auto opacity-50">
-<div class="h-12 flex items-center justify-center border border-outline/20 rounded-lg p-sm hover:border-primary-container/40 transition-colors">
-<span class="font-bold text-outline text-label-md">Patrocinador</span>
-</div>
-<div class="h-12 flex items-center justify-center border border-outline/20 rounded-lg p-sm hover:border-primary-container/40 transition-colors">
-<span class="font-bold text-outline text-label-md">Patrocinador</span>
-</div>
-<div class="h-12 flex items-center justify-center border border-outline/20 rounded-lg p-sm hover:border-primary-container/40 transition-colors">
-<span class="font-bold text-outline text-label-md">Patrocinador</span>
-</div>
-<div class="h-12 flex items-center justify-center border border-outline/20 rounded-lg p-sm hover:border-primary-container/40 transition-colors">
-<span class="font-bold text-outline text-label-md">Patrocinador</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="py-xl bg-surface">
-<div class="max-w-container-max mx-auto px-gutter">
-<div class="flex flex-col md:flex-row gap-lg">
-<div class="md:w-1/3">
-<h2 class="font-headline-md text-headline-md mb-md">Comissão <span class="text-primary">Organizadora</span></h2>
-<p class="font-body-md text-body-md text-on-surface-variant">Conheça as pessoas que fazem o Java Day acontecer todos os anos.</p>
-<div class="mt-lg p-md bg-primary-container/10 border border-primary-container/20 rounded-2xl">
-<p class="text-primary-container font-label-md font-semibold">Interessado em ajudar? Entre em contato com a Java Noroeste.</p>
-</div>
-</div>
-<div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-md">
-<div class="flex items-center gap-md p-md border border-outline-variant/30 rounded-xl hover:bg-surface-container-low transition-colors group">
-<div class="w-16 h-16 rounded-full bg-surface-container-high overflow-hidden border-2 border-transparent group-hover:border-primary-container/50 transition-all flex items-center justify-center text-on-surface-variant/40">
-<span class="material-symbols-outlined text-[40px] select-none">account_circle</span>
-</div>
-<div>
-<h4 class="font-label-md text-label-md font-bold text-on-surface">Carlos Fernando Gonçalves</h4>
-<p class="text-label-sm text-on-surface-variant">Coordenador Geral</p>
-</div>
-</div>
-<div class="flex items-center gap-md p-md border border-outline-variant/30 rounded-xl hover:bg-surface-container-low transition-colors group">
-<div class="w-16 h-16 rounded-full bg-surface-container-high overflow-hidden border-2 border-transparent group-hover:border-primary-container/50 transition-all flex items-center justify-center text-on-surface-variant/40">
-<span class="material-symbols-outlined text-[40px] select-none">account_circle</span>
-</div>
-<div>
-<h4 class="font-label-md text-label-md font-bold text-on-surface">Thiago Gonzaga</h4>
-<p class="text-label-sm text-on-surface-variant">Diretor Técnico</p>
-</div>
-</div>
-<div class="flex items-center gap-md p-md border border-outline-variant/30 rounded-xl hover:bg-surface-container-low transition-colors group">
-<div class="w-16 h-16 rounded-full bg-surface-container-high overflow-hidden border-2 border-transparent group-hover:border-primary-container/50 transition-all flex items-center justify-center text-on-surface-variant/40">
-<span class="material-symbols-outlined text-[40px] select-none">account_circle</span>
-</div>
-<div>
-<h4 class="font-label-md text-label-md font-bold text-on-surface">Comunidade Java Noroeste</h4>
-<p class="text-label-sm text-on-surface-variant">Staff & Voluntários</p>
-</div>
-</div>
-<div class="flex items-center gap-md p-md border border-outline-variant/30 rounded-xl hover:bg-surface-container-low transition-colors group">
-<div class="w-16 h-16 rounded-full bg-surface-container-high overflow-hidden border-2 border-transparent group-hover:border-primary-container/50 transition-all flex items-center justify-center text-on-surface-variant/40">
-<span class="material-symbols-outlined text-[40px] select-none">account_circle</span>
-</div>
-<div>
-<h4 class="font-label-md text-label-md font-bold text-on-surface">IFSP Rio Preto</h4>
-<p class="text-label-sm text-on-surface-variant">Apoio Institucional</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<section class="py-xl bg-surface-container-high" id="location">
-<div class="max-w-container-max mx-auto px-gutter">
-<div class="glass-card rounded-[2rem] overflow-hidden grid grid-cols-1 lg:grid-cols-2">
-<div class="p-lg space-y-md">
-<span class="font-label-sm text-label-sm text-primary-container uppercase tracking-widest font-bold">Onde nos encontrar</span>
-<h2 class="font-headline-md text-headline-md">IFSP São José do Rio Preto</h2>
-<div class="space-y-sm">
-<div class="flex items-start gap-sm">
-<span class="material-symbols-outlined text-primary-container">location_on</span>
-<p class="font-body-md text-body-md text-on-surface">
-                                R. Dr. Eduardo Nielsen, 420 - Jardim Congonhas, São José do Rio Preto - SP,<br>
-                                CEP: 15030-070
-                            </p>
-</div>
-<div class="flex items-start gap-sm">
-<span class="material-symbols-outlined text-primary-container">directions_bus</span>
-
-</div>
-</div>
-<div class="pt-md">
-<button class="bg-primary-container text-on-primary-container px-lg py-3 rounded-xl font-label-md flex items-center gap-sm hover:opacity-90 transition-all">
-                            Abrir no Google Maps
-                            <span class="material-symbols-outlined">map</span>
-</button>
-</div>
-</div>
-<div class="h-80 lg:h-full min-h-[400px]">
-<div class="w-full h-full bg-cover bg-center grayscale contrast-125 brightness-50" data-alt="Map of São José do Rio Preto IFSP campus area." style="background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDkY_PSO-H410fUEiJYDR6BtdKK-9i1FSlKIAKwvhXoC0l2r_RyuG9en9QFGNPDWOtIsCIHQOA19Rx0frQRGFDr9H2gjRjYfLzUTBpHYF02QznjwZsNhbQsthELY0NpVkpUww7FsUSo5YDPg7n3MOa1KBxmmo-CsxnIdKudof2Dqau9mZfFwXt7VDehOpfOlBHswZcfr9D5G4uMOG9S0hiRjrYSpy6B_HE3a6C8I7cE15JNk4pe1C4qvMWG34t_IsIas9EIUe1_OGFJ&quot;);"></div>
-</div>
-</div>
-</div>
-</section>
-</main>
-<footer class="bg-surface-container-lowest border-t border-outline/10">
-<div class="grid grid-cols-1 md:grid-cols-4 gap-md px-gutter py-xl max-w-container-max mx-auto">
-<div class="col-span-1 md:col-span-1 space-y-md">
-<div class="font-headline-sm text-headline-sm font-black text-primary">
-                Java Day</div>
-<p class="text-on-surface-variant font-label-md">
-                Fortalecendo a comunidade de desenvolvimento do Noroeste Paulista através de conhecimento e conexões reais.
+        <div class="hidden md:flex items-center gap-lg">
+          <a
+            class="font-label-code text-[14px] uppercase text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200"
+            href="#speakers"
+            >Palestrantes</a
+          >
+          <a
+            class="font-label-code text-[14px] uppercase text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200"
+            href="#location"
+            >Localização</a
+          >
+          <a
+            class="font-label-code text-[14px] uppercase text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200"
+            href="#partners"
+            >Parceiros</a
+          >
+        </div>
+        <div class="flex items-center gap-sm">
+          <button
+            class="hero-cta bg-primary-container text-on-primary-container px-6 py-2 rounded-xl font-label-md hover:shadow-[0_18px_42px_-18px_rgb(248_120_24_/_0.9)] transition-all active:scale-95"
+          >
+            <span class="relative z-10">Garanta seu ingresso</span>
+          </button>
+        </div>
+      </div>
+    </nav>
+    <main class="pt-20">
+      <section
+        class="relative min-h-[870px] flex items-center overflow-hidden hero-pattern"
+      >
+        <div
+          class="relative z-10 max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-lg items-center"
+        >
+          <div class="space-y-md min-w-0">
+            <p
+              class="font-label-code text-[18px] leading-tight uppercase text-primary-fixed-dim"
+            >
+              Explore o futuro com
             </p>
-<div class="flex gap-md">
-<a class="text-on-surface-variant hover:text-primary-container transition-colors" href="#"><span class="material-symbols-outlined">share</span></a>
-<a class="text-on-surface-variant hover:text-primary-container transition-colors" href="#"><span class="material-symbols-outlined">group</span></a>
-<a class="text-on-surface-variant hover:text-primary-container transition-colors" href="#"><span class="material-symbols-outlined">public</span></a>
-</div>
-</div>
-<div class="space-y-sm">
-<h4 class="text-primary-fixed-dim font-bold">Evento</h4>
-<ul class="space-y-xs">
-<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors font-label-md" href="#">Palestrantes</a></li>
-<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors font-label-md" href="#">Agenda Completa</a></li>
-<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors font-label-md" href="#">Inscrições</a></li>
-<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors font-label-md" href="#">Sponsorship</a></li>
-</ul>
-</div>
-<div class="space-y-sm">
-<h4 class="text-primary-fixed-dim font-bold">Comunidade</h4>
-<ul class="space-y-xs">
-<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors font-label-md" href="#">Java Noroeste</a></li>
-<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors font-label-md" href="#">Código de Conduta</a></li>
-<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors font-label-md" href="#">Política de Privacidade</a></li>
-<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors font-label-md" href="#">Contato</a></li>
-</ul>
-</div>
-
-</div>
-<div class="border-t border-outline/10 py-md px-gutter text-center">
-<p class="text-on-surface-variant/50 font-label-sm">
-            © 2026 Comunidade Java Noroeste. Todos os direitos reservados.
+            <h1 class="hero-title text-[64px] lg:text-[94px] font-extrabold">
+              <span class="hero-title-line text-on-background">Java Day</span>
+              <span class="hero-title-line text-on-background">Rio Preto</span>
+              <span class="hero-title-line text-primary-container">
+                <span data-counter data-end="2026" data-duration="1.1"
+                  >2026</span
+                >
+              </span>
+            </h1>
+            <p
+              class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl tracking-[0.01em] lg:whitespace-nowrap"
+            >
+              <span class="text-primary">Java</span>, arquitetura e comunidade
+              em um encontro técnico no Noroeste Paulista.
+            </p>
+            <div class="flex flex-wrap gap-md pt-base">
+              <button
+                class="hero-cta bg-primary-container text-on-primary-container px-lg py-4 rounded-xl font-headline-sm hover:shadow-[0_18px_42px_-18px_rgb(248_120_24_/_0.9)] transition-all flex items-center gap-sm"
+              >
+                <span class="relative z-10">Garantir meu Ingresso</span>
+                <span class="material-symbols-outlined">arrow_forward</span>
+              </button>
+              <button
+                class="hero-cta bg-surface-container-high text-on-surface px-lg py-4 rounded-xl font-headline-sm hover:bg-surface-container-highest hover:text-primary-fixed-dim hover:shadow-[0_18px_42px_-22px_rgb(255_183_122_/_0.5)] transition-all"
+              >
+                <span class="relative z-10">Ver Agenda</span>
+              </button>
+            </div>
+            <div
+              class="flex flex-wrap items-center gap-lg border-t border-outline-variant/40 pt-md"
+            >
+              <div>
+                <p
+                  class="font-headline-sm text-headline-sm font-black text-primary-container"
+                >
+                  +<span data-counter data-end="200">200</span>
+                </p>
+                <p class="font-label-md text-label-md text-on-surface-variant">
+                  desenvolvedores na edição anterior
+                </p>
+              </div>
+              <div>
+                <p
+                  class="font-headline-sm text-headline-sm font-black text-primary-fixed-dim"
+                >
+                  <span data-counter data-end="8">8</span>ª
+                </p>
+                <p class="font-label-md text-label-md text-on-surface-variant">
+                  edição em Rio Preto
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="hidden lg:block hero-visual">
+            <div class="relative hero-float">
+              <img
+                class="w-full max-h-[650px] object-contain"
+                src="assets/hero-duke-black-cutout.png"
+                alt="Duke, mascote do Java, acenando"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-xl bg-surface">
+        <div class="max-w-container-max mx-auto px-gutter">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-lg items-center">
+            <div class="lg:col-span-5 space-y-md">
+              <h2 class="font-headline-md text-headline-md text-on-background">
+                Transformando o Ecossistema
+                <span class="text-primary">Tech Local</span>
+              </h2>
+              <div class="h-1 w-24 bg-primary-container rounded-full"></div>
+              <p class="font-body-lg text-body-lg text-on-surface-variant">
+                O Java Day é um evento anual focado em disseminar conhecimento
+                técnico de alto nível, promover o networking e fortalecer a
+                comunidade de desenvolvedores do Noroeste Paulista.
+              </p>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Organizado pela comunidade
+                <span class="text-primary">Java Noroeste</span> e o
+                <span class="text-primary">IFSP</span>, unimos academia e
+                indústria para discutir as tendências de Java, Cloud Native,
+                Microserviços e Engenharia de Software.
+              </p>
+            </div>
+            <div class="lg:col-span-7 grid grid-cols-2 gap-md">
+              <div class="space-y-md mt-lg">
+                <div
+                  class="glass-card p-md rounded-xl space-y-xs hover:border-primary-container/40 transition-colors"
+                >
+                  <span
+                    class="material-symbols-outlined text-primary-container text-4xl"
+                    >code</span
+                  >
+                  <h3 class="font-headline-sm text-headline-sm">Palestras</h3>
+                  <p
+                    class="font-label-md text-label-md text-on-surface-variant"
+                  >
+                    Conteúdo técnico denso e atualizado.
+                  </p>
+                </div>
+                <div
+                  class="glass-card p-md rounded-xl space-y-xs hover:border-primary-container/40 transition-colors"
+                >
+                  <span
+                    class="material-symbols-outlined text-primary-container text-4xl"
+                    >groups</span
+                  >
+                  <h3 class="font-headline-sm text-headline-sm">Networking</h3>
+                  <p
+                    class="font-label-md text-label-md text-on-surface-variant"
+                  >
+                    Conexão direta com líderes da indústria.
+                  </p>
+                </div>
+              </div>
+              <div class="space-y-md">
+                <div
+                  class="glass-card p-md rounded-xl space-y-xs hover:border-primary-container/40 transition-colors"
+                >
+                  <span
+                    class="material-symbols-outlined text-primary-container text-4xl"
+                    >school</span
+                  >
+                  <h3 class="font-headline-sm text-headline-sm">Workshops</h3>
+                  <p
+                    class="font-label-md text-label-md text-on-surface-variant"
+                  >
+                    Prática mão na massa com especialistas.
+                  </p>
+                </div>
+                <div
+                  class="glass-card p-md rounded-xl space-y-xs hover:border-primary-container/40 transition-colors"
+                >
+                  <span
+                    class="material-symbols-outlined text-primary-container text-4xl"
+                    >workspace_premium</span
+                  >
+                  <h3 class="font-headline-sm text-headline-sm">Certificado</h3>
+                  <p
+                    class="font-label-md text-label-md text-on-surface-variant"
+                  >
+                    Reconhecimento oficial de participação.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-xl bg-surface-container-lowest">
+        <div class="max-w-container-max mx-auto px-gutter">
+          <div class="text-center mb-lg space-y-xs">
+            <h2 class="font-headline-md text-headline-md">
+              Momentos <span class="text-primary">#JavaDay</span>
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              Uma história construída por desenvolvedores apaixonados.
+            </p>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-md">
+            <div class="space-y-md"></div>
+          </div>
+        </div>
+      </section>
+      <section class="py-xl bg-surface" id="speakers">
+        <div class="max-w-container-max mx-auto px-gutter">
+          <div
+            class="flex flex-col md:flex-row justify-between items-end mb-lg gap-md"
+          >
+            <div>
+              <h2 class="font-headline-md text-headline-md">
+                Palestrantes <span class="text-primary">Confirmados</span>
+              </h2>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Conheça os especialistas que estarão conosco nesta edição.
+              </p>
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-lg">
+            <div class="group relative">
+              <div
+                class="aspect-[4/5] rounded-2xl overflow-hidden bg-surface-container-high mb-sm relative flex items-center justify-center text-on-surface-variant/40"
+              >
+                <span class="material-symbols-outlined text-[96px] select-none"
+                  >account_circle</span
+                >
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-md"
+                >
+                  <div class="flex gap-sm text-white">
+                    <span
+                      class="material-symbols-outlined cursor-pointer hover:text-primary-container"
+                      >link</span
+                    >
+                    <span
+                      class="material-symbols-outlined cursor-pointer hover:text-primary-container"
+                      >person</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <h4 class="font-headline-sm text-headline-sm">Em Breve</h4>
+              <p class="font-label-md text-label-md text-on-surface-variant">
+                Palestrante a ser anunciado
+              </p>
+            </div>
+            <div class="group relative">
+              <div
+                class="aspect-[4/5] rounded-2xl overflow-hidden bg-surface-container-high mb-sm relative flex items-center justify-center text-on-surface-variant/40"
+              >
+                <span class="material-symbols-outlined text-[96px] select-none"
+                  >account_circle</span
+                >
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-md"
+                >
+                  <div class="flex gap-sm text-white">
+                    <span
+                      class="material-symbols-outlined cursor-pointer hover:text-primary-container"
+                      >link</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <h4 class="font-headline-sm text-headline-sm">A Definir</h4>
+              <p class="font-label-md text-label-md text-on-surface-variant">
+                Palestrante a ser anunciado
+              </p>
+            </div>
+            <div class="group relative">
+              <div
+                class="aspect-[4/5] rounded-2xl overflow-hidden bg-surface-container-high mb-sm relative flex items-center justify-center text-on-surface-variant/40"
+              >
+                <span class="material-symbols-outlined text-[96px] select-none"
+                  >account_circle</span
+                >
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-md"
+                >
+                  <div class="flex gap-sm text-white">
+                    <span
+                      class="material-symbols-outlined cursor-pointer hover:text-primary-container"
+                      >link</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <h4 class="font-headline-sm text-headline-sm">A Definir</h4>
+              <p class="font-label-md text-label-md text-on-surface-variant">
+                Palestrante a ser anunciado
+              </p>
+            </div>
+            <div class="group relative">
+              <div
+                class="aspect-[4/5] rounded-2xl overflow-hidden bg-surface-container-high mb-sm relative flex items-center justify-center text-on-surface-variant/40"
+              >
+                <span class="material-symbols-outlined text-[96px] select-none"
+                  >account_circle</span
+                >
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-md"
+                >
+                  <div class="flex gap-sm text-white">
+                    <span
+                      class="material-symbols-outlined cursor-pointer hover:text-primary-container"
+                      >link</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <h4 class="font-headline-sm text-headline-sm">Em Breve</h4>
+              <p class="font-label-md text-label-md text-on-surface-variant">
+                Palestrante a ser anunciado
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-xl bg-surface-container-low" id="partners">
+        <div class="max-w-container-max mx-auto px-gutter">
+          <div class="text-center mb-lg">
+            <h2 class="font-headline-md text-headline-md">
+              Patrocínio e <span class="text-primary">Apoio</span>
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant">
+              Empresas que acreditam e investem na comunidade Java.
+            </p>
+          </div>
+          <div class="space-y-lg">
+            <div
+              class="flex flex-wrap justify-center items-center gap-lg grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+            >
+              <div
+                class="h-16 flex items-center justify-center p-md bg-white/5 rounded-xl"
+              >
+                <img
+                  class="h-full object-contain brightness-0 invert"
+                  data-alt="Oracle Academy logo"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV-2im1L0cd3YILiejPUK84NnRLk92U-BpkaX4F0Vd2ngTXfN0dv1c7y-lE3-lWPaTl2be2dqUIt7UhHMFWxu3LW32O7mJyX1AIHBznqA_bf8t-hMJRiPGWR_92jLmkcsQ45woJpIu-mG_OxdiJ4H6ldqOcTUKaAi3NfVX2TOH_uJ3IC__NKxnpRjDn1KBIhNzAsdtaUT-cAE0eoi5RUBHLebJWDjPBOG8Nbh9dVHfdUWsq7FRTjE5ICpo8zls5vO6mgsyrdvoCD96"
+                />
+              </div>
+              <div
+                class="h-16 flex items-center justify-center p-md bg-white/5 rounded-xl"
+              >
+                <img
+                  class="h-full object-contain brightness-0 invert"
+                  data-alt="GitHub logo"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzs_gepNwWQYnj32VN4leLZORvYAmld6VT4gcpWqbYvpx4t2GSelFRK3g_2F4ThfbI6npZ4VY7lPV-pM47GUduf8BZJ-2sVKK1ffdWIVmuctJFqlfLv08c-qNwNooVjgikrctXvhZsWb8ep8HAgKvJWFWzYBDI-4axVmwvC3EyuWCSRgldUzDSNz0ce6Mzv1T0y-5gCaSzRDS5q60i6Il36TsjZ2v0Otx2uJ8RDxXyk6M6Rrehxy70i7x4o-ypG4PPMWMzCKW7YSgn"
+                />
+              </div>
+              <div
+                class="h-16 flex items-center justify-center p-md bg-white/5 rounded-xl"
+              >
+                <img
+                  class="h-full object-contain brightness-0 invert"
+                  data-alt="IFSP logo"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEIaXNnvanjVbGAYMVhqGYnKNj-DShZe2UaMjFLH_6aMtfoUELqx4nJs4MAQig7Lqb2YoeFvAj7veCCLOx7ZAp7myEa8z6Xrc_wv0c1lFbp23jPIe16c_aOtL8MkfD0145deiWxIsfiEU6MWqNdTkD_GZD5UO-0IWyWU1wR85vbvavMN_VU73TLdodn-yeIi3cRWk2qm72uyP77cmNgGPUu5LqGpBWYPtzObPCdQRz3waWH0DNSO3y4sq8cnh3Uhk3dijZIjKRTtTq"
+                />
+              </div>
+            </div>
+            <div
+              class="grid grid-cols-2 md:grid-cols-4 gap-md items-center justify-center max-w-4xl mx-auto opacity-50"
+            >
+              <div
+                class="h-12 flex items-center justify-center border border-outline/20 rounded-lg p-sm hover:border-primary-container/40 transition-colors"
+              >
+                <span class="font-bold text-outline text-label-md"
+                  >Patrocinador</span
+                >
+              </div>
+              <div
+                class="h-12 flex items-center justify-center border border-outline/20 rounded-lg p-sm hover:border-primary-container/40 transition-colors"
+              >
+                <span class="font-bold text-outline text-label-md"
+                  >Patrocinador</span
+                >
+              </div>
+              <div
+                class="h-12 flex items-center justify-center border border-outline/20 rounded-lg p-sm hover:border-primary-container/40 transition-colors"
+              >
+                <span class="font-bold text-outline text-label-md"
+                  >Patrocinador</span
+                >
+              </div>
+              <div
+                class="h-12 flex items-center justify-center border border-outline/20 rounded-lg p-sm hover:border-primary-container/40 transition-colors"
+              >
+                <span class="font-bold text-outline text-label-md"
+                  >Patrocinador</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-xl bg-surface">
+        <div class="max-w-container-max mx-auto px-gutter">
+          <div class="flex flex-col md:flex-row gap-lg">
+            <div class="md:w-1/3">
+              <h2 class="font-headline-md text-headline-md mb-md">
+                Comissão <span class="text-primary">Organizadora</span>
+              </h2>
+              <p class="font-body-md text-body-md text-on-surface-variant">
+                Conheça as pessoas que fazem o Java Day acontecer todos os anos.
+              </p>
+              <div
+                class="mt-lg p-md bg-primary-container/10 border border-primary-container/20 rounded-2xl"
+              >
+                <p class="text-primary-container font-label-md font-semibold">
+                  Interessado em ajudar? Entre em contato com a Java Noroeste.
+                </p>
+              </div>
+            </div>
+            <div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-md">
+              <div
+                class="flex items-center gap-md p-md border border-outline-variant/30 rounded-xl hover:bg-surface-container-low transition-colors group"
+              >
+                <div
+                  class="w-16 h-16 rounded-full bg-surface-container-high overflow-hidden border-2 border-transparent group-hover:border-primary-container/50 transition-all flex items-center justify-center text-on-surface-variant/40"
+                >
+                  <span
+                    class="material-symbols-outlined text-[40px] select-none"
+                    >account_circle</span
+                  >
+                </div>
+                <div>
+                  <h4
+                    class="font-label-md text-label-md font-bold text-on-surface"
+                  >
+                    Carlos Fernando Gonçalves
+                  </h4>
+                  <p class="text-label-sm text-on-surface-variant">
+                    Coordenador Geral
+                  </p>
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-md p-md border border-outline-variant/30 rounded-xl hover:bg-surface-container-low transition-colors group"
+              >
+                <div
+                  class="w-16 h-16 rounded-full bg-surface-container-high overflow-hidden border-2 border-transparent group-hover:border-primary-container/50 transition-all flex items-center justify-center text-on-surface-variant/40"
+                >
+                  <span
+                    class="material-symbols-outlined text-[40px] select-none"
+                    >account_circle</span
+                  >
+                </div>
+                <div>
+                  <h4
+                    class="font-label-md text-label-md font-bold text-on-surface"
+                  >
+                    Thiago Gonzaga
+                  </h4>
+                  <p class="text-label-sm text-on-surface-variant">
+                    Diretor Técnico
+                  </p>
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-md p-md border border-outline-variant/30 rounded-xl hover:bg-surface-container-low transition-colors group"
+              >
+                <div
+                  class="w-16 h-16 rounded-full bg-surface-container-high overflow-hidden border-2 border-transparent group-hover:border-primary-container/50 transition-all flex items-center justify-center text-on-surface-variant/40"
+                >
+                  <span
+                    class="material-symbols-outlined text-[40px] select-none"
+                    >account_circle</span
+                  >
+                </div>
+                <div>
+                  <h4
+                    class="font-label-md text-label-md font-bold text-on-surface"
+                  >
+                    Comunidade Java Noroeste
+                  </h4>
+                  <p class="text-label-sm text-on-surface-variant">
+                    Staff & Voluntários
+                  </p>
+                </div>
+              </div>
+              <div
+                class="flex items-center gap-md p-md border border-outline-variant/30 rounded-xl hover:bg-surface-container-low transition-colors group"
+              >
+                <div
+                  class="w-16 h-16 rounded-full bg-surface-container-high overflow-hidden border-2 border-transparent group-hover:border-primary-container/50 transition-all flex items-center justify-center text-on-surface-variant/40"
+                >
+                  <span
+                    class="material-symbols-outlined text-[40px] select-none"
+                    >account_circle</span
+                  >
+                </div>
+                <div>
+                  <h4
+                    class="font-label-md text-label-md font-bold text-on-surface"
+                  >
+                    IFSP Rio Preto
+                  </h4>
+                  <p class="text-label-sm text-on-surface-variant">
+                    Apoio Institucional
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="py-xl bg-surface-container-high" id="location">
+        <div class="max-w-container-max mx-auto px-gutter">
+          <div
+            class="glass-card rounded-[2rem] overflow-hidden grid grid-cols-1 lg:grid-cols-2"
+          >
+            <div class="p-lg space-y-md">
+              <span
+                class="font-label-sm text-label-sm text-primary-container uppercase tracking-widest font-bold"
+                >Onde nos encontrar</span
+              >
+              <h2 class="font-headline-md text-headline-md">
+                IFSP São José do Rio Preto
+              </h2>
+              <div class="space-y-sm">
+                <div class="flex items-start gap-sm">
+                  <span class="material-symbols-outlined text-primary-container"
+                    >location_on</span
+                  >
+                  <p class="font-body-md text-body-md text-on-surface">
+                    R. Dr. Eduardo Nielsen, 420 - Jardim Congonhas, São José do
+                    Rio Preto - SP,<br />
+                    CEP: 15030-070
+                  </p>
+                </div>
+                <div class="flex items-start gap-sm">
+                  <span class="material-symbols-outlined text-primary-container"
+                    >directions_bus</span
+                  >
+                </div>
+              </div>
+              <div class="pt-md">
+                <button
+                  class="bg-primary-container text-on-primary-container px-lg py-3 rounded-xl font-label-md flex items-center gap-sm hover:opacity-90 transition-all"
+                >
+                  Abrir no Google Maps
+                  <span class="material-symbols-outlined">map</span>
+                </button>
+              </div>
+            </div>
+            <div class="h-80 lg:h-full min-h-[400px]">
+              <div
+                class="w-full h-full bg-cover bg-center grayscale contrast-125 brightness-50"
+                data-alt="Map of São José do Rio Preto IFSP campus area."
+                style="
+                  background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDkY_PSO-H410fUEiJYDR6BtdKK-9i1FSlKIAKwvhXoC0l2r_RyuG9en9QFGNPDWOtIsCIHQOA19Rx0frQRGFDr9H2gjRjYfLzUTBpHYF02QznjwZsNhbQsthELY0NpVkpUww7FsUSo5YDPg7n3MOa1KBxmmo-CsxnIdKudof2Dqau9mZfFwXt7VDehOpfOlBHswZcfr9D5G4uMOG9S0hiRjrYSpy6B_HE3a6C8I7cE15JNk4pe1C4qvMWG34t_IsIas9EIUe1_OGFJ&quot;);
+                "
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="bg-surface-container-lowest border-t border-outline/10">
+      <div
+        class="grid grid-cols-1 md:grid-cols-4 gap-md px-gutter py-xl max-w-container-max mx-auto"
+      >
+        <div class="col-span-1 md:col-span-1 space-y-md">
+          <div
+            class="font-headline-sm text-headline-sm font-black text-primary"
+          >
+            Java Day
+          </div>
+          <p class="text-on-surface-variant font-label-md">
+            Fortalecendo a comunidade de desenvolvimento do Noroeste Paulista
+            através de conhecimento e conexões reais.
+          </p>
+          <div class="flex gap-md">
+            <a
+              class="text-on-surface-variant hover:text-primary-container transition-colors"
+              href="#"
+              ><span class="material-symbols-outlined">share</span></a
+            >
+            <a
+              class="text-on-surface-variant hover:text-primary-container transition-colors"
+              href="#"
+              ><span class="material-symbols-outlined">group</span></a
+            >
+            <a
+              class="text-on-surface-variant hover:text-primary-container transition-colors"
+              href="#"
+              ><span class="material-symbols-outlined">public</span></a
+            >
+          </div>
+        </div>
+        <div class="space-y-sm">
+          <h4 class="text-primary-fixed-dim font-bold">Evento</h4>
+          <ul class="space-y-xs">
+            <li class="">
+              <a
+                class="text-on-surface-variant hover:text-primary transition-colors font-label-md"
+                href="#"
+                >Palestrantes</a
+              >
+            </li>
+            <li class="">
+              <a
+                class="text-on-surface-variant hover:text-primary transition-colors font-label-md"
+                href="#"
+                >Agenda Completa</a
+              >
+            </li>
+            <li class="">
+              <a
+                class="text-on-surface-variant hover:text-primary transition-colors font-label-md"
+                href="#"
+                >Inscrições</a
+              >
+            </li>
+            <li class="">
+              <a
+                class="text-on-surface-variant hover:text-primary transition-colors font-label-md"
+                href="#"
+                >Sponsorship</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="space-y-sm">
+          <h4 class="text-primary-fixed-dim font-bold">Comunidade</h4>
+          <ul class="space-y-xs">
+            <li class="">
+              <a
+                class="text-on-surface-variant hover:text-primary transition-colors font-label-md"
+                href="#"
+                >Java Noroeste</a
+              >
+            </li>
+            <li class="">
+              <a
+                class="text-on-surface-variant hover:text-primary transition-colors font-label-md"
+                href="#"
+                >Código de Conduta</a
+              >
+            </li>
+            <li class="">
+              <a
+                class="text-on-surface-variant hover:text-primary transition-colors font-label-md"
+                href="#"
+                >Política de Privacidade</a
+              >
+            </li>
+            <li class="">
+              <a
+                class="text-on-surface-variant hover:text-primary transition-colors font-label-md"
+                href="#"
+                >Contato</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-outline/10 py-md px-gutter text-center">
+        <p class="text-on-surface-variant/50 font-label-sm">
+          © 2026 Comunidade Java Noroeste. Todos os direitos reservados.
         </p>
-</div>
-</footer>
-<script>
-    // Micro-interactions and effects
-    document.querySelectorAll('button').forEach(button => {
-        button.addEventListener('mousedown', () => {
-            button.classList.add('scale-95');
+      </div>
+    </footer>
+    <script>
+      // Micro-interactions and effects
+      document.querySelectorAll("button").forEach((button) => {
+        button.addEventListener("mousedown", () => {
+          button.classList.add("scale-95");
         });
-        button.addEventListener('mouseup', () => {
-            button.classList.remove('scale-95');
+        button.addEventListener("mouseup", () => {
+          button.classList.remove("scale-95");
         });
-        button.addEventListener('mouseleave', () => {
-            button.classList.remove('scale-95');
+        button.addEventListener("mouseleave", () => {
+          button.classList.remove("scale-95");
         });
-    });
+      });
 
-    // Header scroll behavior
-    const nav = document.querySelector('nav');
-    window.addEventListener('scroll', () => {
+      // Header scroll behavior
+      const nav = document.querySelector("nav");
+      window.addEventListener("scroll", () => {
         if (window.scrollY > 10) {
-            nav.classList.add('shadow-xl', 'border-b-primary-container/10');
-            nav.style.backgroundColor = 'rgba(18, 20, 20, 0.95)';
+          nav.classList.add(
+            "nav-scrolled",
+            "shadow-xl",
+            "border-b-primary-container/10",
+          );
         } else {
-            nav.classList.remove('shadow-xl', 'border-b-primary-container/10');
-            nav.style.backgroundColor = 'rgba(18, 20, 20, 0.8)';
+          nav.classList.remove(
+            "nav-scrolled",
+            "shadow-xl",
+            "border-b-primary-container/10",
+          );
         }
-    });
-</script>
+      });
+    </script>
+    <script type="module">
+      import { CountUp } from "https://cdn.jsdelivr.net/npm/countup.js@2.10.0/dist/countUp.min.js";
 
+      const counters = document.querySelectorAll("[data-counter]");
+      const startCounter = (counter) => {
+        const endValue = Number(counter.dataset.end);
+        const duration = Number(counter.dataset.duration || 1.8);
+        const countUp = new CountUp(counter, endValue, {
+          duration,
+          useGrouping: false,
+        });
 
-</body></html>
+        if (!countUp.error) {
+          countUp.start();
+        }
+      };
+
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              startCounter(entry.target);
+              observer.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.65 },
+      );
+
+      counters.forEach((counter) => observer.observe(counter));
+    </script>
+  </body>
+</html>
