@@ -338,13 +338,15 @@
           );
       }
       .intro-blend::after {
-        inset: auto -10% -34% -10%;
-        height: 340px;
-        background: radial-gradient(
-          ellipse at center,
-          rgb(255 126 24 / 0.09),
-          transparent 62%
-        );
+        inset: auto 0 0;
+        height: 72px;
+        background: transparent;
+        border-bottom: 1px solid rgb(255 140 30 / 0.28);
+        border-bottom-left-radius: 50% 60px;
+        border-bottom-right-radius: 50% 60px;
+        filter:
+          drop-shadow(0 0 4px rgb(255 126 24 / 0.28))
+          drop-shadow(0 0 10px rgb(255 126 24 / 0.12));
       }
       .intro-marquee {
         position: relative;
@@ -405,6 +407,31 @@
             rgb(var(--background)) 46%,
             rgb(var(--surface-container-lowest)) 100%
           );
+      }
+      .partners-curve {
+        position: relative;
+        margin-top: -1px;
+        overflow: hidden;
+        isolation: isolate;
+        background: transparent !important;
+      }
+      .partners-curve::before {
+        content: "";
+        position: absolute;
+        inset: 0 -18% 0;
+        pointer-events: none;
+        z-index: 0;
+        background: rgb(var(--surface-container-low));
+        border-top: 1px solid rgb(255 140 30 / 0.28);
+        border-top-left-radius: 50% 86px;
+        border-top-right-radius: 50% 86px;
+        filter:
+          drop-shadow(0 0 4px rgb(255 126 24 / 0.22))
+          drop-shadow(0 0 10px rgb(255 126 24 / 0.1));
+      }
+      .partners-curve > div {
+        position: relative;
+        z-index: 1;
       }
       .moments-gallery::before {
         content: "";
@@ -599,18 +626,15 @@
           <a
             class="font-label-code text-[14px] uppercase text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200"
             href="#speakers"
-            >Palestrantes</a
-          >
+            >Palestrantes</a>
           <a
             class="font-label-code text-[14px] uppercase text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200"
             href="#location"
-            >Localização</a
-          >
+            >Localização</a>
           <a
             class="font-label-code text-[14px] uppercase text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200"
             href="#partners"
-            >Parceiros</a
-          >
+            >Parceiros</a>
         </div>
         <div class="flex items-center gap-sm">
           <button
@@ -649,18 +673,20 @@
               <span class="text-primary">Java</span>, arquitetura e comunidade
               em um encontro técnico no Noroeste Paulista.
             </p>
-            <div class="flex flex-wrap gap-md pt-base">
+            <div class="flex flex-col sm:flex-row sm:flex-nowrap gap-md pt-base">
               <button
-                class="hero-cta bg-primary-container text-on-primary-container px-lg py-4 rounded-xl font-headline-sm hover:shadow-[0_18px_42px_-18px_rgb(248_120_24_/_0.9)] transition-all flex items-center gap-sm"
+                class="hero-cta bg-primary-container text-on-primary-container px-lg py-4 rounded-xl font-headline-sm hover:shadow-[0_18px_42px_-18px_rgb(248_120_24_/_0.9)] transition-all flex items-center justify-center gap-sm whitespace-nowrap min-w-[220px]"
               >
                 <span class="relative z-10">Garantir meu Ingresso</span>
                 <span class="material-symbols-outlined">arrow_forward</span>
               </button>
-              <button
-                class="hero-cta bg-surface-container-high text-on-surface px-lg py-4 rounded-xl font-headline-sm hover:bg-surface-container-highest hover:text-primary-fixed-dim hover:shadow-[0_18px_42px_-22px_rgb(255_183_122_/_0.5)] transition-all"
+              <a
+                class="hero-cta bg-surface-container-high text-on-surface px-lg py-4 rounded-xl font-headline-sm hover:bg-surface-container-highest hover:text-primary-fixed-dim hover:shadow-[0_18px_42px_-22px_rgb(255_183_122_/_0.5)] transition-all flex items-center gap-sm whitespace-nowrap"
+                href="#location"
               >
-                <span class="relative z-10">Ver Agenda</span>
-              </button>
+                <span class="relative z-10">São José do Rio Preto às 8h</span>
+                <span class="material-symbols-outlined">location_on</span>
+              </a>
             </div>
             <div
               class="flex flex-wrap items-center gap-lg border-t border-outline-variant/40 pt-md"
@@ -846,7 +872,7 @@
           </div>
         </div>
       </section>
-      <section class="moments-section pt-[176px] pb-[272px]">
+      <section class="moments-section pt-[176px] pb-[184px]">
         <div class="relative z-10 max-w-container-max mx-auto px-gutter">
           <div class="text-center mb-[72px] space-y-xs">
             <h2 class="font-label-code text-[30px] lg:text-[40px] leading-tight font-semibold">
@@ -893,464 +919,473 @@
               />
             </figure>
           </div>
-        </div>
-      </section>
-      <section class="py-xl bg-surface" id="speakers">
-        <div class="max-w-container-max mx-auto px-gutter">
-          <div
-            class="flex flex-col md:flex-row justify-between items-end mb-lg gap-md"
-          >
-            <div>
-              <h2 class="font-headline-md text-headline-md">
+
+          <div id="speakers" class="mt-[252px]">
+            <div class="mb-[64px] text-center">
+              <h2 class="font-label-code text-[30px] lg:text-[40px] leading-tight font-semibold">
                 Palestrantes <span class="text-primary">Confirmados</span>
               </h2>
-              <p class="font-body-md text-body-md text-on-surface-variant">
+              <p class="font-body-md text-body-md text-on-surface-variant mt-xs">
                 Conheça os especialistas que estarão conosco nesta edição.
               </p>
             </div>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-lg">
-            <div class="group relative">
-              <div
-                class="aspect-[4/5] rounded-2xl overflow-hidden bg-surface-container-high mb-sm relative flex items-center justify-center text-on-surface-variant/40"
-              >
-                <span class="material-symbols-outlined text-[96px] select-none"
-                  >account_circle</span
-                >
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-lg max-w-[1120px] mx-auto">
+              <div class="group relative text-center">
                 <div
-                  class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-md"
+                  class="aspect-[4/5] rounded-2xl overflow-hidden bg-surface-container-high mb-sm relative"
                 >
-                  <div class="flex gap-sm text-white">
-                    <span
-                      class="material-symbols-outlined cursor-pointer hover:text-primary-container"
-                      >link</span
-                    >
-                    <span
-                      class="material-symbols-outlined cursor-pointer hover:text-primary-container"
-                      >person</span
-                    >
-                  </div>
+                  <img
+                    class="w-full h-full object-cover transition duration-500 group-hover:scale-[1.035]"
+                    src="assets/speakers/speaker-01.webp"
+                    alt="Palestrante no palco do Java Day Rio Preto"
+                    loading="lazy"
+                  />
+                </div>
+                <h4 class="font-label-code text-[20px] leading-tight font-semibold">
+                  Rafael Martins
+                </h4>
+                <p class="font-body-md text-[14px] text-on-surface-variant">
+                  Trilha Java &amp; Cloud
+                </p>
+                <div class="mt-sm flex justify-center gap-sm">
+                  <a
+                    class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-primary-container/35 bg-background/55 font-label-code text-[12px] font-semibold text-on-surface hover:text-primary-container transition-colors"
+                    href="https://instagram.com/javadaynoroeste"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Instagram de Rafael Martins"
+                  >
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2" />
+                      <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" />
+                      <circle cx="17.5" cy="6.5" r="1.25" fill="currentColor" />
+                    </svg>
+                  </a>
+                  <a
+                    class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-primary-container/35 bg-background/55 font-label-code text-[13px] font-semibold text-on-surface hover:text-primary-container transition-colors"
+                    href="https://www.linkedin.com/company/java-noroeste"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="LinkedIn de Rafael Martins"
+                  >
+                    in
+                  </a>
                 </div>
               </div>
-              <h4 class="font-headline-sm text-headline-sm">Em Breve</h4>
-              <p class="font-label-md text-label-md text-on-surface-variant">
-                Palestrante a ser anunciado
-              </p>
-            </div>
-            <div class="group relative">
-              <div
-                class="aspect-[4/5] rounded-2xl overflow-hidden bg-surface-container-high mb-sm relative flex items-center justify-center text-on-surface-variant/40"
-              >
-                <span class="material-symbols-outlined text-[96px] select-none"
-                  >account_circle</span
-                >
+
+              <div class="group relative text-center">
                 <div
-                  class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-md"
+                  class="aspect-[4/5] rounded-2xl overflow-hidden bg-surface-container-high mb-sm relative"
                 >
-                  <div class="flex gap-sm text-white">
-                    <span
-                      class="material-symbols-outlined cursor-pointer hover:text-primary-container"
-                      >link</span
-                    >
-                  </div>
+                  <img
+                    class="w-full h-full object-cover transition duration-500 group-hover:scale-[1.035]"
+                    src="assets/speakers/speaker-02.jpg"
+                    alt="Palestrante apresentando conteúdo técnico no Java Day"
+                    loading="lazy"
+                  />
+                </div>
+                <h4 class="font-label-code text-[20px] leading-tight font-semibold">
+                  Marina Costa
+                </h4>
+                <p class="font-body-md text-[14px] text-on-surface-variant">
+                  Arquitetura &amp; Backend
+                </p>
+                <div class="mt-sm flex justify-center gap-sm">
+                  <a
+                    class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-primary-container/35 bg-background/55 font-label-code text-[12px] font-semibold text-on-surface hover:text-primary-container transition-colors"
+                    href="https://instagram.com/javadayrio_preto"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Instagram de Marina Costa"
+                  >
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2" />
+                      <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" />
+                      <circle cx="17.5" cy="6.5" r="1.25" fill="currentColor" />
+                    </svg>
+                  </a>
+                  <a
+                    class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-primary-container/35 bg-background/55 font-label-code text-[13px] font-semibold text-on-surface hover:text-primary-container transition-colors"
+                    href="https://www.linkedin.com/company/javaday-rio-preto"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="LinkedIn de Marina Costa"
+                  >
+                    in
+                  </a>
                 </div>
               </div>
-              <h4 class="font-headline-sm text-headline-sm">A Definir</h4>
-              <p class="font-label-md text-label-md text-on-surface-variant">
-                Palestrante a ser anunciado
-              </p>
-            </div>
-            <div class="group relative">
-              <div
-                class="aspect-[4/5] rounded-2xl overflow-hidden bg-surface-container-high mb-sm relative flex items-center justify-center text-on-surface-variant/40"
-              >
-                <span class="material-symbols-outlined text-[96px] select-none"
-                  >account_circle</span
-                >
+
+              <div class="group relative text-center sm:col-span-2 sm:max-w-[352px] sm:mx-auto lg:col-span-1 lg:max-w-none">
                 <div
-                  class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-md"
+                  class="aspect-[4/5] rounded-2xl overflow-hidden bg-surface-container-high mb-sm relative"
                 >
-                  <div class="flex gap-sm text-white">
-                    <span
-                      class="material-symbols-outlined cursor-pointer hover:text-primary-container"
-                      >link</span
-                    >
-                  </div>
+                  <img
+                    class="w-full h-full object-cover object-[82%_center] transition duration-500 group-hover:scale-[1.035]"
+                    src="assets/speakers/speaker-03.webp"
+                    alt="Palestra do Java Day Rio Preto com público acompanhando"
+                    loading="lazy"
+                  />
+                </div>
+                <h4 class="font-label-code text-[20px] leading-tight font-semibold">
+                  Gabriel Almeida
+                </h4>
+                <p class="font-body-md text-[14px] text-on-surface-variant">
+                  Comunidade &amp; Carreira
+                </p>
+                <div class="mt-sm flex justify-center gap-sm">
+                  <a
+                    class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-primary-container/35 bg-background/55 font-label-code text-[12px] font-semibold text-on-surface hover:text-primary-container transition-colors"
+                    href="https://instagram.com/javanoroeste"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="Instagram de Gabriel Almeida"
+                  >
+                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2" />
+                      <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" />
+                      <circle cx="17.5" cy="6.5" r="1.25" fill="currentColor" />
+                    </svg>
+                  </a>
+                  <a
+                    class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-primary-container/35 bg-background/55 font-label-code text-[13px] font-semibold text-on-surface hover:text-primary-container transition-colors"
+                    href="https://www.linkedin.com/company/javanoroeste"
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label="LinkedIn de Gabriel Almeida"
+                  >
+                    in
+                  </a>
                 </div>
               </div>
-              <h4 class="font-headline-sm text-headline-sm">A Definir</h4>
-              <p class="font-label-md text-label-md text-on-surface-variant">
-                Palestrante a ser anunciado
-              </p>
-            </div>
-            <div class="group relative">
-              <div
-                class="aspect-[4/5] rounded-2xl overflow-hidden bg-surface-container-high mb-sm relative flex items-center justify-center text-on-surface-variant/40"
-              >
-                <span class="material-symbols-outlined text-[96px] select-none"
-                  >account_circle</span
-                >
-                <div
-                  class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-md"
-                >
-                  <div class="flex gap-sm text-white">
-                    <span
-                      class="material-symbols-outlined cursor-pointer hover:text-primary-container"
-                      >link</span
-                    >
-                  </div>
-                </div>
-              </div>
-              <h4 class="font-headline-sm text-headline-sm">Em Breve</h4>
-              <p class="font-label-md text-label-md text-on-surface-variant">
-                Palestrante a ser anunciado
-              </p>
             </div>
           </div>
         </div>
       </section>
-      <section class="py-xl bg-surface-container-low" id="partners">
-        <div class="max-w-container-max mx-auto px-gutter">
-          <div class="text-center mb-lg">
-            <h2 class="font-headline-md text-headline-md">
+      <section class="py-xl partners-curve" id="partners">
+        <div class="max-w-container-max mx-auto px-gutter pt-lg">
+          <div class="text-center mb-xl">
+            <p class="font-label-code text-[12px] uppercase tracking-[0.18em] text-primary-container mb-sm">
+              Ecossistema
+            </p>
+            <h2 class="font-label-code text-[30px] lg:text-[40px] leading-tight font-semibold">
               Patrocínio e <span class="text-primary">Apoio</span>
             </h2>
-            <p class="font-body-md text-body-md text-on-surface-variant">
-              Empresas que acreditam e investem na comunidade Java.
+            <p class="font-body-md text-body-md text-on-surface-variant mt-xs max-w-2xl mx-auto">
+              Empresas, instituições e comunidades que ajudam o Java Day a
+              chegar mais longe.
             </p>
           </div>
-          <div class="space-y-lg">
-            <div
-              class="flex flex-wrap justify-center items-center gap-lg grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500"
+
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-md max-w-5xl mx-auto mb-xl">
+            <a
+              class="rounded-xl min-h-32 p-md flex items-center justify-center border border-outline-variant/25 bg-[#f5eee6] hover:border-primary-container/55 hover:shadow-[0_18px_42px_-24px_rgb(255_126_24_/_0.45)] transition-all"
+              href="https://sjp.ifsp.edu.br/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Abrir site do IFSP São José do Rio Preto"
             >
-              <div
-                class="h-16 flex items-center justify-center p-md bg-white/5 rounded-xl"
-              >
-                <img
-                  class="h-full object-contain brightness-0 invert"
-                  data-alt="Oracle Academy logo"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV-2im1L0cd3YILiejPUK84NnRLk92U-BpkaX4F0Vd2ngTXfN0dv1c7y-lE3-lWPaTl2be2dqUIt7UhHMFWxu3LW32O7mJyX1AIHBznqA_bf8t-hMJRiPGWR_92jLmkcsQ45woJpIu-mG_OxdiJ4H6ldqOcTUKaAi3NfVX2TOH_uJ3IC__NKxnpRjDn1KBIhNzAsdtaUT-cAE0eoi5RUBHLebJWDjPBOG8Nbh9dVHfdUWsq7FRTjE5ICpo8zls5vO6mgsyrdvoCD96"
-                />
-              </div>
-              <div
-                class="h-16 flex items-center justify-center p-md bg-white/5 rounded-xl"
-              >
-                <img
-                  class="h-full object-contain brightness-0 invert"
-                  data-alt="GitHub logo"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzs_gepNwWQYnj32VN4leLZORvYAmld6VT4gcpWqbYvpx4t2GSelFRK3g_2F4ThfbI6npZ4VY7lPV-pM47GUduf8BZJ-2sVKK1ffdWIVmuctJFqlfLv08c-qNwNooVjgikrctXvhZsWb8ep8HAgKvJWFWzYBDI-4axVmwvC3EyuWCSRgldUzDSNz0ce6Mzv1T0y-5gCaSzRDS5q60i6Il36TsjZ2v0Otx2uJ8RDxXyk6M6Rrehxy70i7x4o-ypG4PPMWMzCKW7YSgn"
-                />
-              </div>
-              <div
-                class="h-16 flex items-center justify-center p-md bg-white/5 rounded-xl"
-              >
-                <img
-                  class="h-full object-contain brightness-0 invert"
-                  data-alt="IFSP logo"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDEIaXNnvanjVbGAYMVhqGYnKNj-DShZe2UaMjFLH_6aMtfoUELqx4nJs4MAQig7Lqb2YoeFvAj7veCCLOx7ZAp7myEa8z6Xrc_wv0c1lFbp23jPIe16c_aOtL8MkfD0145deiWxIsfiEU6MWqNdTkD_GZD5UO-0IWyWU1wR85vbvavMN_VU73TLdodn-yeIi3cRWk2qm72uyP77cmNgGPUu5LqGpBWYPtzObPCdQRz3waWH0DNSO3y4sq8cnh3Uhk3dijZIjKRTtTq"
-                />
-              </div>
-            </div>
-            <div
-              class="grid grid-cols-2 md:grid-cols-4 gap-md items-center justify-center max-w-4xl mx-auto opacity-50"
+              <img
+                class="max-h-20 max-w-[170px] object-contain"
+                src="assets/partners/ifsp-campus-logo.png"
+                alt="IFSP São José do Rio Preto"
+                loading="lazy"
+              />
+            </a>
+            <a
+              class="rounded-xl min-h-32 p-md flex items-center justify-center border border-outline-variant/25 bg-[#f5eee6] hover:border-primary-container/55 hover:shadow-[0_18px_42px_-24px_rgb(255_126_24_/_0.45)] transition-all"
+              href="https://academy.oracle.com/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Abrir site da Oracle Academy"
             >
-              <div
-                class="h-12 flex items-center justify-center border border-outline/20 rounded-lg p-sm hover:border-primary-container/40 transition-colors"
-              >
-                <span class="font-bold text-outline text-label-md"
-                  >Patrocinador</span
-                >
-              </div>
-              <div
-                class="h-12 flex items-center justify-center border border-outline/20 rounded-lg p-sm hover:border-primary-container/40 transition-colors"
-              >
-                <span class="font-bold text-outline text-label-md"
-                  >Patrocinador</span
-                >
-              </div>
-              <div
-                class="h-12 flex items-center justify-center border border-outline/20 rounded-lg p-sm hover:border-primary-container/40 transition-colors"
-              >
-                <span class="font-bold text-outline text-label-md"
-                  >Patrocinador</span
-                >
-              </div>
-              <div
-                class="h-12 flex items-center justify-center border border-outline/20 rounded-lg p-sm hover:border-primary-container/40 transition-colors"
-              >
-                <span class="font-bold text-outline text-label-md"
-                  >Patrocinador</span
-                >
-              </div>
-            </div>
+              <img
+                class="max-h-[72px] max-w-[170px] object-contain"
+                src="assets/partners/oracle-academy.webp"
+                alt="Oracle Academy"
+                loading="lazy"
+              />
+            </a>
+            <a
+              class="rounded-xl min-h-32 p-md flex items-center justify-center border border-outline-variant/25 bg-[#f5eee6] hover:border-primary-container/55 hover:shadow-[0_18px_42px_-24px_rgb(255_126_24_/_0.45)] transition-all"
+              href="https://i2i.org.br/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Abrir site do i2i"
+            >
+              <img
+                class="max-h-[72px] max-w-[170px] object-contain"
+                src="assets/partners/i2i-cropped.png"
+                alt="i2i"
+                loading="lazy"
+              />
+            </a>
+            <a
+              class="rounded-xl min-h-32 p-md flex items-center justify-center border border-outline-variant/25 bg-[#f5eee6] hover:border-primary-container/55 hover:shadow-[0_18px_42px_-24px_rgb(255_126_24_/_0.45)] transition-all"
+              href="https://github.com/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Abrir site do GitHub"
+            >
+              <img
+                class="max-h-[72px] max-w-[170px] object-contain"
+                src="assets/partners/github.webp"
+                alt="GitHub"
+                loading="lazy"
+              />
+            </a>
           </div>
-        </div>
-      </section>
-      <section class="py-xl bg-surface">
-        <div class="max-w-container-max mx-auto px-gutter">
-          <div class="flex flex-col md:flex-row gap-lg">
-            <div class="md:w-1/3">
-              <h2 class="font-headline-md text-headline-md mb-md">
+
+          <div class="mt-[144px] pb-xl">
+          <div class="grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-xl items-start">
+            <div class="space-y-md">
+              <p class="font-label-code text-[12px] uppercase tracking-[0.18em] text-primary-container">
+                Time
+              </p>
+              <h2 class="font-label-code text-[30px] lg:text-[40px] leading-tight font-semibold">
                 Comissão <span class="text-primary">Organizadora</span>
               </h2>
               <p class="font-body-md text-body-md text-on-surface-variant">
-                Conheça as pessoas que fazem o Java Day acontecer todos os anos.
+                Pessoas e instituições que conectam comunidade, conteúdo,
+                infraestrutura e experiência de evento.
               </p>
-              <div
-                class="mt-lg p-md bg-primary-container/10 border border-primary-container/20 rounded-2xl"
+              <a
+                class="hero-cta inline-flex items-center gap-sm rounded-xl border border-primary-container/35 px-md py-3 font-label-code text-[13px] text-primary-container hover:bg-primary-container/10 hover:shadow-[0_18px_42px_-24px_rgb(255_126_24_/_0.45)] transition-all active:scale-95"
+                href="mailto:contato@javanoroeste.com.br?subject=Voluntariado%20Java%20Day"
               >
-                <p class="text-primary-container font-label-md font-semibold">
-                  Interessado em ajudar? Entre em contato com a Java Noroeste.
-                </p>
-              </div>
+                Quero ajudar
+                <span class="material-symbols-outlined text-[18px]">volunteer_activism</span>
+              </a>
             </div>
-            <div class="md:w-2/3 grid grid-cols-1 sm:grid-cols-2 gap-md">
-              <div
-                class="flex items-center gap-md p-md border border-outline-variant/30 rounded-xl hover:bg-surface-container-low transition-colors group"
-              >
-                <div
-                  class="w-16 h-16 rounded-full bg-surface-container-high overflow-hidden border-2 border-transparent group-hover:border-primary-container/50 transition-all flex items-center justify-center text-on-surface-variant/40"
-                >
-                  <span
-                    class="material-symbols-outlined text-[40px] select-none"
-                    >account_circle</span
-                  >
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-md">
+              <div class="glass-card rounded-xl p-md flex items-center gap-md">
+                <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-xl bg-surface-container-high">
+                  <img class="h-full w-full object-cover object-[58%_center]" src="assets/team/carlos.webp" alt="Carlos Fernando Gonçalves" loading="lazy" />
                 </div>
                 <div>
-                  <h4
-                    class="font-label-md text-label-md font-bold text-on-surface"
-                  >
+                  <h4 class="font-body-md text-[17px] leading-tight font-semibold text-on-surface">
                     Carlos Fernando Gonçalves
                   </h4>
-                  <p class="text-label-sm text-on-surface-variant">
-                    Coordenador Geral
+                  <p class="font-body-md text-[14px] text-on-surface-variant">
+                    Coordenação geral
                   </p>
                 </div>
               </div>
-              <div
-                class="flex items-center gap-md p-md border border-outline-variant/30 rounded-xl hover:bg-surface-container-low transition-colors group"
-              >
-                <div
-                  class="w-16 h-16 rounded-full bg-surface-container-high overflow-hidden border-2 border-transparent group-hover:border-primary-container/50 transition-all flex items-center justify-center text-on-surface-variant/40"
-                >
-                  <span
-                    class="material-symbols-outlined text-[40px] select-none"
-                    >account_circle</span
-                  >
+              <div class="glass-card rounded-xl p-md flex items-center gap-md">
+                <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-xl bg-surface-container-high">
+                  <img class="h-full w-full object-cover" src="assets/team/thiago.jpg" alt="Thiago Gonzaga" loading="lazy" />
                 </div>
                 <div>
-                  <h4
-                    class="font-label-md text-label-md font-bold text-on-surface"
-                  >
+                  <h4 class="font-body-md text-[17px] leading-tight font-semibold text-on-surface">
                     Thiago Gonzaga
                   </h4>
-                  <p class="text-label-sm text-on-surface-variant">
-                    Diretor Técnico
+                  <p class="font-body-md text-[14px] text-on-surface-variant">
+                    Direção técnica
                   </p>
                 </div>
               </div>
-              <div
-                class="flex items-center gap-md p-md border border-outline-variant/30 rounded-xl hover:bg-surface-container-low transition-colors group"
-              >
-                <div
-                  class="w-16 h-16 rounded-full bg-surface-container-high overflow-hidden border-2 border-transparent group-hover:border-primary-container/50 transition-all flex items-center justify-center text-on-surface-variant/40"
-                >
-                  <span
-                    class="material-symbols-outlined text-[40px] select-none"
-                    >account_circle</span
-                  >
+              <div class="glass-card rounded-xl p-md flex items-center gap-md">
+                <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-xl bg-surface-container-high">
+                  <img class="h-full w-full object-cover object-center" src="assets/team/staff.webp" alt="Equipe Java Noroeste" loading="lazy" />
                 </div>
                 <div>
-                  <h4
-                    class="font-label-md text-label-md font-bold text-on-surface"
-                  >
+                  <h4 class="font-body-md text-[17px] leading-tight font-semibold text-on-surface">
                     Comunidade Java Noroeste
                   </h4>
-                  <p class="text-label-sm text-on-surface-variant">
-                    Staff & Voluntários
+                  <p class="font-body-md text-[14px] text-on-surface-variant">
+                    Staff e voluntariado
                   </p>
                 </div>
               </div>
-              <div
-                class="flex items-center gap-md p-md border border-outline-variant/30 rounded-xl hover:bg-surface-container-low transition-colors group"
-              >
-                <div
-                  class="w-16 h-16 rounded-full bg-surface-container-high overflow-hidden border-2 border-transparent group-hover:border-primary-container/50 transition-all flex items-center justify-center text-on-surface-variant/40"
-                >
-                  <span
-                    class="material-symbols-outlined text-[40px] select-none"
-                    >account_circle</span
-                  >
+              <div class="glass-card rounded-xl p-md flex items-center gap-md">
+                <div class="h-24 w-24 flex-shrink-0 overflow-hidden rounded-xl bg-surface-container-high">
+                  <img class="h-full w-full object-cover object-center" src="assets/team/ifsp-campus.jpg" alt="Entrada do IFSP Rio Preto" loading="lazy" />
                 </div>
                 <div>
-                  <h4
-                    class="font-label-md text-label-md font-bold text-on-surface"
-                  >
+                  <h4 class="font-body-md text-[17px] leading-tight font-semibold text-on-surface">
                     IFSP Rio Preto
                   </h4>
-                  <p class="text-label-sm text-on-surface-variant">
-                    Apoio Institucional
+                  <p class="font-body-md text-[14px] text-on-surface-variant">
+                    Apoio institucional
                   </p>
                 </div>
               </div>
             </div>
+          </div>
           </div>
         </div>
       </section>
       <section class="py-xl bg-surface-container-high" id="location">
         <div class="max-w-container-max mx-auto px-gutter">
-          <div
-            class="glass-card rounded-[2rem] overflow-hidden grid grid-cols-1 lg:grid-cols-2"
-          >
-            <div class="p-lg space-y-md">
-              <span
-                class="font-label-sm text-label-sm text-primary-container uppercase tracking-widest font-bold"
-                >Onde nos encontrar</span
-              >
-              <h2 class="font-headline-md text-headline-md">
-                IFSP São José do Rio Preto
-              </h2>
-              <div class="space-y-sm">
-                <div class="flex items-start gap-sm">
-                  <span class="material-symbols-outlined text-primary-container"
-                    >location_on</span
-                  >
+          <div class="grid grid-cols-1 lg:grid-cols-[0.95fr_1.05fr] gap-lg items-stretch">
+            <div class="glass-card rounded-2xl p-lg space-y-lg">
+              <div>
+                <p class="font-label-code text-[12px] uppercase tracking-[0.18em] text-primary-container mb-sm">
+                  Localização
+                </p>
+                <h2 class="font-label-code text-[28px] lg:text-[30px] xl:text-[34px] leading-tight font-semibold lg:whitespace-nowrap">
+                  IFSP São José do Rio Preto
+                </h2>
+                <p class="font-body-md text-body-md text-on-surface-variant mt-xs">
+                  Campus com auditório, salas de apoio e estrutura para receber
+                  a comunidade durante o dia inteiro.
+                </p>
+              </div>
+
+              <div class="space-y-md">
+                <div class="flex items-start gap-md">
+                  <span class="material-symbols-outlined text-primary-container">location_on</span>
                   <p class="font-body-md text-body-md text-on-surface">
-                    R. Dr. Eduardo Nielsen, 420 - Jardim Congonhas, São José do
-                    Rio Preto - SP,<br />
-                    CEP: 15030-070
+                    R. Dr. Eduardo Nielsen, 420 - Jardim Congonhas,<br />
+                    São José do Rio Preto - SP, 15030-070
                   </p>
                 </div>
-                <div class="flex items-start gap-sm">
-                  <span class="material-symbols-outlined text-primary-container"
-                    >directions_bus</span
-                  >
+                <div class="flex items-start gap-md">
+                  <span class="material-symbols-outlined text-primary-container">schedule</span>
+                  <p class="font-body-md text-body-md text-on-surface">
+                    Credenciamento pela manhã, programação técnica ao longo do
+                    dia e encerramento com networking.
+                  </p>
+                </div>
+                <div class="flex items-start gap-md">
+                  <span class="material-symbols-outlined text-primary-container">directions_bus</span>
+                  <p class="font-body-md text-body-md text-on-surface">
+                    Chegue com antecedência para entrada, estacionamento e
+                    retirada de credencial.
+                  </p>
                 </div>
               </div>
-              <div class="pt-md">
-                <button
-                  class="bg-primary-container text-on-primary-container px-lg py-3 rounded-xl font-label-md flex items-center gap-sm hover:opacity-90 transition-all"
-                >
-                  Abrir no Google Maps
-                  <span class="material-symbols-outlined">map</span>
-                </button>
+
+              <a
+                class="hero-cta inline-flex items-center gap-sm rounded-xl bg-primary-container px-lg py-3 font-label-code text-[13px] font-semibold text-on-primary-container hover:shadow-[0_18px_42px_-18px_rgb(248_120_24_/_0.9)] transition-all"
+                href="https://maps.app.goo.gl/1E1777hGR8NXVwZg8"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <span class="relative z-10">Abrir no Google Maps</span>
+                <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+              </a>
+            </div>
+
+            <a
+              class="hero-cta group relative block overflow-hidden rounded-2xl min-h-[420px] border border-outline-variant/25 hover:border-primary-container/55 hover:shadow-[0_24px_64px_-34px_rgb(255_126_24_/_0.55)] transition-all active:scale-[0.99]"
+              href="https://maps.app.goo.gl/1E1777hGR8NXVwZg8"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Abrir localização do IFSP no Google Maps"
+            >
+              <img
+                class="absolute inset-0 h-full w-full object-cover opacity-65 transition duration-500 group-hover:scale-[1.035]"
+                src="assets/team/ifsp-campus.jpg"
+                alt="Entrada do IFSP São José do Rio Preto"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-background via-background/45 to-transparent"></div>
+              <div class="absolute bottom-0 left-0 right-0 p-lg">
+                <div class="grid grid-cols-3 gap-sm">
+                  <div class="rounded-xl border border-outline-variant/25 bg-background/65 p-sm backdrop-blur-sm">
+                    <p class="font-label-code text-[11px] uppercase text-primary-container">Campus</p>
+                    <p class="font-body-md text-[14px] text-on-surface">IFSP</p>
+                  </div>
+                  <div class="rounded-xl border border-outline-variant/25 bg-background/65 p-sm backdrop-blur-sm">
+                    <p class="font-label-code text-[11px] uppercase text-primary-container">Cidade</p>
+                    <p class="font-body-md text-[14px] text-on-surface">Rio Preto</p>
+                  </div>
+                  <div class="rounded-xl border border-outline-variant/25 bg-background/65 p-sm backdrop-blur-sm">
+                    <p class="font-label-code text-[11px] uppercase text-primary-container">Entrada</p>
+                    <p class="font-body-md text-[14px] text-on-surface">Credencial</p>
+                  </div>
+                </div>
               </div>
-            </div>
-            <div class="h-80 lg:h-full min-h-[400px]">
-              <div
-                class="w-full h-full bg-cover bg-center grayscale contrast-125 brightness-50"
-                data-alt="Map of São José do Rio Preto IFSP campus area."
-                style="
-                  background-image: url(&quot;https://lh3.googleusercontent.com/aida-public/AB6AXuDkY_PSO-H410fUEiJYDR6BtdKK-9i1FSlKIAKwvhXoC0l2r_RyuG9en9QFGNPDWOtIsCIHQOA19Rx0frQRGFDr9H2gjRjYfLzUTBpHYF02QznjwZsNhbQsthELY0NpVkpUww7FsUSo5YDPg7n3MOa1KBxmmo-CsxnIdKudof2Dqau9mZfFwXt7VDehOpfOlBHswZcfr9D5G4uMOG9S0hiRjrYSpy6B_HE3a6C8I7cE15JNk4pe1C4qvMWG34t_IsIas9EIUe1_OGFJ&quot;);
-                "
-              ></div>
-            </div>
+            </a>
           </div>
         </div>
       </section>
     </main>
     <footer class="bg-surface-container-lowest border-t border-outline/10">
-      <div
-        class="grid grid-cols-1 md:grid-cols-4 gap-md px-gutter py-xl max-w-container-max mx-auto"
-      >
-        <div class="col-span-1 md:col-span-1 space-y-md">
-          <div
-            class="font-headline-sm text-headline-sm font-black text-primary"
-          >
-            Java Day
+      <div class="max-w-container-max mx-auto px-gutter py-xl">
+        <div class="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr] gap-lg">
+          <div class="space-y-md">
+            <div class="font-label-code text-[22px] font-semibold uppercase tracking-[0.08em] text-primary-fixed-dim">
+              Java Day
+            </div>
+            <p class="font-body-md text-body-md text-on-surface-variant max-w-sm">
+              Encontro da comunidade Java Noroeste para compartilhar
+              conhecimento, carreira, arquitetura e boas práticas de software.
+            </p>
+            <div class="flex gap-sm">
+              <a
+                class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-outline-variant/35 text-on-surface-variant hover:text-primary-container hover:border-primary-container/45 transition-colors"
+                href="https://www.linkedin.com/company/javanoroeste/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn da Java Noroeste"
+              >in</a>
+              <a
+                class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-outline-variant/35 text-on-surface-variant hover:text-primary-container hover:border-primary-container/45 transition-colors"
+                href="https://www.youtube.com/@JavaNoroeste"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="YouTube da Java Noroeste"
+              >
+                <span class="material-symbols-outlined text-[20px]">smart_display</span>
+              </a>
+              <a
+                class="inline-flex h-10 w-10 items-center justify-center rounded-full border border-outline-variant/35 text-on-surface-variant hover:text-primary-container hover:border-primary-container/45 transition-colors"
+                href="https://twitter.com/javanoroeste"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Twitter da Java Noroeste"
+              >
+                <span class="material-symbols-outlined text-[20px]">alternate_email</span>
+              </a>
+            </div>
           </div>
-          <p class="text-on-surface-variant font-label-md">
-            Fortalecendo a comunidade de desenvolvimento do Noroeste Paulista
-            através de conhecimento e conexões reais.
-          </p>
-          <div class="flex gap-md">
-            <a
-              class="text-on-surface-variant hover:text-primary-container transition-colors"
-              href="#"
-              ><span class="material-symbols-outlined">share</span></a
-            >
-            <a
-              class="text-on-surface-variant hover:text-primary-container transition-colors"
-              href="#"
-              ><span class="material-symbols-outlined">group</span></a
-            >
-            <a
-              class="text-on-surface-variant hover:text-primary-container transition-colors"
-              href="#"
-              ><span class="material-symbols-outlined">public</span></a
-            >
+
+          <div>
+            <h4 class="font-label-code text-[13px] uppercase tracking-[0.14em] text-primary-container mb-md">
+              Evento
+            </h4>
+            <ul class="space-y-sm font-body-md text-body-md">
+              <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#speakers">Palestrantes</a></li>
+              <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#partners">Patrocínio</a></li>
+              <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#location">Localização</a></li>
+            </ul>
           </div>
-        </div>
-        <div class="space-y-sm">
-          <h4 class="text-primary-fixed-dim font-bold">Evento</h4>
-          <ul class="space-y-xs">
-            <li class="">
-              <a
-                class="text-on-surface-variant hover:text-primary transition-colors font-label-md"
-                href="#"
-                >Palestrantes</a
-              >
-            </li>
-            <li class="">
-              <a
-                class="text-on-surface-variant hover:text-primary transition-colors font-label-md"
-                href="#"
-                >Agenda Completa</a
-              >
-            </li>
-            <li class="">
-              <a
-                class="text-on-surface-variant hover:text-primary transition-colors font-label-md"
-                href="#"
-                >Inscrições</a
-              >
-            </li>
-            <li class="">
-              <a
-                class="text-on-surface-variant hover:text-primary transition-colors font-label-md"
-                href="#"
-                >Sponsorship</a
-              >
-            </li>
-          </ul>
-        </div>
-        <div class="space-y-sm">
-          <h4 class="text-primary-fixed-dim font-bold">Comunidade</h4>
-          <ul class="space-y-xs">
-            <li class="">
-              <a
-                class="text-on-surface-variant hover:text-primary transition-colors font-label-md"
-                href="#"
-                >Java Noroeste</a
-              >
-            </li>
-            <li class="">
-              <a
-                class="text-on-surface-variant hover:text-primary transition-colors font-label-md"
-                href="#"
-                >Código de Conduta</a
-              >
-            </li>
-            <li class="">
-              <a
-                class="text-on-surface-variant hover:text-primary transition-colors font-label-md"
-                href="#"
-                >Política de Privacidade</a
-              >
-            </li>
-            <li class="">
-              <a
-                class="text-on-surface-variant hover:text-primary transition-colors font-label-md"
-                href="#"
-                >Contato</a
-              >
-            </li>
-          </ul>
+
+          <div>
+            <h4 class="font-label-code text-[13px] uppercase tracking-[0.14em] text-primary-container mb-md">
+              Comunidade
+            </h4>
+            <ul class="space-y-sm font-body-md text-body-md">
+              <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="https://www.javanoroeste.com.br/javaday_riopreto/" target="_blank" rel="noreferrer">Java Noroeste</a></li>
+              <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a></li>
+              <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="https://academy.oracle.com/" target="_blank" rel="noreferrer">Oracle Academy</a></li>
+            </ul>
+          </div>
+
+          <div class="rounded-2xl border border-primary-container/20 bg-primary-container/10 p-md">
+            <h4 class="font-label-code text-[15px] font-semibold text-primary-container">
+              Fale com a organização
+            </h4>
+            <p class="font-body-md text-[14px] text-on-surface-variant mt-xs">
+              Para patrocínio, voluntariado ou dúvidas sobre o evento.
+            </p>
+            <a
+              class="mt-md inline-flex items-center gap-xs font-label-code text-[13px] text-primary-container hover:text-primary transition-colors"
+              href="mailto:contato@javanoroeste.com.br"
+            >
+              contato@javanoroeste.com.br
+              <span class="material-symbols-outlined text-[16px]">outgoing_mail</span>
+            </a>
+          </div>
         </div>
       </div>
       <div class="border-t border-outline/10 py-md px-gutter text-center">
-        <p class="text-on-surface-variant/50 font-label-sm">
-          © 2026 Comunidade Java Noroeste. Todos os direitos reservados.
+        <p class="font-body-md text-[13px] text-on-surface-variant/60">
+          © 2026 Comunidade Java Noroeste. Java Day Rio Preto.
         </p>
       </div>
     </footer>
