@@ -256,10 +256,9 @@
           ),
           radial-gradient(
             ellipse at 56% 0%,
-            transparent 0 31%,
-            rgb(255 177 96 / 0.38) 32%,
-            rgb(255 128 32 / 0.14) 35%,
-            transparent 41%
+            rgb(255 177 96 / 0.13) 0%,
+            rgb(255 128 32 / 0.08) 24%,
+            transparent 52%
           ),
           radial-gradient(
             ellipse at 82% 42%,
@@ -290,16 +289,15 @@
         background:
           linear-gradient(
             180deg,
-            transparent 0 70%,
-            rgb(var(--surface) / 0.45) 88%,
-            rgb(var(--surface)) 100%
+            transparent 0 58%,
+            rgb(var(--background) / 0.24) 84%,
+            rgb(var(--background)) 100%
           ),
           linear-gradient(90deg, rgb(10 10 9 / 0.72) 0 44%, transparent 70%),
           radial-gradient(
             ellipse at center top,
-            transparent 0 34%,
-            rgb(255 126 24 / 0.22) 35%,
-            transparent 36% 100%
+            rgb(255 126 24 / 0.08) 0%,
+            transparent 58%
           );
         mix-blend-mode: normal;
         opacity: 0.55;
@@ -307,16 +305,18 @@
       .intro-blend {
         position: relative;
         overflow: hidden;
+        margin-top: -1px;
         background:
           radial-gradient(
-            ellipse at 52% -18%,
-            rgb(255 126 24 / 0.13),
-            transparent 42%
+            ellipse at 52% 22%,
+            rgb(255 126 24 / 0.1),
+            transparent 48%
           ),
           linear-gradient(
             180deg,
             rgb(var(--background)) 0%,
-            rgb(var(--surface)) 28%,
+            rgb(var(--background)) 18%,
+            rgb(var(--surface)) 62%,
             rgb(var(--surface)) 100%
           );
       }
@@ -330,11 +330,11 @@
       .intro-blend::before {
         inset: 0;
         background:
-          linear-gradient(180deg, rgb(var(--background) / 0.82), transparent 30%),
+          linear-gradient(180deg, rgb(var(--background)), transparent 42%),
           radial-gradient(
-            ellipse at 50% 0%,
-            rgb(255 126 24 / 0.1),
-            transparent 46%
+            ellipse at 50% 28%,
+            rgb(255 126 24 / 0.07),
+            transparent 52%
           );
       }
       .intro-blend::after {
@@ -386,6 +386,25 @@
         gap: 32px;
         align-items: center;
         isolation: isolate;
+      }
+      .moments-section {
+        position: relative;
+        margin-top: -1px;
+        overflow: hidden;
+        isolation: isolate;
+        background:
+          radial-gradient(
+            ellipse at 50% 70%,
+            rgb(255 126 24 / 0.22),
+            rgb(255 126 24 / 0.08) 34%,
+            transparent 68%
+          ),
+          linear-gradient(
+            180deg,
+            rgb(var(--background)) 0%,
+            rgb(var(--background)) 46%,
+            rgb(var(--surface-container-lowest)) 100%
+          );
       }
       .moments-gallery::before {
         content: "";
@@ -679,7 +698,7 @@
           </div>
         </div>
       </section>
-      <section class="pt-[88px] pb-[152px] intro-blend">
+      <section class="pt-[88px] pb-[192px] intro-blend">
         <div class="relative z-10 max-w-container-max mx-auto px-gutter">
           <div class="mx-auto max-w-4xl text-center">
             <h2
@@ -827,9 +846,9 @@
           </div>
         </div>
       </section>
-      <section class="pt-[120px] pb-[160px] bg-surface-container-lowest">
-        <div class="max-w-container-max mx-auto px-gutter">
-          <div class="text-center mb-lg space-y-xs">
+      <section class="moments-section pt-[176px] pb-[272px]">
+        <div class="relative z-10 max-w-container-max mx-auto px-gutter">
+          <div class="text-center mb-[72px] space-y-xs">
             <h2 class="font-label-code text-[30px] lg:text-[40px] leading-tight font-semibold">
               Momentos <span class="text-primary">#JavaDay</span>
             </h2>
