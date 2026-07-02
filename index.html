@@ -608,6 +608,353 @@
       html {
         scroll-behavior: smooth;
       }
+
+      @media (max-width: 40rem) {
+        :root {
+          --mobile-page-pad: 1.25rem;
+          --mobile-section-y: 4rem;
+          --mobile-gap: 1rem;
+        }
+
+        body {
+          overflow-x: hidden;
+        }
+
+        nav > div {
+          height: 4.5rem;
+          padding-inline: var(--mobile-page-pad) !important;
+          gap: 0.75rem;
+        }
+
+        nav .font-label-code {
+          font-size: 0.875rem !important;
+          line-height: 1.2;
+          letter-spacing: 0.04em;
+        }
+
+        nav button {
+          padding: 0.625rem 0.875rem !important;
+          border-radius: 0.5rem !important;
+          font-size: 0.75rem !important;
+          line-height: 1.1;
+          white-space: normal;
+          max-width: 9.5rem;
+        }
+
+        main {
+          padding-top: 4.5rem !important;
+        }
+
+        main > section,
+        footer > div:first-child {
+          padding-block: var(--mobile-section-y) !important;
+        }
+
+        main > section > div,
+        footer > div,
+        footer > div:last-child {
+          padding-inline: var(--mobile-page-pad) !important;
+        }
+
+        .hero-pattern {
+          min-height: auto !important;
+          align-items: flex-start;
+        }
+
+        .hero-pattern > div {
+          padding-block: 4.5rem 4rem;
+          gap: 2rem !important;
+        }
+
+        .hero-pattern p:first-child {
+          font-size: 0.875rem !important;
+          line-height: 1.35;
+        }
+
+        .hero-title {
+          font-size: clamp(3rem, 15vw, 4rem) !important;
+          line-height: 0.92;
+          letter-spacing: 0;
+        }
+
+        .hero-title-line {
+          line-height: 0.9;
+        }
+
+        .hero-pattern .font-body-lg,
+        .intro-blend .font-body-md,
+        .moments-section .font-body-md,
+        .partners-curve .font-body-md,
+        #location .font-body-md,
+        footer .font-body-md {
+          font-size: 1rem !important;
+          line-height: 1.55 !important;
+        }
+
+        .hero-pattern .flex.flex-col {
+          gap: 0.875rem !important;
+          padding-top: 0.5rem !important;
+        }
+
+        .hero-pattern button,
+        .hero-pattern a.hero-cta,
+        #location a.hero-cta,
+        .partners-curve a.hero-cta {
+          width: 100%;
+          min-width: 0 !important;
+          justify-content: center;
+          padding: 0.875rem 1rem !important;
+          font-size: 1rem !important;
+          line-height: 1.25 !important;
+          white-space: normal !important;
+          text-align: center;
+        }
+
+        .hero-pattern .border-t {
+          width: 100%;
+          gap: 1.25rem !important;
+          padding-top: 1.25rem !important;
+        }
+
+        .hero-pattern .border-t > div {
+          flex: 1 1 8rem;
+        }
+
+        .hero-pattern .border-t p:first-child {
+          font-size: 1.35rem !important;
+          line-height: 1.15;
+        }
+
+        .hero-pattern .border-t p:last-child {
+          font-size: 0.875rem !important;
+          line-height: 1.35;
+        }
+
+        .intro-blend {
+          padding-top: 4rem !important;
+          padding-bottom: 4.5rem !important;
+        }
+
+        .intro-blend h2,
+        .moments-section h2,
+        .partners-curve h2,
+        #location h2 {
+          font-size: clamp(1.75rem, 8vw, 2rem) !important;
+          line-height: 1.15 !important;
+        }
+
+        .intro-blend .mt-lg,
+        .partners-curve .mt-xs,
+        #location .mt-xs {
+          margin-top: 1rem !important;
+        }
+
+        .intro-marquee {
+          margin-top: 3rem !important;
+          margin-inline: calc(var(--mobile-page-pad) * -1);
+          padding-inline: var(--mobile-page-pad);
+          overflow-x: auto;
+          mask-image: none;
+          scrollbar-width: none;
+        }
+
+        .intro-marquee::-webkit-scrollbar {
+          display: none;
+        }
+
+        .intro-track {
+          gap: 1rem;
+          animation: none;
+        }
+
+        .intro-card {
+          width: min(76vw, 17rem);
+          min-height: 9.25rem;
+          padding: 1rem !important;
+        }
+
+        .intro-card[aria-hidden="true"] {
+          display: none;
+        }
+
+        .intro-icon {
+          font-size: 2rem;
+        }
+
+        .intro-card h3 {
+          font-size: 1.25rem !important;
+          line-height: 1.3 !important;
+        }
+
+        .intro-card p {
+          font-size: 0.9375rem !important;
+          line-height: 1.45 !important;
+        }
+
+        .moments-section {
+          padding-top: 4.5rem !important;
+          padding-bottom: 4.5rem !important;
+        }
+
+        .moments-section .mb-\[72px\],
+        #speakers .mb-\[64px\],
+        .partners-curve .mb-xl {
+          margin-bottom: 2rem !important;
+        }
+
+        .moments-gallery {
+          grid-template-columns: 1fr 1fr;
+          gap: 0.875rem;
+        }
+
+        .moment-tile,
+        .moment-tile:nth-child(n) {
+          min-height: 0;
+          aspect-ratio: 1 / 1;
+          border-radius: 0.75rem;
+        }
+
+        .moment-tile:nth-child(n + 4) {
+          display: none;
+        }
+
+        .moment-tile:first-child {
+          grid-column: 1 / -1;
+          aspect-ratio: 16 / 9;
+        }
+
+        #speakers {
+          margin-top: 4.5rem !important;
+        }
+
+        #speakers .grid {
+          gap: 2rem !important;
+        }
+
+        #speakers .aspect-\[4\/5\] {
+          aspect-ratio: 16 / 10;
+          max-height: 15rem;
+          border-radius: 0.75rem !important;
+        }
+
+        #speakers h4 {
+          font-size: 1.125rem !important;
+          line-height: 1.25 !important;
+        }
+
+        #speakers p {
+          font-size: 0.9375rem !important;
+        }
+
+        .partners-curve > div {
+          padding-top: 1rem !important;
+        }
+
+        .partners-curve .grid.grid-cols-2 {
+          gap: 0.875rem !important;
+          margin-bottom: 4rem !important;
+        }
+
+        .partners-curve .grid.grid-cols-2 > a {
+          min-height: 6.25rem !important;
+          padding: 0.875rem !important;
+          border-radius: 0.75rem !important;
+        }
+
+        .partners-curve .grid.grid-cols-2 img {
+          max-width: 7.5rem !important;
+          max-height: 3.75rem !important;
+        }
+
+        .partners-curve .mt-\[144px\] {
+          margin-top: 4rem !important;
+          padding-bottom: 0 !important;
+        }
+
+        .partners-curve .grid.grid-cols-1 {
+          gap: 1.5rem !important;
+        }
+
+        .partners-curve .glass-card {
+          padding: 1rem !important;
+          gap: 0.875rem !important;
+          border-radius: 0.75rem !important;
+        }
+
+        .partners-curve .h-24.w-24 {
+          width: 4.25rem !important;
+          height: 4.25rem !important;
+          border-radius: 0.625rem !important;
+        }
+
+        .partners-curve h4 {
+          font-size: 1rem !important;
+          line-height: 1.25 !important;
+        }
+
+        #location {
+          padding-block: 4rem !important;
+        }
+
+        #location .grid {
+          gap: 1.25rem !important;
+        }
+
+        #location .glass-card {
+          padding: 1.25rem !important;
+          border-radius: 0.75rem !important;
+          gap: 1.5rem !important;
+        }
+
+        #location .space-y-md {
+          gap: 1rem !important;
+        }
+
+        #location .flex.items-start {
+          gap: 0.875rem !important;
+        }
+
+        #location .material-symbols-outlined {
+          font-size: 1.25rem;
+          margin-top: 0.125rem;
+        }
+
+        #location .min-h-\[420px\] {
+          min-height: 17rem !important;
+          border-radius: 0.75rem !important;
+        }
+
+        #location .absolute.bottom-0 {
+          padding: 1rem !important;
+        }
+
+        #location .grid.grid-cols-3 {
+          grid-template-columns: 1fr;
+          gap: 0.625rem !important;
+        }
+
+        #location .grid.grid-cols-3 > div {
+          padding: 0.625rem 0.75rem !important;
+          border-radius: 0.625rem !important;
+        }
+
+        footer .grid {
+          gap: 2rem !important;
+        }
+
+        footer .rounded-2xl {
+          border-radius: 0.75rem !important;
+          padding: 1rem !important;
+        }
+
+        footer h4 {
+          margin-bottom: 0.875rem !important;
+        }
+
+        footer > div:last-child {
+          padding-block: 1.25rem !important;
+        }
+      }
     </style>
   </head>
   <body class="bg-background text-on-background font-body-md">
