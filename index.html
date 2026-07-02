@@ -282,11 +282,8 @@
       }
       .intro-blend::after {
         inset: auto 0 0;
-        height: 72px;
-        background: transparent;
-        border-bottom: 1px solid rgb(255 140 30 / 0.28);
-        border-bottom-left-radius: 50% 60px;
-        border-bottom-right-radius: 50% 60px;
+        height: 1px;
+        background: rgb(255 140 30 / 0.28);
         filter:
           drop-shadow(0 0 4px rgb(255 126 24 / 0.28))
           drop-shadow(0 0 10px rgb(255 126 24 / 0.12));
@@ -1067,32 +1064,43 @@
               </a>
             </div>
 
-           <a class="hero-cta group relative block overflow-hidden rounded-2xl min-h-[420px] border border-outline-variant/25 hover:border-primary-container/55 hover:shadow-[0_24px_64px_-34px_rgb(255_126_24_/_0.55)] transition-all active:scale-[0.99]" href="https://maps.app.goo.gl/1E1777hGR8NXVwZg8" target="_blank" rel="noreferrer" aria-label="Abrir localização do IFSP no Google Maps">
+<div class="flex flex-col gap-sm w-full">
   
-  <img class="absolute inset-0 h-full w-full object-cover opacity-85 transition duration-500 group-hover:scale-[1.035]" src="assets/team/ifsp-campus.jpg" alt="Entrada do IFSP São José do Rio Preto" loading="lazy" />
-  
-  <div class="absolute inset-0 bg-gradient-to-t from-background/80 via-background/20 to-transparent"></div>
-  
-  <div class="absolute bottom-0 left-0 right-0 p-lg">
-    <div class="grid grid-cols-3 gap-sm">
-            <div class="rounded-xl border border-outline-variant/25 bg-background/20 p-sm backdrop-blur-sm">
-        <p class="font-label-code text-[11px] uppercase text-primary-container">Campus</p>
-        <p class="font-body-md text-[14px] text-on-surface">IFSP</p>
-      </div>
-      
-      <div class="rounded-xl border border-outline-variant/25 bg-background/20 p-sm backdrop-blur-sm">
-        <p class="font-label-code text-[11px] uppercase text-primary-container">Cidade</p>
-        <p class="font-body-md text-[14px] text-on-surface">Rio Preto</p>
-      </div>
-      
-      <div class="rounded-xl border border-outline-variant/25 bg-background/20 p-sm backdrop-blur-sm">
-        <p class="font-label-code text-[11px] uppercase text-primary-container">Entrada</p>
-        <p class="font-body-md text-[14px] text-on-surface">Credencial</p>
-      </div>
-      
+  <a 
+    class="group relative block overflow-hidden rounded-2xl h-[320px] w-full border border-outline-variant/25 hover:border-primary-container/55 hover:shadow-[0_24px_64px_-34px_rgb(255_126_24_/_0.55)] transition-all active:scale-[0.99]" 
+    href="https://maps.app.goo.gl/1E1777hGR8NXVwZg8" 
+    target="_blank" 
+    rel="noreferrer" 
+    aria-label="Abrir localização do IFSP no Google Maps"
+  >
+    <img 
+      class="absolute inset-0 h-full w-full object-cover opacity-100 transition duration-500 group-hover:scale-[1.035]" 
+      src="assets/team/ifsp-campus.jpg" 
+      alt="Entrada do IFSP São José do Rio Preto" 
+      loading="lazy" 
+    />
+  </a>
+
+  <!-- Blocos de Informação dispostos logo abaixo da imagem -->
+  <div class="grid grid-cols-1 sm:grid-cols-3 gap-sm w-full">
+    
+    <div class="rounded-xl border border-outline-variant/25 bg-surface-container-high p-sm text-center flex flex-col justify-center">
+      <p class="font-label-code text-[11px] uppercase text-primary-container">Campus</p>
+      <p class="font-body-md text-[14px] text-on-surface font-medium">IFSP</p>
     </div>
+    
+    <div class="rounded-xl border border-outline-variant/25 bg-surface-container-high p-sm text-center flex flex-col justify-center">
+      <p class="font-label-code text-[11px] uppercase text-primary-container">Cidade</p>
+      <p class="font-body-md text-[14px] text-on-surface font-medium">Rio Preto</p>
+    </div>
+    
+    <div class="rounded-xl border border-outline-variant/25 bg-surface-container-high p-sm text-center flex flex-col justify-center">
+      <p class="font-label-code text-[11px] uppercase text-primary-container">Entrada</p>
+      <p class="font-body-md text-[14px] text-on-surface font-medium">Credencial</p>
+    </div>
+    
   </div>
-</a>
+</div>
           </div>
         </div>
       </section>
