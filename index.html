@@ -697,22 +697,22 @@
         .moment-tile:first-child { grid-column: 1 / -1; aspect-ratio: 16 / 9; }
 
         #speakers { margin-top: 4rem !important; }
-        #speakers .grid { gap: 1.5rem !important; }
-        #speakers .aspect-\[4\/5\] {
-          aspect-ratio: 16 / 10; max-height: 15rem; border-radius: 0.75rem !important;
+        #speakers .speaker-soon-card {
+          padding: 1.25rem !important;
+          border-radius: 0.75rem !important;
         }
-        #speakers h4 { font-size: 1.125rem !important; line-height: 1.25 !important; }
-        #speakers p { font-size: 0.9375rem !important; }
+        #speakers .speaker-soon-card h3 { font-size: 1.375rem !important; line-height: 1.18 !important; }
+        #speakers .speaker-soon-card p { font-size: 0.9375rem !important; }
 
         /* Parceiros */
         .partners-curve > div { padding-top: var(--mobile-section-y) !important; }
-        .partners-curve .grid.grid-cols-2 { gap: 0.875rem !important; margin-bottom: 2.5rem !important; }
-        .partners-curve .grid.grid-cols-2 > a {
+        .partners-curve .partners-grid { gap: 0.875rem !important; margin-bottom: 2.5rem !important; }
+        .partners-curve .partners-grid > a {
           min-height: 6.25rem !important; padding: 0.875rem !important; border-radius: 0.75rem !important;
         }
-        .partners-curve .grid.grid-cols-2 img { max-width: 7.5rem !important; max-height: 3.75rem !important; }
+        .partners-curve .partners-grid img { max-width: 7.5rem !important; max-height: 3.75rem !important; }
         .partners-curve .mt-\[144px\] { margin-top: 4rem !important; padding-bottom: 0 !important; }
-        .partners-curve .grid.grid-cols-1 { gap: 1.5rem !important; }
+        .partners-curve .mt-\[144px\] .grid.grid-cols-1 { gap: 1.5rem !important; }
         .partners-curve .glass-card { padding: 1rem !important; gap: 0.875rem !important; border-radius: 0.75rem !important; }
         .partners-curve .h-24.w-24 { width: 4.25rem !important; height: 4.25rem !important; border-radius: 0.625rem !important; }
         .partners-curve h4 { font-size: 1rem !important; line-height: 1.25 !important; }
@@ -967,57 +967,26 @@
           <div id="speakers" class="mt-[252px]">
             <div class="mb-[64px] text-center">
               <h2 class="font-label-code text-[30px] lg:text-[40px] leading-tight font-semibold">
-                Palestrantes <span class="text-primary">Confirmados</span>
+                Em breve <span class="text-primary">Palestrantes</span>
               </h2>
               <p class="font-body-md text-body-md text-on-surface-variant mt-xs">
-                Conheça os especialistas que estarão conosco nesta edição.
+                A curadoria da programação está em andamento. Novos nomes serão divulgados em breve.
               </p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-lg max-w-[1120px] mx-auto">
-              <!-- Speaker 1 -->
-              <div class="group relative text-center">
-                <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-surface-container-high mb-sm relative">
-                  <img class="w-full h-full object-cover transition duration-500 group-hover:scale-[1.035]" src="assets/speakers/speaker-01.webp" alt="Palestrante no palco do Java Day Rio Preto" loading="lazy" />
-                </div>
-                <h4 class="font-label-code text-[20px] leading-tight font-semibold">Rafael Martins</h4>
-                <p class="font-body-md text-[14px] text-on-surface-variant">Trilha Java &amp; Cloud</p>
-                <div class="mt-sm flex justify-center gap-sm">
-                  <a class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-primary-container/35 bg-background/55 font-label-code text-[12px] font-semibold text-on-surface hover:text-primary-container transition-colors" href="https://instagram.com/javadaynoroeste" target="_blank" rel="noreferrer" aria-label="Instagram de Rafael Martins">
-                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2" /><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" /><circle cx="17.5" cy="6.5" r="1.25" fill="currentColor" /></svg>
-                  </a>
-                  <a class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-primary-container/35 bg-background/55 font-label-code text-[13px] font-semibold text-on-surface hover:text-primary-container transition-colors" href="https://www.linkedin.com/company/java-noroeste" target="_blank" rel="noreferrer" aria-label="LinkedIn de Rafael Martins">in</a>
-                </div>
-              </div>
-
-              <!-- Speaker 2 -->
-              <div class="group relative text-center">
-                <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-surface-container-high mb-sm relative">
-                  <img class="w-full h-full object-cover transition duration-500 group-hover:scale-[1.035]" src="assets/speakers/speaker-02.jpg" alt="Palestrante apresentando conteúdo técnico no Java Day" loading="lazy" />
-                </div>
-                <h4 class="font-label-code text-[20px] leading-tight font-semibold">Marina Costa</h4>
-                <p class="font-body-md text-[14px] text-on-surface-variant">Arquitetura &amp; Backend</p>
-                <div class="mt-sm flex justify-center gap-sm">
-                  <a class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-primary-container/35 bg-background/55 font-label-code text-[12px] font-semibold text-on-surface hover:text-primary-container transition-colors" href="https://instagram.com/javadayrio_preto" target="_blank" rel="noreferrer" aria-label="Instagram de Marina Costa">
-                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2" /><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" /><circle cx="17.5" cy="6.5" r="1.25" fill="currentColor" /></svg>
-                  </a>
-                  <a class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-primary-container/35 bg-background/55 font-label-code text-[13px] font-semibold text-on-surface hover:text-primary-container transition-colors" href="https://www.linkedin.com/company/javaday-rio-preto" target="_blank" rel="noreferrer" aria-label="LinkedIn de Marina Costa">in</a>
-                </div>
-              </div>
-
-              <!-- Speaker 3 -->
-              <div class="group relative text-center sm:col-span-2 sm:max-w-[352px] sm:mx-auto lg:col-span-1 lg:max-w-none">
-                <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-surface-container-high mb-sm relative">
-                  <img class="w-full h-full object-cover object-[82%_center] transition duration-500 group-hover:scale-[1.035]" src="assets/speakers/speaker-03.webp" alt="Palestra do Java Day Rio Preto com público acompanhando" loading="lazy" />
-                </div>
-                <h4 class="font-label-code text-[20px] leading-tight font-semibold">Gabriel Almeida</h4>
-                <p class="font-body-md text-[14px] text-on-surface-variant">Comunidade &amp; Carreira</p>
-                <div class="mt-sm flex justify-center gap-sm">
-                  <a class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-primary-container/35 bg-background/55 font-label-code text-[12px] font-semibold text-on-surface hover:text-primary-container transition-colors" href="https://instagram.com/javanoroeste" target="_blank" rel="noreferrer" aria-label="Instagram de Gabriel Almeida">
-                    <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2" /><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2" /><circle cx="17.5" cy="6.5" r="1.25" fill="currentColor" /></svg>
-                  </a>
-                  <a class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-primary-container/35 bg-background/55 font-label-code text-[13px] font-semibold text-on-surface hover:text-primary-container transition-colors" href="https://www.linkedin.com/company/javanoroeste" target="_blank" rel="noreferrer" aria-label="LinkedIn de Gabriel Almeida">in</a>
-                </div>
+            <div class="speaker-soon-card glass-card relative mx-auto max-w-[880px] overflow-hidden rounded-2xl p-lg text-center">
+              <div class="absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-primary-container/60 to-transparent"></div>
+              <span class="material-symbols-outlined mb-sm text-[40px] text-primary-container">campaign</span>
+              <h3 class="font-label-code text-[28px] leading-tight font-semibold text-on-surface">
+                Chamada de palestrantes em preparação
+              </h3>
+              <p class="mx-auto mt-sm max-w-2xl font-body-md text-body-md text-on-surface-variant">
+                A programação será apresentada assim que a agenda estiver fechada, com trilhas para Java, arquitetura, carreira e comunidade.
+              </p>
+              <div class="mt-md flex flex-wrap justify-center gap-sm">
+                <span class="rounded-xl border border-primary-container/30 bg-primary-container/10 px-sm py-2 font-label-code text-[12px] uppercase tracking-[0.12em] text-primary">Java</span>
+                <span class="rounded-xl border border-primary-container/30 bg-primary-container/10 px-sm py-2 font-label-code text-[12px] uppercase tracking-[0.12em] text-primary">Backend</span>
+                <span class="rounded-xl border border-primary-container/30 bg-primary-container/10 px-sm py-2 font-label-code text-[12px] uppercase tracking-[0.12em] text-primary">Comunidade</span>
               </div>
             </div>
           </div>
@@ -1035,10 +1004,9 @@
             </p>
           </div>
 
-          <div class="grid grid-cols-2 md:grid-cols-4 gap-md max-w-5xl mx-auto mb-xl">
+          <div class="partners-grid grid grid-cols-1 sm:grid-cols-3 gap-md max-w-4xl mx-auto mb-xl">
             <a class="rounded-xl min-h-32 p-md flex items-center justify-center border border-outline-variant/25 bg-[#f5eee6] hover:border-primary-container/55 hover:shadow-[0_18px_42px_-24px_rgb(255_126_24_/_0.45)] transition-all" href="https://sjp.ifsp.edu.br/" target="_blank" rel="noreferrer" aria-label="Abrir site do IFSP São José do Rio Preto"><img class="max-h-20 max-w-[170px] object-contain" src="assets/partners/ifsp-campus-logo.png" alt="IFSP São José do Rio Preto" loading="lazy" /></a>
             <a class="rounded-xl min-h-32 p-md flex items-center justify-center border border-outline-variant/25 bg-[#f5eee6] hover:border-primary-container/55 hover:shadow-[0_18px_42px_-24px_rgb(255_126_24_/_0.45)] transition-all" href="https://academy.oracle.com/" target="_blank" rel="noreferrer" aria-label="Abrir site da Oracle Academy"><img class="max-h-[72px] max-w-[170px] object-contain" src="assets/partners/oracle-academy.webp" alt="Oracle Academy" loading="lazy" /></a>
-            <a class="rounded-xl min-h-32 p-md flex items-center justify-center border border-outline-variant/25 bg-[#f5eee6] hover:border-primary-container/55 hover:shadow-[0_18px_42px_-24px_rgb(255_126_24_/_0.45)] transition-all" href="https://i2i.org.br/" target="_blank" rel="noreferrer" aria-label="Abrir site do i2i"><img class="max-h-[72px] max-w-[170px] object-contain" src="assets/partners/i2i-cropped.png" alt="i2i" loading="lazy" /></a>
             <a class="rounded-xl min-h-32 p-md flex items-center justify-center border border-outline-variant/25 bg-[#f5eee6] hover:border-primary-container/55 hover:shadow-[0_18px_42px_-24px_rgb(255_126_24_/_0.45)] transition-all" href="https://github.com/" target="_blank" rel="noreferrer" aria-label="Abrir site do GitHub"><img class="max-h-[72px] max-w-[170px] object-contain" src="assets/partners/github.webp" alt="GitHub" loading="lazy" /></a>
           </div>
 
