@@ -566,13 +566,13 @@
           letter-spacing: 0.04em;
         }
 
-        nav button {
-          padding: 0.625rem 0.875rem !important;
+        nav a.hero-cta {
+          flex-shrink: 0;
+          padding: 0.625rem 0.75rem !important;
           border-radius: 0.5rem !important;
           font-size: 0.75rem !important;
           line-height: 1.1;
-          white-space: normal;
-          max-width: 9.5rem;
+          white-space: nowrap;
         }
 
         main { padding-top: 4.5rem !important; }
@@ -633,6 +633,43 @@
           line-height: 1.25 !important;
           white-space: normal !important;
           text-align: center;
+        }
+
+        #discount-promo {
+          display: grid !important;
+          grid-template-columns: auto minmax(0, 1fr);
+          width: 100%;
+          gap: 0.75rem 0.875rem !important;
+          padding: 1rem !important;
+          text-align: left;
+        }
+        #discount-promo > span:first-child {
+          grid-row: 1;
+          width: 3rem;
+          height: 3rem;
+        }
+        #discount-promo > span:nth-child(2) {
+          grid-column: 2;
+          align-self: center;
+        }
+        #discount-promo strong {
+          font-size: 0.875rem;
+          line-height: 1.3;
+        }
+        #discount-promo .font-body-md {
+          display: block;
+          margin-top: 0.2rem;
+          font-size: 0.75rem !important;
+          line-height: 1.4 !important;
+        }
+        #discount-countdown {
+          grid-column: 1 / -1;
+          width: 100%;
+          border-top: 1px solid rgb(var(--primary-container) / 0.22);
+          padding-top: 0.75rem;
+          text-align: center;
+          font-size: 0.75rem !important;
+          letter-spacing: 0.04em;
         }
 
         .hero-pattern .border-t {
@@ -838,9 +875,9 @@
           <a class="font-label-code text-[14px] uppercase text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200" href="#partners">Parceiros</a>
         </div>
         <div class="flex items-center gap-sm">
-          <button class="hero-cta bg-primary-container text-on-primary-container px-6 py-2 rounded-xl font-label-md hover:shadow-[0_18px_42px_-18px_rgb(248_120_24_/_0.9)] transition-all active:scale-95">
+          <a class="hero-cta bg-primary-container text-on-primary-container px-6 py-2 rounded-xl font-label-md hover:shadow-[0_18px_42px_-18px_rgb(248_120_24_/_0.9)] transition-all active:scale-95" href="https://www.sympla.com.br/evento/8-java-day-2026-sao-jose-do-rio-preto-sp/3502847" target="_blank" rel="noreferrer">
             <span class="relative z-10">Garanta seu ingresso</span>
-          </button>
+          </a>
         </div>
       </div>
     </nav>
@@ -863,15 +900,23 @@
               em um encontro técnico no Noroeste Paulista.
             </p>
             <div class="flex flex-col sm:flex-row sm:flex-nowrap gap-md pt-base">
-              <button class="hero-cta bg-primary-container text-on-primary-container px-lg py-4 rounded-xl font-headline-sm hover:shadow-[0_18px_42px_-18px_rgb(248_120_24_/_0.9)] transition-all flex items-center justify-center gap-sm whitespace-nowrap min-w-[220px]">
+              <a class="hero-cta bg-primary-container text-on-primary-container px-lg py-4 rounded-xl font-headline-sm hover:shadow-[0_18px_42px_-18px_rgb(248_120_24_/_0.9)] transition-all flex items-center justify-center gap-sm whitespace-nowrap min-w-[220px]" href="https://www.sympla.com.br/evento/8-java-day-2026-sao-jose-do-rio-preto-sp/3502847" target="_blank" rel="noreferrer">
                 <span class="relative z-10">Garantir meu Ingresso</span>
                 <span class="material-symbols-outlined">arrow_forward</span>
-              </button>
+              </a>
               <a class="hero-cta bg-surface-container-high text-on-surface px-lg py-4 rounded-xl font-headline-sm hover:bg-surface-container-highest hover:text-primary-fixed-dim hover:shadow-[0_18px_42px_-22px_rgb(255_183_122_/_0.5)] transition-all flex items-center gap-sm" href="#location">
                 <span class="relative z-10">29 de agosto de 2026 · <span class="whitespace-nowrap">São José do Rio Preto, 8h</span></span>
                 <span class="material-symbols-outlined">location_on</span>
               </a>
             </div>
+            <a id="discount-promo" class="mt-md flex max-w-2xl flex-wrap items-center gap-md rounded-2xl border border-primary-container/45 bg-primary-container/10 p-md shadow-[0_18px_50px_-30px_rgb(255_126_24_/_0.9)] transition-all hover:border-primary-container hover:bg-primary-container/15 sm:flex-nowrap" href="https://www.sympla.com.br/evento/8-java-day-2026-sao-jose-do-rio-preto-sp/3502847" target="_blank" rel="noreferrer">
+              <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary-container font-label-code text-[18px] font-black text-on-primary-container">20%</span>
+              <span class="min-w-0 flex-1">
+                <strong class="block font-label-code text-[15px] text-primary-fixed-dim">Desconto especial até 3 de agosto</strong>
+                <span class="font-body-md text-[13px] text-on-surface-variant">Garanta seu ingresso antes que a promoção termine.</span>
+              </span>
+              <span id="discount-countdown" class="shrink-0 font-label-code text-[12px] text-primary-container" aria-live="polite">Calculando...</span>
+            </a>
             <div class="flex flex-wrap items-center gap-lg border-t border-outline-variant/40 pt-md">
               <div>
                 <p class="font-headline-sm text-headline-sm font-black text-primary-container">
@@ -990,15 +1035,24 @@
           <div id="speakers" class="mt-[252px]">
             <div class="mb-[64px] text-center">
               <h2 class="font-label-code text-[30px] lg:text-[40px] leading-tight font-semibold">
-                Palestrantes <span class="text-primary">Confirmados</span>
+                Em breve: <span class="text-primary">palestrantes</span>
               </h2>
               <p class="font-body-md text-body-md text-on-surface-variant mt-xs">
-                Conheça os especialistas que estarão conosco nesta edição.
+                Estamos preparando uma programação incrível. Novos nomes serão anunciados em breve.
               </p>
             </div>
 
+            <div class="mx-auto max-w-2xl rounded-2xl border border-primary-container/25 bg-primary-container/10 px-lg py-xl text-center">
+              <span class="material-symbols-outlined text-[48px] text-primary-container">campaign</span>
+              <p class="mt-sm font-label-code text-[18px] text-on-surface">Fique de olho nas novidades</p>
+              <p class="mt-xs font-body-md text-on-surface-variant">Em breve divulgaremos os palestrantes da 8ª edição do Java Day Rio Preto.</p>
+            </div>
+
+            <!--
+            PALESTRANTES PRESERVADOS PARA DIVULGAÇÃO FUTURA.
+            Para reativar, remova a abertura e o fechamento deste comentário e o card informativo acima.
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-lg max-w-[1120px] mx-auto">
-              <!-- Speaker: Jessica Felix -->
+              Speaker: Jessica Felix
               <div class="speaker-card group relative flex flex-col overflow-hidden rounded-2xl glass-card hover:border-primary-container/40 transition-colors">
                 <div class="aspect-[4/5] w-full overflow-hidden bg-surface-container-high">
                   <img class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.035]" src="assets/speakers/jessica-felix.jpg" alt="Jessica Felix, palestrante do Java Day São José do Rio Preto" loading="lazy" />
@@ -1033,7 +1087,7 @@
                 </div>
               </div>
 
-              <!-- Speaker: Thiago Gonzaga -->
+              Speaker: Thiago Gonzaga
               <div class="speaker-card group relative flex flex-col overflow-hidden rounded-2xl glass-card hover:border-primary-container/40 transition-colors">
                 <div class="aspect-[4/5] w-full overflow-hidden bg-surface-container-high">
                   <img class="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.035]" src="assets/speakers/thiago-gonzaga-palestra.jpg" alt="Thiago Gonzaga, palestrante do Java Day São José do Rio Preto" loading="lazy" />
@@ -1076,7 +1130,7 @@
                 </div>
               </div>
 
-              <!-- Speaker: Kamila Santos -->
+              Speaker: Kamila Santos
               <div class="speaker-card group relative flex flex-col overflow-hidden rounded-2xl glass-card hover:border-primary-container/40 transition-colors">
                 <div class="aspect-[4/5] w-full overflow-hidden bg-surface-container-high">
                   <img class="h-full w-full object-cover transition duration-500 group-hover:scale-[1.035]" src="assets/speakers/kamila-santos.jpg" alt="Kamila Santos, palestrante do Java Day São José do Rio Preto" loading="lazy" />
@@ -1114,6 +1168,7 @@
                 </div>
               </div>
             </div>
+            -->
           </div>
         </div>
       </section>
@@ -1145,7 +1200,7 @@
                 <p class="font-body-md text-body-md text-on-surface-variant">
                   Pessoas e instituições que conectam comunidade, conteúdo, infraestrutura e experiência de evento.
                 </p>
-                <a class="hero-cta inline-flex items-center gap-sm rounded-xl border border-primary-container/35 px-md py-3 font-label-code text-[13px] text-primary-container hover:bg-primary-container/10 hover:shadow-[0_18px_42px_-24px_rgb(255_126_24_/_0.45)] transition-all active:scale-95" href="mailto:contato@javanoroeste.com.br?subject=Voluntariado%20Java%20Day">
+                <a class="hero-cta inline-flex items-center gap-sm rounded-xl border border-primary-container/35 px-md py-3 font-label-code text-[13px] text-primary-container hover:bg-primary-container/10 hover:shadow-[0_18px_42px_-24px_rgb(255_126_24_/_0.45)] transition-all active:scale-95" href="mailto:javanoroeste@gmail.com?subject=Voluntariado%20Java%20Day">
                   Quero ajudar <span class="material-symbols-outlined text-[18px]">volunteer_activism</span>
                 </a>
               </div>
@@ -1317,8 +1372,8 @@
             <p class="font-body-md text-[14px] text-on-surface-variant mt-xs">
               Para patrocínio, voluntariado ou dúvidas sobre o evento.
             </p>
-            <a class="mt-md inline-flex items-center gap-xs font-label-code text-[13px] text-primary-container hover:text-primary transition-colors justify-center" href="mailto:contato@javanoroeste.com.br">
-              contato@javanoroeste.com.br
+            <a class="mt-md inline-flex items-center gap-xs font-label-code text-[13px] text-primary-container hover:text-primary transition-colors justify-center" href="mailto:javanoroeste@gmail.com">
+              javanoroeste@gmail.com
               <span class="material-symbols-outlined text-[16px]">outgoing_mail</span>
             </a>
           </div>
@@ -1348,6 +1403,27 @@
         }
       });
       document.addEventListener('DOMContentLoaded', () => {
+        const countdown = document.querySelector('#discount-countdown');
+        const promo = document.querySelector('#discount-promo');
+        const promotionEndsAt = new Date('2026-08-04T00:00:00-03:00').getTime();
+
+        const updateDiscountCountdown = () => {
+          const remaining = promotionEndsAt - Date.now();
+          if (remaining <= 0) {
+            countdown.textContent = 'Promoção encerrada';
+            promo.setAttribute('aria-label', 'Promoção de 20% encerrada');
+            return;
+          }
+
+          const days = Math.floor(remaining / 86400000);
+          const hours = Math.floor((remaining % 86400000) / 3600000);
+          const minutes = Math.floor((remaining % 3600000) / 60000);
+          countdown.textContent = `${days}d ${hours}h ${minutes}min`;
+        };
+
+        updateDiscountCountdown();
+        setInterval(updateDiscountCountdown, 60000);
+
         const mobileCards = document.querySelectorAll('.intro-marquee .intro-card:not([aria-hidden="true"])');
         if(mobileCards.length > 0) {
           let currentIndex = 0;
