@@ -434,6 +434,32 @@
         position: relative;
         z-index: 1;
       }
+      .certificate-section {
+        position: relative;
+        overflow: hidden;
+        isolation: isolate;
+        background:
+          radial-gradient(circle at 85% 18%, rgb(255 126 24 / 0.14), transparent 30%),
+          linear-gradient(180deg, rgb(var(--surface-container-lowest)), rgb(var(--background)));
+      }
+      .certificate-section::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        opacity: 0.18;
+        background-image:
+          linear-gradient(rgb(255 255 255 / 0.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgb(255 255 255 / 0.08) 1px, transparent 1px);
+        background-size: 48px 48px;
+        mask-image: linear-gradient(to bottom, transparent, black 25%, black 75%, transparent);
+      }
+      .bronze-card {
+        background:
+          linear-gradient(135deg, rgb(205 127 50 / 0.18), transparent 48%),
+          rgb(245 238 230);
+        box-shadow: 0 22px 60px -38px rgb(205 127 50 / 0.9);
+      }
       .moments-gallery::before {
         content: "";
         position: absolute;
@@ -561,16 +587,16 @@
         }
 
         nav .font-label-code {
-          font-size: 0.875rem !important;
+          font-size: 0.6875rem !important;
           line-height: 1.2;
           letter-spacing: 0.04em;
         }
 
         nav a.hero-cta {
           flex-shrink: 0;
-          padding: 0.625rem 0.75rem !important;
+          padding: 0.625rem !important;
           border-radius: 0.5rem !important;
-          font-size: 0.75rem !important;
+          font-size: 0.6875rem !important;
           line-height: 1.1;
           white-space: nowrap;
         }
@@ -607,6 +633,7 @@
 
         .hero-pattern .font-body-lg,
         .intro-blend .font-body-md,
+        .certificate-section .font-body-md,
         .moments-section .font-body-md,
         .partners-curve .font-body-md,
         #location .font-body-md,
@@ -689,6 +716,7 @@
         }
 
         .intro-blend h2,
+        .certificate-section h2,
         .moments-section h2,
         .partners-curve h2,
         #location h2 {
@@ -779,6 +807,11 @@
         .intro-card p { font-size: 0.9375rem !important; line-height: 1.45 !important; }
         /* ----------------------------------------------------------------- */
 
+        .certificate-section { padding-block: var(--mobile-section-y) !important; }
+        .certificate-section .certificate-layout { gap: 1.5rem !important; }
+        .certificate-section .certificate-card { padding: 1rem !important; border-radius: 0.75rem !important; }
+        .certificate-section .certificate-highlight { padding: 1.25rem !important; border-radius: 0.75rem !important; }
+
         .moments-section {
           padding-top: var(--mobile-section-y) !important;
           padding-bottom: var(--mobile-section-y) !important;
@@ -808,6 +841,9 @@
           min-height: 6.25rem !important; padding: 0.875rem !important; border-radius: 0.75rem !important;
         }
         .partners-curve .partners-grid img { max-width: 7.5rem !important; max-height: 3.75rem !important; }
+        .partners-curve .bronze-grid { margin-bottom: 3rem !important; }
+        .partners-curve .bronze-grid > div { min-height: 8rem !important; padding: 1rem !important; }
+        .partners-curve .bronze-grid img { max-width: 11rem !important; max-height: 5.5rem !important; }
         .partners-curve .mt-\[144px\] { margin-top: 4rem !important; padding-bottom: 0 !important; }
         .partners-curve .mt-\[144px\] .grid.grid-cols-1 { gap: 1.5rem !important; }
         .partners-curve .glass-card { padding: 1rem !important; gap: 0.875rem !important; border-radius: 0.75rem !important; }
@@ -871,12 +907,14 @@
         </div>
         <div class="hidden md:flex items-center gap-lg">
           <a class="font-label-code text-[14px] uppercase text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200" href="#speakers">Palestrantes</a>
+          <a class="font-label-code text-[14px] uppercase text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200" href="#certificates">Certificados</a>
           <a class="font-label-code text-[14px] uppercase text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200" href="#location">Localização</a>
           <a class="font-label-code text-[14px] uppercase text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200" href="#partners">Parceiros</a>
         </div>
         <div class="flex items-center gap-sm">
           <a class="hero-cta bg-primary-container text-on-primary-container px-6 py-2 rounded-xl font-label-md hover:shadow-[0_18px_42px_-18px_rgb(248_120_24_/_0.9)] transition-all active:scale-95" href="https://www.sympla.com.br/evento/8-java-day-2026-sao-jose-do-rio-preto-sp/3502847" target="_blank" rel="noreferrer">
-            <span class="relative z-10">Garanta seu ingresso</span>
+            <span class="relative z-10 hidden sm:inline">Garanta seu ingresso</span>
+            <span class="relative z-10 sm:hidden">Ingressos</span>
           </a>
         </div>
       </div>
@@ -1010,6 +1048,35 @@
                 <h3 class="font-headline-sm text-[25px] leading-8 font-semibold text-on-surface">Certificado</h3>
                 <p class="font-body-md text-[16px] leading-6 text-on-surface/75">Reconhecimento oficial de participa&ccedil;&atilde;o.</p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="certificate-section py-xl" id="certificates">
+        <div class="max-w-container-max mx-auto px-gutter">
+          <div class="certificate-layout grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-xl items-center">
+            <div class="space-y-md text-center lg:text-left">
+              <p class="font-label-code text-[12px] uppercase tracking-[0.18em] text-primary-container">Sua participa&ccedil;&atilde;o conta</p>
+              <h2 class="font-label-code text-[30px] lg:text-[40px] leading-tight font-semibold">Certificado do<br /><span class="text-primary">Java Day</span></h2>
+              <p class="font-body-md text-[17px] leading-7 text-on-surface-variant max-w-xl mx-auto lg:mx-0">Quem participar do evento poder&aacute; receber um certificado digital, ideal para comprovar horas complementares e registrar essa experi&ecirc;ncia na carreira.</p>
+              <div class="certificate-highlight glass-card rounded-2xl p-md flex items-start gap-sm text-left">
+                <span class="material-symbols-outlined text-primary-container text-[28px] flex-shrink-0">info</span>
+                <p class="font-body-md text-[14px] leading-6 text-on-surface-variant">A emiss&atilde;o depende da inscri&ccedil;&atilde;o e do registro de presen&ccedil;a no dia. As orienta&ccedil;&otilde;es para acesso ser&atilde;o enviadas ap&oacute;s o evento.</p>
+              </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-md">
+              <article class="certificate-card glass-card rounded-xl p-md space-y-sm hover:border-primary-container/40 transition-colors">
+                <span class="material-symbols-outlined intro-icon text-primary-container">how_to_reg</span><p class="font-label-code text-[12px] uppercase tracking-[0.12em] text-primary-container">01</p>
+                <h3 class="font-headline-sm text-[21px] leading-7 font-semibold text-on-surface">Inscreva-se</h3><p class="font-body-md text-[14px] leading-6 text-on-surface-variant">Garanta seu ingresso usando seus dados corretos.</p>
+              </article>
+              <article class="certificate-card glass-card rounded-xl p-md space-y-sm hover:border-primary-container/40 transition-colors">
+                <span class="material-symbols-outlined intro-icon text-primary-container">event_available</span><p class="font-label-code text-[12px] uppercase tracking-[0.12em] text-primary-container">02</p>
+                <h3 class="font-headline-sm text-[21px] leading-7 font-semibold text-on-surface">Confirme presen&ccedil;a</h3><p class="font-body-md text-[14px] leading-6 text-on-surface-variant">Fa&ccedil;a o credenciamento no local do evento.</p>
+              </article>
+              <article class="certificate-card glass-card rounded-xl p-md space-y-sm hover:border-primary-container/40 transition-colors">
+                <span class="material-symbols-outlined intro-icon text-primary-container">workspace_premium</span><p class="font-label-code text-[12px] uppercase tracking-[0.12em] text-primary-container">03</p>
+                <h3 class="font-headline-sm text-[21px] leading-7 font-semibold text-on-surface">Receba online</h3><p class="font-body-md text-[14px] leading-6 text-on-surface-variant">Acesse seu certificado digital ap&oacute;s a libera&ccedil;&atilde;o.</p>
+              </article>
             </div>
           </div>
         </div>
@@ -1177,6 +1244,14 @@
             </p>
           </div>
 
+          <div class="bronze-grid max-w-xl mx-auto mb-xl">
+            <p class="font-label-code text-[12px] uppercase tracking-[0.18em] text-center text-[#d79a5b] mb-sm">Patrocinador Bronze</p>
+            <div class="bronze-card rounded-2xl min-h-44 p-lg flex items-center justify-center border border-[#cd7f32]/45 transition-all hover:border-[#d99a5a] hover:-translate-y-1">
+              <img class="max-h-28 max-w-[280px] w-full object-contain" src="assets/partners/shift.png" alt="Shift — patrocinadora Bronze do Java Day" loading="lazy" />
+            </div>
+          </div>
+
+          <p class="font-label-code text-[12px] uppercase tracking-[0.18em] text-center text-on-surface-variant mb-md">Apoio institucional</p>
           <div class="partners-grid grid grid-cols-1 sm:grid-cols-3 gap-md max-w-4xl mx-auto mb-xl">
             <a class="rounded-xl min-h-32 p-md flex items-center justify-center border border-outline-variant/25 bg-[#f5eee6] hover:border-primary-container/55 hover:shadow-[0_18px_42px_-24px_rgb(255_126_24_/_0.45)] transition-all" href="https://sjp.ifsp.edu.br/" target="_blank" rel="noreferrer" aria-label="Abrir site do IFSP São José do Rio Preto"><img class="max-h-20 max-w-[170px] object-contain" src="assets/partners/ifsp-campus-logo.png" alt="IFSP São José do Rio Preto" loading="lazy" /></a>
             <a class="rounded-xl min-h-32 p-md flex items-center justify-center border border-outline-variant/25 bg-[#f5eee6] hover:border-primary-container/55 hover:shadow-[0_18px_42px_-24px_rgb(255_126_24_/_0.45)] transition-all" href="https://academy.oracle.com/" target="_blank" rel="noreferrer" aria-label="Abrir site da Oracle Academy"><img class="max-h-[72px] max-w-[170px] object-contain" src="assets/partners/oracle-academy.webp" alt="Oracle Academy" loading="lazy" /></a>
@@ -1193,7 +1268,7 @@
                 <p class="font-body-md text-body-md text-on-surface-variant">
                   Pessoas e instituições que conectam comunidade, conteúdo, infraestrutura e experiência de evento.
                 </p>
-                <a class="hero-cta inline-flex items-center gap-sm rounded-xl border border-primary-container/35 px-md py-3 font-label-code text-[13px] text-primary-container hover:bg-primary-container/10 hover:shadow-[0_18px_42px_-24px_rgb(255_126_24_/_0.45)] transition-all active:scale-95" href="mailto:javanoroeste@gmail.com?subject=Voluntariado%20Java%20Day">
+                <a class="hero-cta inline-flex items-center gap-sm rounded-xl border border-primary-container/35 px-md py-3 font-label-code text-[13px] text-primary-container hover:bg-primary-container/10 hover:shadow-[0_18px_42px_-24px_rgb(255_126_24_/_0.45)] transition-all active:scale-95" href="https://forms.gle/2qxpUJcZpXd6mWYy7" target="_blank" rel="noreferrer">
                   Quero ajudar <span class="material-symbols-outlined text-[18px]">volunteer_activism</span>
                 </a>
               </div>
