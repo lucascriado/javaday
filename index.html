@@ -842,7 +842,8 @@
         }
         .partners-curve .partners-grid img { max-width: 7.5rem !important; max-height: 3.75rem !important; }
         .partners-curve .bronze-grid { margin-bottom: 3rem !important; }
-        .partners-curve .bronze-grid > div { min-height: 8rem !important; padding: 1rem !important; }
+        .partners-curve .bronze-cards { grid-template-columns: 1fr !important; gap: 0.875rem !important; }
+        .partners-curve .bronze-card { min-height: 8rem !important; padding: 1rem !important; }
         .partners-curve .bronze-grid img { max-width: 11rem !important; max-height: 5.5rem !important; }
         .partners-curve .mt-\[144px\] { margin-top: 4rem !important; padding-bottom: 0 !important; }
         .partners-curve .mt-\[144px\] .grid.grid-cols-1 { gap: 1.5rem !important; }
@@ -1244,10 +1245,15 @@
             </p>
           </div>
 
-          <div class="bronze-grid max-w-xl mx-auto mb-xl">
-            <p class="font-label-code text-[12px] uppercase tracking-[0.18em] text-center text-[#d79a5b] mb-sm">Patrocinador Bronze</p>
-            <div class="bronze-card rounded-2xl min-h-44 p-lg flex items-center justify-center border border-[#cd7f32]/45 transition-all hover:border-[#d99a5a] hover:-translate-y-1">
-              <img class="max-h-28 max-w-[280px] w-full object-contain" src="assets/partners/shift.png" alt="Shift — patrocinadora Bronze do Java Day" loading="lazy" />
+          <div class="bronze-grid max-w-3xl mx-auto mb-xl">
+            <p class="font-label-code text-[12px] uppercase tracking-[0.18em] text-center text-[#d79a5b] mb-sm">Patrocinadores Bronze</p>
+            <div class="bronze-cards grid grid-cols-2 gap-md">
+              <div class="bronze-card rounded-2xl min-h-44 p-lg flex items-center justify-center border border-[#cd7f32]/45 transition-all hover:border-[#d99a5a] hover:-translate-y-1">
+                <img class="max-h-28 max-w-[280px] w-full object-contain" src="assets/partners/shift.png" alt="Shift — patrocinadora Bronze do Java Day" loading="lazy" />
+              </div>
+              <div class="bronze-card rounded-2xl min-h-44 p-lg flex items-center justify-center border border-[#cd7f32]/45 transition-all hover:border-[#d99a5a] hover:-translate-y-1">
+                <img class="max-h-28 max-w-[280px] w-full object-contain" src="assets/partners/field-control.jpeg" alt="Field Control — patrocinadora Bronze do Java Day" loading="lazy" />
+              </div>
             </div>
           </div>
 
