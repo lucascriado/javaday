@@ -1399,8 +1399,8 @@
           </div>
 
           <div class="mt-[144px] pb-xl">
-            <div class="max-w-5xl mx-auto grid grid-cols-1 lg:grid-cols-[0.85fr_1.15fr] gap-xl items-center justify-center">
-              <div class="space-y-md text-center lg:text-left">
+            <div class="max-w-5xl mx-auto flex flex-col gap-xl items-center">
+              <div class="space-y-md text-center max-w-2xl mx-auto">
                 <p class="font-label-code text-[12px] uppercase tracking-[0.18em] text-primary-container">Time</p>
                 <h2 class="font-label-code text-[30px] lg:text-[40px] leading-tight font-semibold">
                   Comissão <span class="text-primary">Organizadora</span>
@@ -1413,7 +1413,7 @@
                 </a>
               </div>
 
-              <div id="team-container" class="grid grid-cols-1 sm:grid-cols-2 gap-md"></div>
+              <div id="team-container" class="grid w-full grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-md"></div>
             </div>
           </div>
 
@@ -1679,6 +1679,18 @@ const membrosEquipe = [
     cargo: "",
     foto: "assets/team/BrunoSouza.jpg",
     linkedin: "https://www.linkedin.com/in/bruno-souza-pires/"
+  },
+  {
+    nome: "Luciene Cavalcanti",
+    cargo: "",
+    foto: "assets/team/luciene-cavalcanti.jpg",
+    linkedin: "https://www.linkedin.com/in/luciene-cavalcanti-3709a7b/"
+  },
+  {
+    nome: "Thiago Gonzaga",
+    cargo: "",
+    foto: "assets/team/thiago-gonzaga.jpg",
+    linkedin: "https://www.linkedin.com/in/thiagosg/"
   }
 ];
 
@@ -1686,15 +1698,12 @@ const teamContainer = document.getElementById("team-container");
 
 if (teamContainer) {
   teamContainer.innerHTML = membrosEquipe.map((membro, index) => {
-    
-    // O card em destaque ocupa as duas colunas, mas mantém a largura de uma
-    // coluna (gap-md = 24px) para que o nome quebre igual aos demais cards.
-    const destaqueClasse = index === 0
-      ? "sm:col-span-2 justify-self-center w-full sm:w-[calc(50%-12px)]"
+    const ultimoImparClasse = membrosEquipe.length % 2 !== 0 && index === membrosEquipe.length - 1
+      ? "sm:col-span-2 sm:justify-self-center sm:w-[calc(50%-12px)] lg:col-span-1 lg:w-full"
       : "w-full";
 
     return `
-      <div class="glass-card ${destaqueClasse} h-full rounded-xl p-3 sm:p-5 flex items-center text-left gap-3 sm:gap-4 relative overflow-hidden transition-colors hover:border-primary-container/40">
+      <div class="glass-card ${ultimoImparClasse} h-full min-w-0 rounded-xl p-3 sm:p-5 flex items-center text-left gap-3 sm:gap-4 relative overflow-hidden transition-colors hover:border-primary-container/40">
 
         <div class="h-16 w-16 sm:h-24 sm:w-24 flex-shrink-0 overflow-hidden rounded-xl bg-surface-container-high">
           <img class="h-full w-full object-cover" src="${membro.foto}" alt="Foto de ${membro.nome}" loading="lazy" />
@@ -1713,7 +1722,7 @@ if (teamContainer) {
           ` : ''}
 
           ${membro.linkedin ? `
-          <a class="inline-flex h-8 items-center gap-1.5 px-3 rounded-lg bg-[#0077B5] text-white font-label-code text-[12px] font-semibold leading-none hover:opacity-90 transition-opacity" href="${membro.linkedin}" target="_blank" rel="noreferrer" aria-label="LinkedIn de ${membro.nome}">
+          <a class="inline-flex min-h-8 max-w-full items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#0077B5] text-white font-label-code text-[12px] font-semibold leading-none hover:opacity-90 transition-opacity" href="${membro.linkedin}" target="_blank" rel="noreferrer" aria-label="LinkedIn de ${membro.nome}">
             <svg class="h-3.5 w-3.5 fill-current" viewBox="0 0 24 24"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/></svg>
             LinkedIn
           </a>
