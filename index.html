@@ -462,6 +462,14 @@
           rgb(245 238 230);
         box-shadow: 0 22px 60px -38px rgb(205 127 50 / 0.9);
       }
+      .sponsor-card { background: rgb(245 238 230); }
+      .sponsor-card--platinum { border-color: rgb(203 213 225 / 0.72); box-shadow: 0 22px 60px -38px rgb(148 163 184 / 0.9); }
+      .sponsor-card--gold { border-color: rgb(212 175 55 / 0.58); box-shadow: 0 22px 60px -38px rgb(212 175 55 / 0.9); }
+      .sponsor-card--silver { border-color: rgb(148 163 184 / 0.58); box-shadow: 0 22px 60px -38px rgb(148 163 184 / 0.9); }
+      .sponsors-grid img,
+      .partners-grid img {
+        mix-blend-mode: multiply;
+      }
       .moments-gallery::before {
         content: "";
         position: absolute;
@@ -839,20 +847,20 @@
         /* Parceiros */
         .partners-curve > div { padding-top: var(--mobile-section-y) !important; }
         .partners-curve .partners-grid { gap: 0.75rem !important; margin-bottom: 2rem !important; }
-        .partners-curve .partners-grid > a {
+        .partners-curve .partners-grid > * {
           min-height: 5.5rem !important; padding: 0.75rem !important; border-radius: 0.75rem !important;
         }
         .partners-curve .partners-grid img { max-width: 8.5rem !important; max-height: 3.25rem !important; }
-        .partners-curve .bronze-grid { margin-bottom: 2.25rem !important; }
-        .partners-curve .bronze-cards { grid-template-columns: 1fr !important; gap: 0.75rem !important; }
-        .partners-curve .bronze-card { min-height: 5.5rem !important; padding: 0.875rem !important; }
-        .partners-curve .bronze-card,
-        .partners-curve .partners-grid > a {
+        .partners-curve .sponsors-grid { margin-bottom: 2.25rem !important; }
+        .partners-curve .sponsor-cards { grid-template-columns: 1fr !important; gap: 0.75rem !important; }
+        .partners-curve .sponsor-card { min-height: 5.5rem !important; padding: 0.875rem !important; }
+        .partners-curve .sponsor-card,
+        .partners-curve .partners-grid > * {
           width: 100%;
           max-width: 17rem;
           margin-inline: auto;
         }
-        .partners-curve .bronze-grid img { max-width: 8.5rem !important; max-height: 3.25rem !important; }
+        .partners-curve .sponsors-grid img { max-width: 8.5rem !important; max-height: 3.25rem !important; }
         .partners-curve .mt-\[144px\] { margin-top: 4rem !important; padding-bottom: 0 !important; }
         .partners-curve .mt-\[144px\] .grid.grid-cols-1 { gap: 1.5rem !important; }
         .partners-curve .glass-card { padding: 1rem !important; gap: 0.875rem !important; border-radius: 0.75rem !important; }
@@ -1379,26 +1387,36 @@
             </p>
           </div>
 
-          <div class="bronze-grid max-w-3xl mx-auto mb-xl">
-            <p class="font-label-code text-[12px] uppercase tracking-[0.18em] text-center text-[#d79a5b] mb-sm">Patrocinadores Bronze</p>
-            <div class="bronze-cards grid grid-cols-1 sm:grid-cols-3 gap-md">
-              <div class="bronze-card rounded-2xl min-h-44 p-lg flex items-center justify-center border border-[#cd7f32]/45 transition-all hover:border-[#d99a5a] hover:-translate-y-1">
-                <img class="max-h-28 max-w-[280px] w-full object-contain" src="assets/partners/shift.png" alt="Shift — patrocinadora Bronze do Java Day" loading="lazy" />
-              </div>
-              <div class="bronze-card rounded-2xl min-h-44 p-lg flex items-center justify-center border border-[#cd7f32]/45 transition-all hover:border-[#d99a5a] hover:-translate-y-1">
-                <img class="max-h-28 max-w-[280px] w-full object-contain" src="assets/partners/field-control.jpeg" alt="Field Control — patrocinadora Bronze do Java Day" loading="lazy" />
-              </div>
-              <div class="bronze-card rounded-2xl min-h-44 p-lg flex items-center justify-center border border-[#cd7f32]/45 transition-all hover:border-[#d99a5a] hover:-translate-y-1">
-                <img class="max-h-28 max-w-[280px] w-full object-contain" src="assets/partners/pontta.svg" alt="Pontta — patrocinadora Bronze do Java Day" loading="lazy" />
+          <div class="sponsors-grid max-w-3xl mx-auto mb-xl space-y-lg">
+            <div>
+              <p class="font-label-code text-[12px] uppercase tracking-[0.18em] text-center text-slate-300 mb-sm">Patrocinador Platina</p>
+              <div class="sponsor-cards grid grid-cols-1 max-w-md mx-auto gap-md"><div class="sponsor-card sponsor-card--platinum rounded-2xl min-h-44 p-lg flex items-center justify-center border transition-all hover:-translate-y-1"><img class="max-h-28 max-w-[280px] w-full object-contain" src="assets/partners/pontta.svg" alt="Pontta — patrocinadora Platina do Java Day" loading="lazy" /></div></div>
+            </div>
+            <div>
+              <p class="font-label-code text-[12px] uppercase tracking-[0.18em] text-center text-[#d4af37] mb-sm">Patrocinador Ouro</p>
+              <div class="sponsor-cards grid grid-cols-1 max-w-md mx-auto gap-md"><div class="sponsor-card sponsor-card--gold rounded-2xl min-h-44 p-lg flex items-center justify-center border transition-all hover:-translate-y-1"><img class="max-h-28 max-w-[280px] w-full object-contain" src="assets/partners/empro.jpeg" alt="EMPRO — patrocinadora Ouro do Java Day" loading="lazy" /></div></div>
+            </div>
+            <div>
+              <p class="font-label-code text-[12px] uppercase tracking-[0.18em] text-center text-slate-400 mb-sm">Patrocinador Prata</p>
+              <div class="sponsor-cards grid grid-cols-1 max-w-md mx-auto gap-md"><div class="sponsor-card sponsor-card--silver rounded-2xl min-h-44 p-lg flex items-center justify-center border transition-all hover:-translate-y-1"><img class="max-h-28 max-w-[280px] w-full object-contain" src="assets/partners/apeti.webp" alt="APETI — patrocinadora Prata do Java Day" loading="lazy" /></div></div>
+            </div>
+            <div>
+              <p class="font-label-code text-[12px] uppercase tracking-[0.18em] text-center text-[#d79a5b] mb-sm">Patrocinadores Bronze</p>
+              <div class="sponsor-cards grid grid-cols-1 sm:grid-cols-2 gap-md">
+                <div class="bronze-card sponsor-card rounded-2xl min-h-44 p-lg flex items-center justify-center border border-[#cd7f32]/45 transition-all hover:border-[#d99a5a] hover:-translate-y-1"><img class="max-h-28 max-w-[280px] w-full object-contain" src="assets/partners/shift.png" alt="Shift — patrocinadora Bronze do Java Day" loading="lazy" /></div>
+                <div class="bronze-card sponsor-card rounded-2xl min-h-44 p-lg flex items-center justify-center border border-[#cd7f32]/45 transition-all hover:border-[#d99a5a] hover:-translate-y-1"><img class="max-h-28 max-w-[280px] w-full object-contain" src="assets/partners/field-control.jpeg" alt="Field Control — patrocinadora Bronze do Java Day" loading="lazy" /></div>
               </div>
             </div>
           </div>
 
           <p class="font-label-code text-[12px] uppercase tracking-[0.18em] text-center text-on-surface-variant mb-md">Apoio institucional</p>
-          <div class="partners-grid grid grid-cols-1 sm:grid-cols-3 gap-md max-w-4xl mx-auto mb-xl">
+          <div class="partners-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-md max-w-4xl mx-auto mb-xl">
             <a class="rounded-xl min-h-32 p-md flex items-center justify-center border border-outline-variant/25 bg-[#f5eee6] hover:border-primary-container/55 hover:shadow-[0_18px_42px_-24px_rgb(255_126_24_/_0.45)] transition-all" href="https://sjp.ifsp.edu.br/" target="_blank" rel="noreferrer" aria-label="Abrir site do IFSP São José do Rio Preto"><img class="max-h-20 max-w-[170px] object-contain" src="assets/partners/ifsp-campus-logo.png" alt="IFSP São José do Rio Preto" loading="lazy" /></a>
             <a class="rounded-xl min-h-32 p-md flex items-center justify-center border border-outline-variant/25 bg-[#f5eee6] hover:border-primary-container/55 hover:shadow-[0_18px_42px_-24px_rgb(255_126_24_/_0.45)] transition-all" href="https://academy.oracle.com/" target="_blank" rel="noreferrer" aria-label="Abrir site da Oracle Academy"><img class="max-h-[72px] max-w-[170px] object-contain" src="assets/partners/oracle-academy.webp" alt="Oracle Academy" loading="lazy" /></a>
             <a class="rounded-xl min-h-32 p-md flex items-center justify-center border border-outline-variant/25 bg-[#f5eee6] hover:border-primary-container/55 hover:shadow-[0_18px_42px_-24px_rgb(255_126_24_/_0.45)] transition-all" href="https://www.sjp.ufscar.br/" target="_blank" rel="noreferrer" aria-label="Abrir site da UFSCar São José do Rio Preto"><img class="max-h-[72px] max-w-[170px] object-contain" src="assets/partners/UFSCar.jpeg" alt="UFSCar São José do Rio Preto" loading="lazy" /></a>
+            <a class="rounded-xl min-h-32 p-md flex items-center justify-center border border-outline-variant/25 bg-[#f5eee6] hover:border-primary-container/55 hover:shadow-[0_18px_42px_-24px_rgb(255_126_24_/_0.45)] transition-all" href="https://www.cps.sp.gov.br/" target="_blank" rel="noreferrer" aria-label="Abrir site do Centro Paula Souza"><img class="max-h-[72px] max-w-[170px] object-contain" src="assets/partners/centro-paula-souza.jpeg" alt="Centro Paula Souza" loading="lazy" /></a>
+            <div class="rounded-xl min-h-32 p-md flex items-center justify-center border border-outline-variant/25 bg-[#f5eee6]"><img class="max-h-[72px] max-w-[170px] object-contain" src="assets/partners/etec-philadelpho.jpeg" alt="ETEC Philadelpho Gouvêa Netto" loading="lazy" /></div>
+            <div class="rounded-xl min-h-32 p-md flex items-center justify-center border border-outline-variant/25 bg-[#f5eee6]"><img class="max-h-[72px] max-w-[170px] object-contain" src="assets/partners/fatec-rio-preto.jpeg" alt="FATEC Rio Preto" loading="lazy" /></div>
           </div>
 
           <div class="mt-[144px] pb-xl">
