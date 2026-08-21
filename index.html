@@ -697,8 +697,6 @@
           text-align: center;
         }
 
-        /* Menor que os demais títulos: "IFSP São José do Rio Preto" quebrava
-           deixando "IFSP" sozinho na primeira linha */
         #location h2 {
           font-size: clamp(1.25rem, 5.4vw, 1.5rem) !important;
           line-height: 1.25 !important;
@@ -786,7 +784,6 @@
         .intro-icon { font-size: 2rem; }
         .intro-card h3 { font-size: 1.25rem !important; line-height: 1.3 !important; }
         .intro-card p { font-size: 0.9375rem !important; line-height: 1.45 !important; }
-        /* ----------------------------------------------------------------- */
 
         .certificate-section { padding-block: var(--mobile-section-y) !important; }
         .certificate-section .certificate-layout { gap: 1.5rem !important; }
@@ -839,12 +836,10 @@
         #speakers { margin-top: 4rem !important; }
         #speakers .speaker-card { border-radius: 1rem !important; }
         #speakers .speaker-card > div:first-child { aspect-ratio: 4 / 3 !important; }
-        /* Com o recorte 4/3 o enquadramento do Thiago cortava o rosto */
         #speakers img[src*="thiago-gonzaga"] { object-position: 50% 78% !important; }
         #speakers .speaker-card .p-md { padding: 1.125rem !important; }
         #speakers .speaker-card h4 { font-size: 1.125rem !important; }
 
-        /* Parceiros */
         .partners-curve > div { padding-top: var(--mobile-section-y) !important; }
         .partners-curve .partners-grid { gap: 0.75rem !important; margin-bottom: 2rem !important; }
         .partners-curve .partners-grid > * {
@@ -866,14 +861,12 @@
         .partners-curve .glass-card { padding: 1rem !important; gap: 0.875rem !important; border-radius: 0.75rem !important; }
         .partners-curve h4 { font-size: 1rem !important; line-height: 1.25 !important; }
 
-        /* Bloco da comissão (texto, botão e cards) na mesma largura, centralizado */
         .partners-curve .mt-\[144px\] .grid.grid-cols-1 > div {
           width: 100%;
           max-width: 22.5rem;
           margin-inline: auto;
         }
 
-        /* Cards da comissão em formato compacto no mobile */
         #team-container { gap: 0.75rem !important; }
         #team-container > div { padding: 1rem !important; gap: 1rem !important; }
         #team-container > div > div:first-child {
@@ -922,13 +915,12 @@
         #location .location-facts { grid-template-columns: 1fr !important; gap: 0.625rem !important; }
         #location .location-facts > div { min-height: 4.25rem; padding: 0.875rem 1rem !important; border-radius: 0.875rem !important; }
 
-        /* Footer Centralizado */
         footer .grid { 
           gap: 2rem !important; 
           text-align: center; 
           justify-items: center; 
         }
-        footer .space-y-md .flex { justify-content: center; } /* Centralizando redes sociais */
+        footer .space-y-md .flex { justify-content: center; }
         footer .rounded-2xl { border-radius: 0.75rem !important; padding: 1rem !important; }
         footer h4 { margin-bottom: 0.875rem !important; }
         footer > div:last-child { padding-block: 1.25rem !important; }
@@ -943,6 +935,7 @@
         </div>
         <div class="hidden md:flex items-center gap-lg">
           <a class="font-label-code text-[14px] uppercase text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200" href="#speakers">Palestrantes</a>
+          <a class="font-label-code text-[14px] uppercase text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200" href="#schedule">Programação</a>
           <a class="font-label-code text-[14px] uppercase text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200" href="#certificates">Certificados</a>
           <a class="font-label-code text-[14px] uppercase text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200" href="#location">Localização</a>
           <a class="font-label-code text-[14px] uppercase text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200" href="#partners">Parceiros</a>
@@ -1021,16 +1014,16 @@
             </h2>
             <div class="mt-lg mx-auto max-w-[760px] space-y-sm font-body-md text-[17px] leading-8 text-on-surface/90">
               <p>
-                O Java Day &eacute; um evento anual focado em disseminar conhecimento
-                t&eacute;cnico de alto n&iacute;vel, promover o networking e fortalecer a
+                O Java Day é um evento anual focado em disseminar conhecimento
+                técnico de alto nível, promover o networking e fortalecer a
                 comunidade de desenvolvedores do Noroeste Paulista.
               </p>
               <p>
                 Organizado pela comunidade
                 <span class="text-primary">Java Noroeste</span> e o
                 <span class="text-primary">IFSP</span>, unimos academia e
-                ind&uacute;stria para discutir as tend&ecirc;ncias de Java, Cloud Native,
-                Microservi&ccedil;os e Engenharia de Software.
+                indústria para discutir as tendências de Java, Cloud Native,
+                Microserviços e Engenharia de Software.
               </p>
             </div>
           </div>
@@ -1039,42 +1032,42 @@
               <div class="intro-card glass-card p-md rounded-xl space-y-sm hover:border-primary-container/40 transition-colors">
                 <span class="material-symbols-outlined intro-icon text-primary-container">co_present</span>
                 <h3 class="font-headline-sm text-[25px] leading-8 font-semibold text-on-surface">Palestras</h3>
-                <p class="font-body-md text-[16px] leading-6 text-on-surface/75">Conte&uacute;do t&eacute;cnico denso e atualizado.</p>
+                <p class="font-body-md text-[16px] leading-6 text-on-surface/75">Conteúdo técnico denso e atualizado.</p>
               </div>
               <div class="intro-card glass-card p-md rounded-xl space-y-sm hover:border-primary-container/40 transition-colors">
                 <span class="material-symbols-outlined intro-icon text-primary-container">handyman</span>
                 <h3 class="font-headline-sm text-[25px] leading-8 font-semibold text-on-surface">Workshops</h3>
-                <p class="font-body-md text-[16px] leading-6 text-on-surface/75">Pr&aacute;tica m&atilde;o na massa com especialistas.</p>
+                <p class="font-body-md text-[16px] leading-6 text-on-surface/75">Prática mão na massa com especialistas.</p>
               </div>
               <div class="intro-card glass-card p-md rounded-xl space-y-sm hover:border-primary-container/40 transition-colors">
                 <span class="material-symbols-outlined intro-icon text-primary-container">diversity_3</span>
                 <h3 class="font-headline-sm text-[25px] leading-8 font-semibold text-on-surface">Networking</h3>
-                <p class="font-body-md text-[16px] leading-6 text-on-surface/75">Conex&atilde;o direta com l&iacute;deres da ind&uacute;stria.</p>
+                <p class="font-body-md text-[16px] leading-6 text-on-surface/75">Conexão direta com líderes da indústria.</p>
               </div>
               <div class="intro-card glass-card p-md rounded-xl space-y-sm hover:border-primary-container/40 transition-colors">
                 <span class="material-symbols-outlined intro-icon text-primary-container">verified</span>
                 <h3 class="font-headline-sm text-[25px] leading-8 font-semibold text-on-surface">Certificado</h3>
-                <p class="font-body-md text-[16px] leading-6 text-on-surface/75">Reconhecimento oficial de participa&ccedil;&atilde;o.</p>
+                <p class="font-body-md text-[16px] leading-6 text-on-surface/75">Reconhecimento oficial de participação.</p>
               </div>
               <div class="intro-card glass-card p-md rounded-xl space-y-sm hover:border-primary-container/40 transition-colors" aria-hidden="true">
                 <span class="material-symbols-outlined intro-icon text-primary-container">co_present</span>
                 <h3 class="font-headline-sm text-[25px] leading-8 font-semibold text-on-surface">Palestras</h3>
-                <p class="font-body-md text-[16px] leading-6 text-on-surface/75">Conte&uacute;do t&eacute;cnico denso e atualizado.</p>
+                <p class="font-body-md text-[16px] leading-6 text-on-surface/75">Conteúdo técnico denso e atualizado.</p>
               </div>
               <div class="intro-card glass-card p-md rounded-xl space-y-sm hover:border-primary-container/40 transition-colors" aria-hidden="true">
                 <span class="material-symbols-outlined intro-icon text-primary-container">handyman</span>
                 <h3 class="font-headline-sm text-[25px] leading-8 font-semibold text-on-surface">Workshops</h3>
-                <p class="font-body-md text-[16px] leading-6 text-on-surface/75">Pr&aacute;tica m&atilde;o na massa com especialistas.</p>
+                <p class="font-body-md text-[16px] leading-6 text-on-surface/75">Prática mão na massa com especialistas.</p>
               </div>
               <div class="intro-card glass-card p-md rounded-xl space-y-sm hover:border-primary-container/40 transition-colors" aria-hidden="true">
                 <span class="material-symbols-outlined intro-icon text-primary-container">diversity_3</span>
                 <h3 class="font-headline-sm text-[25px] leading-8 font-semibold text-on-surface">Networking</h3>
-                <p class="font-body-md text-[16px] leading-6 text-on-surface/75">Conex&atilde;o direta com l&iacute;deres da ind&uacute;stria.</p>
+                <p class="font-body-md text-[16px] leading-6 text-on-surface/75">Conexão direta com líderes da indústria.</p>
               </div>
               <div class="intro-card glass-card p-md rounded-xl space-y-sm hover:border-primary-container/40 transition-colors" aria-hidden="true">
                 <span class="material-symbols-outlined intro-icon text-primary-container">verified</span>
                 <h3 class="font-headline-sm text-[25px] leading-8 font-semibold text-on-surface">Certificado</h3>
-                <p class="font-body-md text-[16px] leading-6 text-on-surface/75">Reconhecimento oficial de participa&ccedil;&atilde;o.</p>
+                <p class="font-body-md text-[16px] leading-6 text-on-surface/75">Reconhecimento oficial de participação.</p>
               </div>
             </div>
           </div>
@@ -1084,12 +1077,12 @@
         <div class="max-w-container-max mx-auto px-gutter">
           <div class="certificate-layout grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-xl items-center">
             <div class="space-y-md text-center lg:text-left">
-              <p class="font-label-code text-[12px] uppercase tracking-[0.18em] text-primary-container">Sua participa&ccedil;&atilde;o conta</p>
+              <p class="font-label-code text-[12px] uppercase tracking-[0.18em] text-primary-container">Sua participação conta</p>
               <h2 class="font-label-code text-[30px] lg:text-[40px] leading-tight font-semibold">Certificado do<br /><span class="text-primary">Java Day</span></h2>
-              <p class="font-body-md text-[17px] leading-7 text-on-surface-variant max-w-xl mx-auto lg:mx-0">Quem participar do evento poder&aacute; receber um certificado digital, ideal para comprovar horas complementares e registrar essa experi&ecirc;ncia na carreira.</p>
+              <p class="font-body-md text-[17px] leading-7 text-on-surface-variant max-w-xl mx-auto lg:mx-0">Quem participar do evento poderá receber um certificado digital, ideal para comprovar horas complementares e registrar essa experiência na carreira.</p>
               <div class="certificate-highlight glass-card rounded-2xl p-md flex items-start gap-sm text-left">
                 <span class="material-symbols-outlined text-primary-container text-[28px] flex-shrink-0">info</span>
-                <p class="font-body-md text-[14px] leading-6 text-on-surface-variant">A emiss&atilde;o depende da inscri&ccedil;&atilde;o e do registro de presen&ccedil;a no dia. As orienta&ccedil;&otilde;es para acesso ser&atilde;o enviadas ap&oacute;s o evento.</p>
+                <p class="font-body-md text-[14px] leading-6 text-on-surface-variant">A emissão depende da inscrição e do registro de presença no dia. As orientações para acesso serão enviadas após o evento.</p>
               </div>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-md">
@@ -1099,11 +1092,11 @@
               </article>
               <article class="certificate-card glass-card rounded-xl p-md space-y-sm hover:border-primary-container/40 transition-colors">
                 <span class="material-symbols-outlined intro-icon text-primary-container">event_available</span><p class="font-label-code text-[12px] uppercase tracking-[0.12em] text-primary-container">02</p>
-                <h3 class="font-headline-sm text-[21px] leading-7 font-semibold text-on-surface">Confirme presen&ccedil;a</h3><p class="font-body-md text-[14px] leading-6 text-on-surface-variant">Fa&ccedil;a o credenciamento no local do evento.</p>
+                <h3 class="font-headline-sm text-[21px] leading-7 font-semibold text-on-surface">Confirme presença</h3><p class="font-body-md text-[14px] leading-6 text-on-surface-variant">Faça o credenciamento no local do evento.</p>
               </article>
               <article class="certificate-card glass-card rounded-xl p-md space-y-sm hover:border-primary-container/40 transition-colors">
                 <span class="material-symbols-outlined intro-icon text-primary-container">workspace_premium</span><p class="font-label-code text-[12px] uppercase tracking-[0.12em] text-primary-container">03</p>
-                <h3 class="font-headline-sm text-[21px] leading-7 font-semibold text-on-surface">Receba online</h3><p class="font-body-md text-[14px] leading-6 text-on-surface-variant">Acesse seu certificado digital ap&oacute;s a libera&ccedil;&atilde;o.</p>
+                <h3 class="font-headline-sm text-[21px] leading-7 font-semibold text-on-surface">Receba online</h3><p class="font-body-md text-[14px] leading-6 text-on-surface-variant">Acesse seu certificado digital após a liberação.</p>
               </article>
             </div>
           </div>
@@ -1136,7 +1129,7 @@
                 Conheça quem já está confirmado para a 8ª edição do Java Day Rio Preto.
               </p>
             </div>
- 
+
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-lg max-w-[1160px] mx-auto items-start justify-items-center">
               
               <!-- Speaker: Jessica Felix -->
@@ -1356,7 +1349,7 @@
                       <div class="mt-xs space-y-sm font-body-md text-[13.5px] leading-relaxed text-on-surface-variant">
                         <p>Damiana Costa é Principal Engineer no Itaú, com mais de 20 anos de experiência em tecnologia, atuando com arquitetura de software, sistemas distribuídos, backend e plataformas de alta disponibilidade.</p>
                         <p>É mestra e doutoranda em Engenharia Elétrica e Computação pela Universidade Presbiteriana Mackenzie e professora de graduação. Também atua como palestrante e autora de conteúdos sobre arquitetura, Java e engenharia de software.</p>
-                        <p>Nesta palestra, acompanharemos a jornada de uma única requisição enquanto um sistema começa a falhar. A cada etapa, veremos como estratégias como Timeout, Retry, Circuit Breaker, Bulkhead, Rate Limiter, Fallback e Idempotência atuam para impedir que pequenas falhas se transformem em grandes indisponibilidades.</p>
+                        <p>Nesta palestra, acompanharemos a jornada de uma única requisição enquanto um sistema começa a falhar. A cada etapa, veremos como estratégias como Timeout, Retry, Circuit Breaker, Bulkhead, Rate Limiter, Fallback e Idempotência atuam para impedir que pequenas falhas se transformem em grandes indisponividades.</p>
                         <p>Com exemplos práticos em Java e Spring Boot, você entenderá não apenas como implementar esses padrões, mas principalmente quando utilizá-los, em que ordem aplicá-los e quais armadilhas evitar.</p>
                       </div>
                     </div>
@@ -1375,6 +1368,81 @@
           </div>
         </div>
       </section>
+
+      <!-- SEÇÃO PROGRAMAÇÃO / AGENDA -->
+      <section class="py-xl relative z-10" id="schedule">
+        <div class="max-w-container-max mx-auto px-gutter">
+          <div class="mb-[64px] text-center">
+            <p class="font-label-code text-[12px] uppercase tracking-[0.18em] text-primary-container mb-sm">Agenda</p>
+            <h2 class="font-label-code text-[30px] lg:text-[40px] leading-tight font-semibold">
+              Nossa <span class="text-primary">Programação</span>
+            </h2>
+            <p class="font-body-md text-body-md text-on-surface-variant mt-xs max-w-2xl mx-auto">
+              Acompanhe os horários e não perca nenhum momento do Java Day Rio Preto.
+            </p>
+          </div>
+
+          <div class="max-w-4xl mx-auto space-y-sm">
+            <!-- Check-in -->
+            <div class="glass-card rounded-2xl p-md flex flex-col md:flex-row gap-md md:items-center items-start hover:border-primary-container/40 transition-colors">
+              <div class="min-w-[140px] font-label-code text-[18px] font-semibold text-primary">07:45</div>
+              <div class="flex items-center gap-sm">
+                <span class="material-symbols-outlined text-primary-container text-[24px]">qr_code_scanner</span>
+                <h3 class="font-headline-sm text-[21px] font-semibold text-on-surface">Check-in</h3>
+              </div>
+            </div>
+
+            <!-- Abertura -->
+            <div class="glass-card rounded-2xl p-md flex flex-col md:flex-row gap-md md:items-center items-start hover:border-primary-container/40 transition-colors">
+              <div class="min-w-[140px] font-label-code text-[18px] font-semibold text-primary">08:30 - 09:00</div>
+              <div class="flex items-center gap-sm">
+                <span class="material-symbols-outlined text-primary-container text-[24px]">campaign</span>
+                <h3 class="font-headline-sm text-[21px] font-semibold text-on-surface">Abertura</h3>
+              </div>
+            </div>
+
+            <!-- Palestra Damiana -->
+            <div class="glass-card rounded-2xl p-md flex flex-col md:flex-row gap-md items-start hover:border-primary-container/40 transition-colors">
+              <div class="min-w-[140px] font-label-code text-[18px] font-semibold text-primary mt-1">09:00 - 09:50</div>
+              <div>
+                <p class="font-label-code text-[12px] uppercase tracking-[0.1em] text-primary-container mb-1">Damiana Costa</p>
+                <h3 class="font-headline-sm text-[21px] font-semibold text-on-surface mb-2">Resiliência Além do Circuit Breaker: Como Construir Aplicações Java que Sobrevivem às Falhas</h3>
+                <p class="font-body-md text-[14.5px] leading-relaxed text-on-surface-variant">Nesta palestra, acompanharemos a jornada de uma única requisição enquanto um sistema começa a falhar. A cada etapa, veremos como estratégias como Timeout, Retry, Circuit Breaker, Bulkhead, Rate Limiter, Fallback e Idempotência atuam para impedir que pequenas falhas se transformem em grandes indisponibilidades. Com exemplos práticos em Java e Spring Boot, você entenderá não apenas como implementar esses padrões, mas principalmente quando utilizá-los, em que ordem aplicá-los e quais armadilhas evitar. Uma abordagem prática e arquitetural para quem deseja construir aplicações realmente resilientes.</p>
+              </div>
+            </div>
+
+            <!-- Coffee Break -->
+            <div class="glass-card rounded-2xl p-md flex flex-col md:flex-row gap-md md:items-center items-start hover:border-primary-container/40 transition-colors bg-surface-container-highest/30">
+              <div class="min-w-[140px] font-label-code text-[18px] font-semibold text-primary">09:50 - 10:20</div>
+              <div class="flex items-center gap-sm">
+                <span class="material-symbols-outlined text-primary-container text-[24px]">local_cafe</span>
+                <h3 class="font-headline-sm text-[21px] font-semibold text-on-surface">Coffee Break</h3>
+              </div>
+            </div>
+
+            <!-- Palestra Kamila -->
+            <div class="glass-card rounded-2xl p-md flex flex-col md:flex-row gap-md items-start hover:border-primary-container/40 transition-colors">
+              <div class="min-w-[140px] font-label-code text-[18px] font-semibold text-primary mt-1">10:20 - 11:10</div>
+              <div>
+                <p class="font-label-code text-[12px] uppercase tracking-[0.1em] text-primary-container mb-1">Kamila Code</p>
+                <h3 class="font-headline-sm text-[21px] font-semibold text-on-surface mb-2">Como usar a IA para acelerar sua carreira de dev</h3>
+                <p class="font-body-md text-[14.5px] leading-relaxed text-on-surface-variant">Nessa palestra vamos explorar como usar IA além do básico de gerar códigos, vamos explorar como gerar documentações, criar assistentes pessoais, fazer refinamentos tecnicos, melhorar a developer experience do time, treinar para entrevistas e como tudo isso te torna um dev mais relevante na era da IA.</p>
+              </div>
+            </div>
+
+            <!-- Palestra Thiago -->
+            <div class="glass-card rounded-2xl p-md flex flex-col md:flex-row gap-md items-start hover:border-primary-container/40 transition-colors">
+              <div class="min-w-[140px] font-label-code text-[18px] font-semibold text-primary mt-1">11:10 - 12:00</div>
+              <div>
+                <p class="font-label-code text-[12px] uppercase tracking-[0.1em] text-primary-container mb-1">Thiago Gonzaga</p>
+                <h3 class="font-headline-sm text-[21px] font-semibold text-on-surface mb-2">Projeto Babylon: Rodando Java na GPU</h3>
+                <p class="font-body-md text-[14.5px] leading-relaxed text-on-surface-variant">Escrever kernels de GPU em Java puro, sem JNI ou CUDA C? O Projeto Babylon (OpenJDK) torna isso possível com code reflection, que transforma código Java em modelos simbólicos executáveis em aceleradores. Nesta sessão introdutória, você vai entender o conceito, descobrir como isso abre caminho para explorar hardware especializado como os Tensor Cores da NVIDIA em cargas de ML e IA, e ver em live demo Java rodando na GPU com o HAT.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section class="py-xl partners-curve" id="partners">
         <div class="max-w-container-max mx-auto px-gutter pt-lg">
           <div class="text-center mb-xl">
@@ -1547,6 +1615,7 @@
             <h4 class="font-label-code text-[13px] uppercase tracking-[0.14em] text-primary-container mb-md">Evento</h4>
             <ul class="space-y-sm font-body-md text-body-md">
               <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#speakers">Palestrantes</a></li>
+              <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#schedule">Programação</a></li>
               <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#partners">Patrocínio</a></li>
               <li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#location">Localização</a></li>
             </ul>
