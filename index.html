@@ -488,7 +488,7 @@
         position: relative;
         overflow: hidden;
         aspect-ratio: 4 / 5;
-        min-height: 340px;
+        min-height: 0;
         border: 1px solid rgb(var(--outline-variant) / 0.34);
         border-radius: 18px;
         background: rgb(var(--surface-container-low) / 0.72);
@@ -579,6 +579,10 @@
       .hero-cta:hover { transform: translateY(-2px); }
       .hero-cta:hover::before { transform: translateX(120%); }
       .nav-scrolled { background-color: rgb(var(--surface) / 0.95); }
+      .nav-toggle .nav-toggle-close { display: none; }
+      .nav-toggle[aria-expanded="true"] .nav-toggle-open { display: none; }
+      .nav-toggle[aria-expanded="true"] .nav-toggle-close { display: inline-block; }
+      .nav-menu[hidden] { display: none; }
       html { scroll-behavior: smooth; }
 
       @media (max-width: 40rem) {
@@ -590,17 +594,21 @@
 
         body { overflow-x: hidden; }
 
-        nav > div {
+        nav > div:first-child {
           height: 4.5rem;
           padding-inline: var(--mobile-page-pad) !important;
           gap: 0.75rem;
         }
 
-        nav .font-label-code {
+        nav > div:first-child .font-label-code {
           font-size: 0.6875rem !important;
           line-height: 1.2;
           letter-spacing: 0.04em;
         }
+
+        nav .nav-toggle { height: 2.25rem; width: 2.25rem; }
+        nav .nav-menu > div { padding-inline: var(--mobile-page-pad) !important; }
+        nav .nav-menu a { font-size: 0.8125rem !important; }
 
         nav a.hero-cta {
           flex-shrink: 0;
@@ -930,25 +938,45 @@
   <body class="bg-background text-on-background font-body-md">
     <nav class="fixed top-0 w-full z-50 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/30 shadow-sm">
       <div class="flex justify-between items-center h-20 px-gutter max-w-container-max mx-auto">
-        <div class="font-label-code text-[18px] font-semibold uppercase tracking-[0.08em] text-primary-fixed-dim">
+        <a class="font-label-code text-[16px] xl:text-[18px] font-semibold uppercase tracking-[0.08em] text-primary-fixed-dim whitespace-nowrap" href="#top">
           Java Day <span data-counter data-end="8">8</span>ª Edição
-        </div>
-        <div class="hidden md:flex items-center gap-lg">
-          <a class="font-label-code text-[14px] uppercase text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200" href="#speakers">Palestrantes</a>
-          <a class="font-label-code text-[14px] uppercase text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200" href="#schedule">Programação</a>
-          <a class="font-label-code text-[14px] uppercase text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200" href="#certificates">Certificados</a>
-          <a class="font-label-code text-[14px] uppercase text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200" href="#location">Localização</a>
-          <a class="font-label-code text-[14px] uppercase text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200" href="#partners">Parceiros</a>
+        </a>
+        <div class="hidden lg:flex items-center gap-md xl:gap-lg">
+          <a class="font-label-code text-[13px] xl:text-[14px] uppercase whitespace-nowrap text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200" href="#speakers">Palestrantes</a>
+          <a class="font-label-code text-[13px] xl:text-[14px] uppercase whitespace-nowrap text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200" href="#schedule">Programação</a>
+          <a class="font-label-code text-[13px] xl:text-[14px] uppercase whitespace-nowrap text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200" href="#certificates">Certificados</a>
+          <a class="font-label-code text-[13px] xl:text-[14px] uppercase whitespace-nowrap text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200" href="#location">Localização</a>
+          <a class="font-label-code text-[13px] xl:text-[14px] uppercase whitespace-nowrap text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200" href="#partners">Parceiros</a>
         </div>
         <div class="flex items-center gap-sm">
-          <a class="hero-cta bg-primary-container text-on-primary-container px-6 py-2 rounded-xl font-label-md hover:shadow-[0_18px_42px_-18px_rgb(248_120_24_/_0.9)] transition-all active:scale-95" href="https://www.sympla.com.br/evento/8-java-day-2026-sao-jose-do-rio-preto-sp/3502847" target="_blank" rel="noreferrer">
+          <a class="hero-cta bg-primary-container text-on-primary-container px-6 py-2 rounded-xl font-label-md whitespace-nowrap hover:shadow-[0_18px_42px_-18px_rgb(248_120_24_/_0.9)] transition-all active:scale-95" href="https://www.sympla.com.br/evento/8-java-day-2026-sao-jose-do-rio-preto-sp/3502847" target="_blank" rel="noreferrer">
             <span class="relative z-10 hidden sm:inline">Garanta seu ingresso</span>
             <span class="relative z-10 sm:hidden">Ingressos</span>
           </a>
+          <button
+            id="nav-toggle"
+            class="nav-toggle lg:hidden inline-flex items-center justify-center h-10 w-10 rounded-lg border border-outline-variant/40 text-on-surface-variant hover:text-primary-fixed-dim hover:border-primary-container/40 transition-colors"
+            type="button"
+            aria-controls="nav-menu"
+            aria-expanded="false"
+            aria-label="Abrir menu"
+          >
+            <span class="material-symbols-outlined nav-toggle-open" aria-hidden="true">menu</span>
+            <span class="material-symbols-outlined nav-toggle-close" aria-hidden="true">close</span>
+          </button>
+        </div>
+      </div>
+      <div id="nav-menu" class="nav-menu lg:hidden border-t border-outline-variant/30 bg-surface/95 backdrop-blur-xl" hidden>
+        <div class="max-w-container-max mx-auto px-gutter py-sm flex flex-col">
+          <a class="font-label-code text-[14px] uppercase py-3 border-b border-outline-variant/20 text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200" href="#speakers">Palestrantes</a>
+          <a class="font-label-code text-[14px] uppercase py-3 border-b border-outline-variant/20 text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200" href="#schedule">Programação</a>
+          <a class="font-label-code text-[14px] uppercase py-3 border-b border-outline-variant/20 text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200" href="#certificates">Certificados</a>
+          <a class="font-label-code text-[14px] uppercase py-3 border-b border-outline-variant/20 text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200" href="#location">Localização</a>
+          <a class="font-label-code text-[14px] uppercase py-3 text-on-surface-variant hover:text-primary-fixed-dim transition-colors duration-200" href="#partners">Parceiros</a>
         </div>
       </div>
     </nav>
-    <main class="pt-20">
+    <main id="top" class="pt-20">
       <section class="relative min-h-[870px] flex items-center overflow-hidden hero-pattern">
         <div class="relative z-10 max-w-container-max mx-auto px-gutter grid grid-cols-1 lg:grid-cols-[1.1fr_0.9fr] gap-lg items-center">
           <div class="space-y-md min-w-0">
@@ -962,7 +990,7 @@
                 <span data-counter data-end="2026" data-duration="1.1">2026</span>
               </span>
             </h1>
-            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl tracking-[0.01em] lg:whitespace-nowrap">
+            <p class="font-body-lg text-body-lg text-on-surface-variant max-w-3xl tracking-[0.01em] xl:whitespace-nowrap">
               <span class="text-primary">Java</span>, arquitetura e comunidade
               em um encontro técnico no Noroeste Paulista.
             </p>
@@ -1009,7 +1037,7 @@
       <section class="pt-[88px] pb-[192px] intro-blend">
         <div class="relative z-10 max-w-container-max mx-auto px-gutter">
           <div class="mx-auto max-w-4xl text-center">
-            <h2 class="font-label-code text-[30px] lg:text-[36px] xl:text-[40px] leading-tight font-semibold text-on-background lg:whitespace-nowrap">
+            <h2 class="font-label-code text-[30px] lg:text-[36px] xl:text-[38px] leading-tight font-semibold text-on-background lg:whitespace-nowrap">
               Transformando o Ecossistema <span class="text-primary">Tech Local</span>
             </h2>
             <div class="mt-lg mx-auto max-w-[760px] space-y-sm font-body-md text-[17px] leading-8 text-on-surface/90">
@@ -1733,6 +1761,19 @@
         button.addEventListener("mouseup", () => button.classList.remove("scale-95"));
         button.addEventListener("mouseleave", () => button.classList.remove("scale-95"));
       });
+
+      // Menu mobile
+      const navToggle = document.getElementById("nav-toggle");
+      const navMenu = document.getElementById("nav-menu");
+      const setMenu = (open) => {
+        navToggle.setAttribute("aria-expanded", String(open));
+        navToggle.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu");
+        navMenu.hidden = !open;
+      };
+      navToggle.addEventListener("click", () => setMenu(navMenu.hidden));
+      navMenu.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setMenu(false)));
+      document.addEventListener("keydown", (event) => { if (event.key === "Escape") setMenu(false); });
+      window.matchMedia("(min-width: 1024px)").addEventListener("change", (event) => { if (event.matches) setMenu(false); });
 
       // Scroll do header
       const nav = document.querySelector("nav");
